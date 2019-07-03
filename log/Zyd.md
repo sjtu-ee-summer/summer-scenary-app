@@ -8,5 +8,7 @@
 #### 2/7 2019
 
  - File
- - Jenkins + Android Studio http://47.95.253.250:8080/
+ - Jenkins + Android Studio http://47.95.253.250:8080 Summer-Android
  - Android Studio + React Native
+
+
