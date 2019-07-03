@@ -1,4 +1,4 @@
-package com.example.travelsy.Translate.ui.main;
+package com.example.travelsy.translate.ui.main;
 
 import android.content.Context;
 
@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.travelsy.Translate.R;
+import com.example.travelsy.R;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -16,6 +16,7 @@ import com.example.travelsy.Translate.R;
  */
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
+    // change tab titles
     @StringRes
     private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2};
     private final Context mContext;

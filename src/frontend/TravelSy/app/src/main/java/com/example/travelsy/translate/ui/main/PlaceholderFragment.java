@@ -1,4 +1,4 @@
-package com.example.travelsy.Translate.ui.main;
+package com.example.travelsy.translate.ui.main;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.travelsy.Translate.R;
+import com.example.travelsy.R;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -38,6 +38,7 @@ public class PlaceholderFragment extends Fragment {
         int index = 1;
         if (getArguments() != null) {
             index = getArguments().getInt(ARG_SECTION_NUMBER);
+            index = getArguments().getInt(ARG_SECTION_NUMBER);
         }
         pageViewModel.setIndex(index);
     }
@@ -46,14 +47,17 @@ public class PlaceholderFragment extends Fragment {
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_main, container, false);
-        final TextView textView = root.findViewById(R.id.section_label);
-        pageViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+//        View root = inflater.inflate(R.layout.fragment_translate, container, false);
+//        final TextView textView = root.findViewById(R.id.section_label);
+//        pageViewModel.getText().observe(this, new Observer<String>() {
+//            @Override
+//            public void onChanged(@Nullable String s) {
+//                textView.setText(s);
+//            }
+//        });
+//        return root;
+
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_translate, container, false);
     }
 }

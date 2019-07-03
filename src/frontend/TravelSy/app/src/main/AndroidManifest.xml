@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Translate.TranslateActivity"
+            android:name=".translate.TranslateActivity"
             android:label="@string/title_activity_translate"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

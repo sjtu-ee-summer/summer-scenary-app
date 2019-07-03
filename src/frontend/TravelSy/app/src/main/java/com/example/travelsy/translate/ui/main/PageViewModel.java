@@ -1,4 +1,4 @@
-package com.example.travelsy.Translate.ui.main;
+package com.example.travelsy.translate.ui.main;
 
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;
