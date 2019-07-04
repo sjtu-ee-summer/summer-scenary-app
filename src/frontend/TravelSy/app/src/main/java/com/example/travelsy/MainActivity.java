@@ -3,6 +3,7 @@ package com.example.travelsy;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.travelsy.translate.TranslateActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -100,7 +101,8 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_gallery) {
-
+            Intent intent = new Intent(this, TranslateActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_tools) {

@@ -1,0 +1,4 @@
+#Tue Jul 02 23:33:05 CST 2019
+base.0=/home/zydiii/summer-scenary-app/src/frontend/TravelSy/app/build/intermediates/transforms/dexMerger/debug/7
+path.0=classes.dex
+renamed.0=classes.dex
