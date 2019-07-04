@@ -14,3 +14,8 @@
 
  - file
  - android studio UI design learn
+
+#### 4/7 2019
+
+ - Baidu API
+ - learn microservice 
