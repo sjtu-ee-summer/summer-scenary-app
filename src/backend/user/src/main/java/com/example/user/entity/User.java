@@ -1,5 +1,7 @@
 package com.example.user.entity;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,31 +12,17 @@ public class User
     @Id
     @Column(name = "user_id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userId;
+    private Long userId;
 
     private String username;
 
     private String password;
 
-    private String address;
-
     private String phone;
 
     private String email;
 
-    private String name;
-
     private int is_admin;
-
-    private int is_valid;
-
-    public void setIs_valid(int is_valid) {
-        this.is_valid = is_valid;
-    }
-
-    public int getIs_valid() {
-        return is_valid;
-    }
 
     public int getIsAdmin() {
         return is_admin;
@@ -56,16 +44,10 @@ public class User
         return password;
     }
 
+    // using Spring provided password hashing encryption algorithm to encrypt password
     public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        this.password = encoder.encode(password);
     }
 
     public String getPhone() {
@@ -84,27 +66,12 @@ public class User
         this.email = email;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
+//    public User(String username, String password) {
+//        this.username = username;
+//        this.password = password;
+//    }
+//
+//    public User() {
+//    }
 
 }
