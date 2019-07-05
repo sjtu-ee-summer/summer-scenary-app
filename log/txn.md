@@ -9,3 +9,8 @@
  - spring cloud config
  - spring cloud discovery
  - microservice
+
+#### 3/7 2019
+
+ - file
+ - android studio UI design learn
