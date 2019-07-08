@@ -5,9 +5,9 @@ pipeline {
         stage('Build') {
             steps {
                 sh "cd src/backend/config && mvn -B -DskipTests clean package"
-		        sh "cd discovery && mvn -B -DskipTests clean package"
-		        sh "cd gateway && mvn -B -DskipTests clean package"
-		        sh "cd user && mvn -B -DskipTests clean package"
+		        sh "cd src/backend/discovery && mvn -B -DskipTests clean package"
+		        sh "cd src/backend/gateway && mvn -B -DskipTests clean package"
+		        sh "cd src/backend/user && mvn -B -DskipTests clean package"
             }
         }
     }

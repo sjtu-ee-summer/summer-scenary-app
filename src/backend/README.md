@@ -13,11 +13,11 @@ This README file is added to prevent duplicate work that might mess up our cloud
 
 ## Ongoing
 
-*All done*
+- Configuring Jenkins' Job
+- Configuring Jenkins' pipeline
 
 ## Pending
 
-- Configure Jenkins
 - Compile projects' services
 - Run project container
 - Kubernetes
@@ -51,7 +51,28 @@ password: 0000
 
 ## Using Jenkins
 
+**Jenkins' Credentials**  
 URL: http://202.120.40.8:30451/  
 Username: admin  
 Password: password  
 
+**Freestyle Project**  
+Job name: TravelSy  
+To run: Modify Jenkinsfile & Build Now  
+
+**Pipeline Project**  
+Job name: Travelsy_pipeline  
+To run: Build Now
+
+**Pipeline workflow sample to chain Jobs**  
+```
+stage('Build') {
+  build 'build-dev-code'
+}
+stage('Test') {
+  build 'test-dev-code'
+}
+stage('Deploy') {
+  build 'deploy-stage'
+}
+```
