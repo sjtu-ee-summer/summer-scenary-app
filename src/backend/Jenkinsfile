@@ -1,10 +1,10 @@
 pipeline {
     agent any
-    
+
     stages {
         stage('Build') {
             steps {
-                sh "cd config && mvn -B -DskipTests clean package"
+                sh "cd src/backend/config && mvn -B -DskipTests clean package"
 		        sh "cd discovery && mvn -B -DskipTests clean package"
 		        sh "cd gateway && mvn -B -DskipTests clean package"
 		        sh "cd user && mvn -B -DskipTests clean package"
