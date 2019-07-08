@@ -20,6 +20,7 @@ This README file is added to prevent duplicate work that might mess up our cloud
 - Configure Jenkins
 - Compile projects' services
 - Run project container
+- Kubernetes
 
 ## Conecting to Server
 
@@ -41,9 +42,16 @@ This README file is added to prevent duplicate work that might mess up our cloud
 ```
 > sudo docker start mysql
 ```
-- Logging to service:
+- Run service:
 user: root
 password: 0000
 ```
 > sudo docker exec -it mysql mysql -uroot -p
 ```
+
+## Using Jenkins
+
+URL: http://202.120.40.8:30451/  
+Username: admin  
+Password: password  
+
