@@ -29,50 +29,27 @@ public class TranslatePicture {
 
     private static Logger logger = LoggerFactory.getLogger(TranslatePicture.class);
 
-    public static void main(String[] args) throws IOException {
+    public static String main(String file64) throws IOException {
 
         String appKey = "356a681fd478dcea";
         String appSecret = "MRYTJISyhxTZsYUZgkEBd3LVXyMAsfHX";
-        String filePath = "您的图片地址";
-        String tempFilePath = "压缩图片临时地址";
-        ocrtrans(appKey,appSecret,filePath,tempFilePath);
+        String base64Picture = file64;
+
+        return ocrtrans(appKey,appSecret,base64Picture);
     }
 
     /**
      *
      * @param appKey 应用ID
      * @param appSecret 应用密钥
-     * @param filePath 图片路径
-     * @param tmpFilePath 压缩后文件临时保存路径
+     * @param file 图片路径
      */
-    public static void ocrtrans(String appKey,String appSecret,String filePath,String tmpFilePath) throws IOException {
+    public static String ocrtrans(String appKey,String appSecret,String base64Picture) throws IOException {
         /** 图片翻译接口地址 */
         String url = "http://openapi.youdao.com/ocrtransapi";
 
         /** 构建参数 */
         Map<String,String> params = new HashMap<String,String>();
-
-        File file = new File(filePath);
-        if(!file.exists()){
-            logger.error("文件不存在");
-            return;
-        }
-        /** 压缩图片 */
-        long maxSize = 1 * 1024 * 1024;
-        float quality = 0.7f;
-        if(file.length() > maxSize){
-            /** 设置图片大小和质量 */
-            Thumbnails.of(filePath).scale(1f).outputQuality(quality).toFile(new File(tmpFilePath));
-            File tmpFile = new File(tmpFilePath);
-            filePath = tmpFilePath;
-            /** 连续压缩 */
-            while(tmpFile.length() > maxSize){
-                quality -= 0.2;
-                Thumbnails.of(filePath).scale(1f).outputQuality(quality).toFile(tmpFile);
-                tmpFile = new File(tmpFilePath);
-            }
-        }
-        System.out.println(file.length());
 
         String salt = String.valueOf(System.currentTimeMillis());
         String from = "auto";
@@ -87,9 +64,8 @@ public class TranslatePicture {
 
 
         /** 请求图片翻译 */
-        File imgFile = new File(filePath);
         String result = null;
-        String q = getBase64OfFile(imgFile);
+        String q = base64Picture;
         params.put("q", q);
         sign = md5(appKey + q + salt +appSecret);
         params.put("sign",sign);
@@ -97,6 +73,8 @@ public class TranslatePicture {
 
         /** 处理结果 */
         System.out.println(result);
+
+        return result;
     }
 
     public static String requestForHttp(String url,Map<String,String> params) throws IOException {

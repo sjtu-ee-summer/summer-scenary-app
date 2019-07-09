@@ -1,7 +1,5 @@
 package com.example.translate.service;
 
-import com.example.translate.entity.Text;
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import org.apache.http.Header;
@@ -32,10 +30,10 @@ public class TranslateText {
 
     private static final String APP_SECRET = "MRYTJISyhxTZsYUZgkEBd3LVXyMAsfHX";
 
-    public static String main(Text text) throws IOException {
+    public static String main(String text) throws IOException {
 
         Map<String,String> params = new HashMap<String,String>();
-        String q = text.getText();
+        String q = text;
         String salt = String.valueOf(System.currentTimeMillis());
         params.put("from", "auto");
         params.put("to", "zh-CHS");
@@ -93,11 +91,9 @@ public class TranslateText {
             try{
                 if(httpResponse!=null){
                     httpResponse.close();
-                    return json;
                 }
             }catch(IOException e){
                 logger.info("## release resouce error ##" + e);
-                return "error";
             }
         }
 
