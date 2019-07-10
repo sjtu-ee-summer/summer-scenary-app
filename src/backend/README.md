@@ -64,15 +64,10 @@ To run: Modify Jenkinsfile & Build Now
 Job name: Travelsy_pipeline  
 To run: Build Now
 
-**Pipeline workflow sample to chain Jobs**  
+**Pipeline View**
 ```
-stage('Build') {
-  build 'build-dev-code'
-}
-stage('Test') {
-  build 'test-dev-code'
-}
-stage('Deploy') {
-  build 'deploy-stage'
-}
-```
+> sudo docker image prune -a
+> sudo docker images
+```  
+then  
+run in Jenkins' GUI pipeline view

@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../config-server-repo" beforeDir="false" afterPath="$PROJECT_DIR$/../config-server-repo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/service/TranslatePicture.java" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/service/TranslatePicture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/service/TranslateVoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/service/TranslateVoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/src/main/resources/bootstrap.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/example/user/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/example/user/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/resources/bootstrap.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -202,12 +195,12 @@
       <option name="presentableId" value="Default" />
       <updated>1562205632883</updated>
       <workItem from="1562205634484" duration="9124000" />
-      <workItem from="1562724926111" duration="1268000" />
+      <workItem from="1562724926111" duration="1269000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10392000" />
+    <option name="totallyTimeSpent" value="10393000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -223,7 +216,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3285968" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
