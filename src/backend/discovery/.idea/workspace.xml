@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config-server-repo/translate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config-server-repo/translate.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config-server-repo/user.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config-server-repo/user.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../config/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../translate/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/src/main/resources/bootstrap.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
