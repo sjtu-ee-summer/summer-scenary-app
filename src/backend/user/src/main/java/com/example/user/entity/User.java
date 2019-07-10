@@ -18,6 +18,20 @@ public class User
 
     private String password;
 
+    private String phone="null";
+
+    private String email;
+
+    private int is_admin=0;
+
+    private int vip=0;
+
+    private String sex="null";
+
+    private int age=0;
+
+    private String address="null";
+
     public Long getUserId() {
         return userId;
     }
@@ -33,21 +47,6 @@ public class User
     public void setIs_admin(int is_admin) {
         this.is_admin = is_admin;
     }
-
-    private String phone="null";
-
-    private String email;
-
-    private int is_admin=0;
-
-    private int vip=0;
-
-    private String sex="null";
-
-    private int age=0;
-
-    private String address="null";
-
 
     public int getVip() {
         return vip;

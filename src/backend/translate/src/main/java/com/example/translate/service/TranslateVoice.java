@@ -1,6 +1,5 @@
 package com.example.translate.service;
 
-import com.sun.org.apache.xml.internal.security.utils.Base64;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -11,9 +10,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -70,26 +67,6 @@ public class TranslateVoice {
         System.out.println(result);
 
         return result;
-    }
-
-    /**
-     * 根据文件路径获取文件的base64编码
-     * @param filePath 文件路径
-     * @return 文件base64编码
-     */
-    private static String getBase64OfFile(String filePath) {
-        InputStream in = null;
-        byte[] data = null;
-        //读取文件字节数组
-        try{
-            in = new FileInputStream(filePath);
-            data = new byte[in.available()];
-            in.read(data);
-            in.close();
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-        return Base64.encode(data);
     }
 
     /**

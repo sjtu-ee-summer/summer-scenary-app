@@ -144,18 +144,4 @@ public class TranslatePicture {
             return null;
         }
     }
-
-    public static String getBase64OfFile(File file){
-        byte[] data = null;
-        InputStream in = null;
-        try{
-            in = new BufferedInputStream(new FileInputStream(file));
-            data = new byte[in.available()];
-            in.read(data);
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return com.sun.org.apache.xml.internal.security.utils.Base64.encode(data);
-    }
 }
