@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../sh.exe.stackdump" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bootstrap.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -208,12 +206,12 @@
       <updated>1562205632883</updated>
       <workItem from="1562205634484" duration="9124000" />
       <workItem from="1562724926111" duration="1269000" />
-      <workItem from="1562739157097" duration="3010000" />
+      <workItem from="1562739157097" duration="3623000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13403000" />
+    <option name="totallyTimeSpent" value="14016000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
