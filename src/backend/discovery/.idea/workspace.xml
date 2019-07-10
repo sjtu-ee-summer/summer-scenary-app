@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.vs/slnx.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
