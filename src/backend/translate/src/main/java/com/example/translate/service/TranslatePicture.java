@@ -42,7 +42,7 @@ public class TranslatePicture {
      *
      * @param appKey 应用ID
      * @param appSecret 应用密钥
-     * @param file 图片路径
+     * @param base64Picture 图片路径
      */
     public static String ocrtrans(String appKey,String appSecret,String base64Picture) throws IOException {
         /** 图片翻译接口地址 */
