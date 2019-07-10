@@ -54,15 +54,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2b2c6e5-8610-45f8-a383-ba08e4167e73" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../doc/Project ID_Software Requirement Specification_V1.0.doc" beforeDir="false" afterPath="$PROJECT_DIR$/../../../doc/Project ID_Software Requirement Specification_V1.0.doc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../doc/立项/pic/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../doc/立项/pic/use case.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../doc/立项/pic/use case.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../doc/立项/pic/软件设计.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../doc/立项报告/26组.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../doc/计划书/26组.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../doc/计划书/26组.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../doc/计划书/景点智能识别语言翻译软件项目计划--张源娣组.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend/config-server-repo" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend/config-server-repo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -93,30 +86,18 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="200" />
-    <option name="y" value="33" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="x" value="174" />
+    <option name="y" value="222" />
+    <option name="width" value="1347" />
+    <option name="height" value="729" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="TravelSy" type="58d84e3e:PackageViewProjectNode" />
-              <item name="app" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -128,11 +109,22 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="TravelSy" type="58d84e3e:PackageViewProjectNode" />
+              <item name="app" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="device.picker.selection" value="Pixel_2_API_29" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MainPage" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../translate" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
@@ -237,10 +229,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="33" width="1853" height="1047" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.32999444" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.3360324" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -255,7 +247,7 @@
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.32921347" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.32921347" />
-      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.33033708" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.3285968" />
       <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="9" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
