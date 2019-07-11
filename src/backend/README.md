@@ -73,3 +73,4 @@ then
 run in Jenkins' GUI pipeline view
 
 java -jar config-0.0.1-SNAPSHOT.jar 30452 
+sudo service mysql start
