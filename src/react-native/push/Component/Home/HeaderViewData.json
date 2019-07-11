@@ -1,0 +1,58 @@
+[
+    [
+        {
+            "image": "http://photocdn.sohu.com/20120111/Img331863292.jpg",
+            "title": "重庆"
+        },
+        {
+            "image": "http://dingyue.nosdn.127.net/ZqG7XErYS8qiBcXHLDpXAR8E=3vZFjccZf9bVej0yNfRE1539783775844compressflag.jpg",
+            "title": "成都"
+        },
+        {
+            "image": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562774985295&di=b76918476d5cae7ecc6464be8b69e49c&imgtype=0&src=http%3A%2F%2Fimg1.gtimg.com%2F13%2F1360%2F136096%2F13609638_1200x1000_0.jpg",
+            "title": "上海"
+        },
+        {
+            "image": "http://5b0988e595225.cdn.sohucs.com/images/20180902/bb27c319398641968992d87cadcb38ac.jpeg",
+            "title": "北京"
+        },
+        {
+            "image": "icon_5",
+            "title": "新疆"
+        },
+        {
+            "image": "icon_6",
+            "title": "澳门"
+        },
+        {
+            "image": "icon_7",
+            "title": "湖南"
+        },
+        {
+            "image": "icon_8",
+            "title": "陕西"
+        },
+        {
+            "image": "icon_9",
+            "title": "甘肃"
+        },
+        {
+            "image": "icon_10",
+            "title": "云南"
+        }
+    ],
+    [
+        {
+            "image": "icon_11",
+            "title": "广东"
+        },
+        {
+            "image": "icon_4",
+            "title": "香港"
+        },
+        {
+            "image": "icon_3",
+            "title": "福建"
+        }
+    ]
+]

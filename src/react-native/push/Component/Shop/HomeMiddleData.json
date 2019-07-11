@@ -1,0 +1,23 @@
+{
+    "leftData": {
+        "image1": "http://img1.cache.netease.com/catchpic/8/8D/8DB991E2392FA6287414E996F98BF8A9.jpg",
+        "image2": "http://www.hy61.com/WebEditor/UploadFile/201611215938233.jpg",
+        "title": "语言专家在线翻译",
+        "price": 150,
+        "tips": "再减50"
+    },
+    "rightData": [
+        {
+            "title": "语音翻译",
+            "subtitle": "自动精准语音检测",
+            "image": "0",
+            "titlecolor": "green"
+        },
+        {
+            "title": "图片翻译",
+            "subtitle": "人工智能图片识别",
+            "image": "1",
+            "titlecolor": "red"
+        }
+    ]
+}
