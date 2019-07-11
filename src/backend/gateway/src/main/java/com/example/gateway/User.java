@@ -1,7 +1,5 @@
 package com.example.gateway;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
 public class User {
     private Long userId;
 
