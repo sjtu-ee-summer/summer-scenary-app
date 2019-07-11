@@ -10,11 +10,12 @@ This README file is added to prevent duplicate work that might mess up our cloud
 - Installed Docker
 - Installed Java 1.8 | Java 8
 - Installed Maven
+- Configuring Jenkins' Job
+- Configuring Jenkins' pipeline
 
 ## Ongoing
 
-- Configuring Jenkins' Job
-- Configuring Jenkins' pipeline
+*All done*
 
 ## Pending
 
@@ -56,21 +57,31 @@ URL: http://202.120.40.8:30451/
 Username: admin  
 Password: password  
 
-**Freestyle Project**  
-Job name: TravelSy  
-To run: Modify Jenkinsfile & Build Now  
-
-**Pipeline Project**  
-Job name: Travelsy_pipeline  
-To run: Build Now
-
 **Pipeline View**
 ```
 > sudo docker image prune -a
 > sudo docker images
-```  
-then  
-run in Jenkins' GUI pipeline view
+```
 
-java -jar config-0.0.1-SNAPSHOT.jar 30452 
-sudo service mysql start
+## Using native MySQL  
+username: root  
+password: 0000  
+
+```
+> sudo service mysql start
+> mysql -uroot -p
+```
+
+## Copy configuration file from git repo to config-server-repo
+```
+> git pull
+> cd into config-server-repo
+> cp * ~/summer/config-server-repo/ 
+```
+
+## Run microservices
+
+```
+> cd summer/project
+> java -jar ?-0.0.1-SNAPSHOT.jar
+```
