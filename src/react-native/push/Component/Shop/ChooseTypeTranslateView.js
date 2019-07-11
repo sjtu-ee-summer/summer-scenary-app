@@ -19,8 +19,9 @@ var middleData = require('./HomeMiddleData.json')
 
 var Dimensions = require('Dimensions');
 var sWidth = Dimensions.get('window').width;
+var createReactClass = require('create-react-class');
 
-var ChooseTypeTranslateView = React.createClass({
+var ChooseTypeTranslateView = createReactClass({
 
     getDefaultProps() {
         return {
@@ -61,25 +62,53 @@ var ChooseTypeTranslateView = React.createClass({
 
     },
 
+    // renderRightView() {
+    //     const { middleData } = this.props;
+    //     var rightData = middleData.rightData;
+
+    //     var itemArr = [];
+    //     for (var i = 0; i < rightData.length; i++) {
+    //         var data = rightData[i]
+
+    //         itemArr.push(
+    //             <MiddleCommonView
+    //                 key={i}
+    //                 data={data}
+    //                 CommonViewPush={(title) => { this.middleViewPush(title) }}
+    //             >
+    //             </MiddleCommonView>
+    //         )
+    //     }
+    //     return itemArr;
+
+    // },
+
     renderRightView() {
-        const { middleData } = this.props;
+        const{middleData} = this.props;
         var rightData = middleData.rightData;
 
-        var itemArr = [];
-        for (var i = 0; i < rightData.length; i++) {
-            var data = rightData[i]
+        var data = rightData[0];
+        var data1 = rightData[1];
 
-            itemArr.push(
-                <MiddleCommonView
-                    key={i}
-                    data={data}
-                    CommonViewPush={(title) => { this.middleViewPush(title) }}
-                >
-                </MiddleCommonView>
-            )
-        }
-        return itemArr;
+        return(
+            this.renderRow(data)
+            
+        );
+    },
 
+    renderRow(data){
+        var img = require('./voice.png');
+        var img1 = require('./pic.png');
+        return(
+<View style={styles.containerStyle1}>
+            <View style={styles.leftStyle}>
+                <Text style={{ color: 'gray', fontSize: 18 }}>{data.title}</Text>
+                <Text style={{ color: 'gray', fontSize: 13 }}>{data.subtitle}</Text>
+            </View>
+            <Image source={(data.image==="0")?img:img1} style={{ width: 50, height: 50, position: 'absolute', right: 5 }} />
+    </View>
+)
+        
     },
 
     middleViewPush(title) {
@@ -109,6 +138,21 @@ const styles = StyleSheet.create({
     },
     rightViewStyle: {
 
+    },
+    containerStyle1: {
+        flexDirection: 'row',
+        // justifyContent: 'space-around',
+        alignItems: 'center',
+        backgroundColor: 'white',
+        width: (sWidth - 2) / 2,
+        height: 80,
+        marginBottom: 1,
+        marginRight: 1,
+    },
+    leftStyle: {
+        marginLeft: 5,
+        justifyContent: 'center',
+        alignItems: 'flex-start'
     }
 });
 

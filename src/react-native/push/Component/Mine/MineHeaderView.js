@@ -20,8 +20,9 @@ var Dimensions = require('Dimensions');
 var screenWidth = Dimensions.get('window').width;
 
 var itemsData = require('./HeaderViewData.json');
+var createReactClass = require('create-react-class');
 
-var MiddleHeaderView = React.createClass({
+var MiddleHeaderView = createReactClass({
     getDefaultProps() {
         return {
             icon: 'image_lead_head',
@@ -74,7 +75,7 @@ var MiddleHeaderView = React.createClass({
 
 })
 
-var HeaderItemView = React.createClass({
+var HeaderItemView = createReactClass({
 
     getDefaultProps() {
         return {

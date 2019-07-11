@@ -19,8 +19,9 @@ import Icon from 'react-native-vector-icons/EvilIcons'
 
 var Dimensions = require('Dimensions');
 var sWidth = Dimensions.get('window').width;
+var createReactClass = require('create-react-class');
 
-var TranslateChooseLanguageView = React.createClass({
+var TranslateChooseLanguageView = createReactClass({
 
     getDefaultProps() {
         return {

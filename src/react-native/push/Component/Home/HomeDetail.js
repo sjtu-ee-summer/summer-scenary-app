@@ -13,8 +13,8 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-
-var HomeDetail = React.createClass({
+var createReactClass = require('create-react-class');
+var HomeDetail = createReactClass({
 
     // getDefaultProps() {
     //     return {

@@ -18,8 +18,9 @@ import VectorIcon from 'react-native-vector-icons/MaterialIcons';
 
 var Dimensions = require('Dimensions');
 var screenWidth = Dimensions.get('window').width;
+var createReactClass = require('create-react-class');
 
-var CommonMyCell = React.createClass({
+var CommonMyCell = createReactClass({
     getDefaultProps() {
         return {
             leftIcon: '',

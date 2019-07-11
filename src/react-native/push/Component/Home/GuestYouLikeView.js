@@ -19,8 +19,9 @@ var ShopTopCommonView = require('./ShopTopCommonView')
 
 var Dimensions = require('Dimensions');
 var sWidth = Dimensions.get('window').width;
+var createReactClass = require('create-react-class');
 
-var GuestYouLikeView = React.createClass({
+var GuestYouLikeView = createReactClass({
 
     getDefaultProps() {
         return {

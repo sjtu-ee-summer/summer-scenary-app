@@ -14,8 +14,9 @@ var Home = require('../Home/Home')
 var Shop = require('../Shop/Shop')
 var Mine = require('../Mine/Mine')
 var More = require('../More/More')
+var createReactClass = require('create-react-class');
 
-var Main = React.createClass({
+var Main = createReactClass({
     getInitialState() {
         return {
             selectedTab: 'home'

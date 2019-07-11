@@ -39,9 +39,10 @@ import ButtonComponent, { CircleButton, RoundButton, RectangleButton } from 'rea
 
 var Dimensions = require('Dimensions');
 var sWidth = Dimensions.get('window').width;
+var createReactClass = require('create-react-class');
 
 
-var TranslateChooseLanguageView = React.createClass({
+var TranslateChooseLanguageView = createReactClass({
 
     getDefaultProps() {
         return {
@@ -52,20 +53,40 @@ var TranslateChooseLanguageView = React.createClass({
     getInitialState() {
         return {
             currentPage: 0,
-            text: ''
+            text: '',
+            translation: '',
         }
     },
 
-    getMoviesFromApiAsync() {
-      return fetch('https://facebook.github.io/react-native/movies.json')
-        .then((response) => response.json())
-        .then((responseJson) => {
-          return responseJson.movies;
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+    getTranslationFromApiAsync(text) {
+      fetch('http://202.120.40.8:30454/translate/translate/text/' + text)
+      .then((response) => {
+        return response.text();
+     })
+     .then((responseJson) => {
+        console.log(responseJson);
+        alert(responseJson);
+     })
+     .catch((error) => {
+        console.error(error);
+     });
     },
+
+    // getMoviesFromApiAsync() {
+    //   fetch('https://facebook.github.io/react-native/movies.json')
+    //   .then((response) => response.json())//把response转为json格式
+    //   .then((jsondata) => {    //上面的转好的json
+    //     //alert(jsondata.movies[0].title);
+    //     this.setState({ //将获取到的数据更新到state中
+    //       title: jsondata.title,
+    //       description: jsondata.description,
+    //       movies: jsondata.movies,
+    //     })
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
+    // },
 
     render() {
         const { data } = this.props;
@@ -88,16 +109,13 @@ var TranslateChooseLanguageView = React.createClass({
       <View style={{padding: 5}}></View>
       <ButtonComponent
             onPress={() => {
-              this.state.text = this.getMoviesFromApiAsync()
+              this.getTranslationFromApiAsync(this.state.text)
+              //alert(this.state.text)
             }
           }
             text="翻译">
             </ButtonComponent>
       </View>
-      <ButtonComponent
-            onPress={() => {alert(this.state.text)}}
-            text="翻译">
-            </ButtonComponent>
         
         
               </ScrollView>

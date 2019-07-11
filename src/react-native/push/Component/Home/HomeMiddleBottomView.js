@@ -18,8 +18,9 @@ import MiddleCommonView from './MiddleCommonView'
 var middleBottomData = require('./HomeMiddleBottomData.json')
 var Dimensions = require('Dimensions');
 var sWidth = Dimensions.get('window').width;
+var createReactClass = require('create-react-class');
 
-var HomeMiddleBottomView = React.createClass({
+var HomeMiddleBottomView = createReactClass({
 
     getDefaultProps() {
         return {

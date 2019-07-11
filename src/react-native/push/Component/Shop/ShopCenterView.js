@@ -17,8 +17,9 @@ import {
 
 var shopData = require('./ShopCenterViewData.json')
 var ShopTopCommonView = require('./ShopTopCommonView')
+var createReactClass = require('create-react-class');
 
-var ShopCenterView = React.createClass({
+var ShopCenterView = createReactClass({
 
     getDefaultProps() {
         return {
@@ -66,7 +67,7 @@ var ShopCenterView = React.createClass({
 
 })
 
-var ShopCenterItemView = React.createClass({
+var ShopCenterItemView = createReactClass({
 
     getDefaultProps() {
         return {

@@ -19,8 +19,9 @@ import HomeHeaderListView from './HomeHeaderListView'
 var Dimensions = require('Dimensions');
 var sWidth = Dimensions.get('window').width;
 var headerData = require('./HeaderViewData.json');
+var createReactClass = require('create-react-class');
 
-var HomeHeaderView = React.createClass({
+var HomeHeaderView = createReactClass({
 
     getDefaultProps() {
         return {

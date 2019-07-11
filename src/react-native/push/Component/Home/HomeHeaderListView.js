@@ -20,8 +20,9 @@ var sWidth = Dimensions.get('window').width;
 var marginLeft = 15;
 var marginTop = 15;
 var scale = sWidth/375;
+var createReactClass = require('create-react-class');
 
-var HomeHeaderListView = React.createClass({
+var HomeHeaderListView = createReactClass({
 
     getDefaultProps() {
         return {

@@ -22,6 +22,8 @@ import ButtonComponent, { CircleButton, RoundButton, RectangleButton } from 'rea
 var TranslateChooseLanguageView = require('../Shop/TranslateChooseLanguageView')
 var TextTranslateView = require('../Shop/TextTranslateView')
 var ChooseTypeTranslateView = require('../Shop/ChooseTypeTranslateView')
+var VoiceTranslation = require('../Shop/VoiceTranslation')
+var UploadVoice = require('../Shop/UploadVoice')
 
 var Dimensions = require('Dimensions');
 var screenWidth = Dimensions.get('window').width;
@@ -39,6 +41,12 @@ export default class Shop extends Component {
             <TranslateChooseLanguageView></TranslateChooseLanguageView>
             <TextTranslateView></TextTranslateView>            
             <ChooseTypeTranslateView></ChooseTypeTranslateView>
+            <UploadVoice></UploadVoice>
+            <VoiceTranslation></VoiceTranslation>
+
+
+
+
             <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
 
             <Image source={require('./his.png')} style={{ width: 50, height: 50 }}/>

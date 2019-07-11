@@ -19,8 +19,9 @@ var middleData = require('./HomeMiddleData.json')
 
 var Dimensions = require('Dimensions');
 var sWidth = Dimensions.get('window').width;
+var createReactClass = require('create-react-class');
 
-var HomeMiddleView = React.createClass({
+var HomeMiddleView = createReactClass({
 
     getDefaultProps() {
         return {

@@ -7,17 +7,18 @@
         "tips": "再减50"
     },
     "rightData": [
-        {
-            "title": "语音翻译",
-            "subtitle": "自动精准语音检测",
-            "image": "0",
-            "titlecolor": "green"
-        },
+       
         {
             "title": "图片翻译",
             "subtitle": "人工智能图片识别",
             "image": "1",
             "titlecolor": "red"
+        },
+        {
+            "title": "语音翻译",
+            "subtitle": "自动精准语音检测",
+            "image": "0",
+            "titlecolor": "green"
         }
     ]
 }

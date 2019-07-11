@@ -19,8 +19,9 @@ var MiddleData = require('./MiddleViewData.json')
 
 var Dimensions = require('Dimensions');
 var screenWidth = Dimensions.get('window').width;
+var createReactClass = require('create-react-class');
 
-var MineMiddleView = React.createClass({
+var MineMiddleView = createReactClass({
     render() {
         return (
             <View style={styles.containerStyle}>
@@ -49,7 +50,7 @@ var MineMiddleView = React.createClass({
     }
 })
 
-var MineMiddleItemView = React.createClass({
+var MineMiddleItemView = createReactClass({
 
     getDefaultProps() {
         return {

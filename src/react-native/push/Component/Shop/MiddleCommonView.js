@@ -16,8 +16,9 @@ import {
 
 var Dimensions = require('Dimensions');
 var sWidth = Dimensions.get('window').width;
+var createReactClass = require('create-react-class');
 
-var MiddleCommonView = React.createClass({
+var MiddleCommonView = createReactClass({
 
     getDefaultProps() {
         return {

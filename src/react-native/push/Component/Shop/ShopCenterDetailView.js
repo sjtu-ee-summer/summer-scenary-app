@@ -18,8 +18,9 @@ import VectorIcon from 'react-native-vector-icons/MaterialIcons';
 
 var Dimensions = require('Dimensions');
 var sWidth = Dimensions.get('window').width;
+var createReactClass = require('create-react-class');
 
-var ShopCenterDetailView = React.createClass({
+var ShopCenterDetailView = createReactClass({
 
     getDefaultProps() {
         return {
