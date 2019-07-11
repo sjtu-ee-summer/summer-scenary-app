@@ -81,10 +81,16 @@ password: 0000
 
 ## Run microservices
 
+To run in background:  
 ```
 > cd summer/project
-> java -jar ?-0.0.1-SNAPSHOT.jar
 > nohup java -jar ?-0.0.1-SNAPSHOT.jar &
+```
+
+To get the running processes:  
+```
+> ps aux | grep java
+> kill -9 PID
 ```
 
 ## Redis server

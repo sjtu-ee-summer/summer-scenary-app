@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/SessionConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/UserClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/UserDetailServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/UserPrinciple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/GatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/example/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/example/user/controller/UserController.java" afterDir="false" />
-    </list>
+    <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
