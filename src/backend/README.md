@@ -84,4 +84,10 @@ password: 0000
 ```
 > cd summer/project
 > java -jar ?-0.0.1-SNAPSHOT.jar
+> nohup java -jar ?-0.0.1-SNAPSHOT.jar &
 ```
+
+## Redis server
+
+host & port: 127.0.0.1:6379
+run: > redis-cli

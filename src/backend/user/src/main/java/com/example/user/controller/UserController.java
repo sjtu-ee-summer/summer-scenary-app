@@ -12,25 +12,22 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/id/{id}")
+    @GetMapping("/users/id/{id}")
     public User getUser(@PathVariable Long id) { return userRepository.findById(id).get();}
 
-    @RequestMapping("/hello")
-    public boolean hello(@RequestParam String a) {
-        String af;
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        af = encoder.encode("abcdf");
-        return encoder.matches("abcdf",af);
-
+    //tested
+    @GetMapping("/users/username/{username}")
+    public User getByUsername(@PathVariable String username){
+        return userRepository.findUserByUsername(username);
     }
 
-    @PostMapping("/oldsignup")
+    @PostMapping("/users/oldsignup")
     public User postUser(@RequestBody User user){
 
         return userRepository.save(user);
     }
     //tested
-    @RequestMapping("/newsignup")
+    @RequestMapping("/users/newsignup")
     public User addUser(@RequestParam String username,@RequestParam String password,
                         @RequestParam String email){
         User u = new User();
@@ -42,7 +39,7 @@ public class UserController {
     }
 
     //tested
-    @GetMapping("/signin")
+    @GetMapping("/users/signin")
     public boolean signin(@RequestParam String email,
                           @RequestParam String password){
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -56,14 +53,9 @@ public class UserController {
         System.out.println("no");
         return false;
     }
-    //tested
-    @GetMapping("/username/{username}")
-    public User getByUsername(@PathVariable String username){
-        return userRepository.findUserByUsername(username);
-    }
 
     //tested
-    @RequestMapping("/userinfo/{id}")
+    @RequestMapping("/users/userinfo/{id}")
     public User postUserInfo(@PathVariable(value = "id")Long id,
                              @RequestParam String sex,@RequestParam int age,
                              @RequestParam String address,@RequestParam String phone)
@@ -76,14 +68,14 @@ public class UserController {
         return userRepository.save(u);
     }
     //tested
-    @RequestMapping("/improvip/{id}")
+    @RequestMapping("/users/improvip/{id}")
     public User improPermission(@PathVariable(value = "id") Long id){
         User u = userRepository.findById(id).get();
         u.setVip(u.getVip()+1);
         return userRepository.save(u);
     }
 
-    @RequestMapping("/refind")
+    @RequestMapping("/users/refind")
     public String refindpassword(@RequestParam String email) {
         User u = userRepository.findUserByEmail(email);
         if(u==null) {
@@ -95,7 +87,7 @@ public class UserController {
 
     }
 
-    @RequestMapping("/changepassword/{id}")
+    @RequestMapping("/users/changepassword/{id}")
     public String changePassword(@PathVariable(value = "id") Long id,
                                  @RequestParam String password){
         User u = userRepository.findById(id).get();

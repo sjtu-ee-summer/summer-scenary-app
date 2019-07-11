@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/SessionConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/UserClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/UserDetailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/UserPrinciple.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/Entity/Tranpichis.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/Entity/Trantexhis.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/Entity/Tranvoihis.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/Repository/TranpichisRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/Repository/TrantexhisRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/Repository/TranvoihisRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/com/example/gateway/GatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/example/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/example/user/controller/UserController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -221,12 +222,12 @@
       <workItem from="1562724926111" duration="1269000" />
       <workItem from="1562739157097" duration="5680000" />
       <workItem from="1562810296999" duration="3811000" />
-      <workItem from="1562823389376" duration="239000" />
+      <workItem from="1562823389376" duration="925000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20123000" />
+    <option name="totallyTimeSpent" value="20809000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
