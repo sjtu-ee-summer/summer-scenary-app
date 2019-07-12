@@ -95,5 +95,8 @@ To get the running processes:
 
 ## Redis server
 
-host & port: 127.0.0.1:6379
-run: > redis-cli
+host & port: 127.0.0.1:6379  
+run:  
+```
+> redis-cli
+```
