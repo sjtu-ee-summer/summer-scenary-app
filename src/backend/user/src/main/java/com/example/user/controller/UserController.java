@@ -20,36 +20,35 @@ public class UserController {
         return userRepository.findUserByUsername(username);
     }
 
-    @PostMapping("/users/oldsignup")
-    public User postUser(@RequestBody User user){
-
-        return userRepository.save(user);
-    }
     //tested
-    @RequestMapping("/users/newsignup")
+    @RequestMapping("/users/signup")
     public User addUser(@RequestParam String username,@RequestParam String password,
                         @RequestParam String email){
         User u = new User();
         u.setPassword(password);
         u.setUsername(username);
         u.setEmail(email);
-        return userRepository.save(u);
 
+        User uTest = userRepository.findUserByUsername(username);
+        if (uTest != null) {
+            return uTest;
+        }
+
+        return userRepository.save(u);
     }
 
     //tested
     @GetMapping("/users/signin")
-    public boolean signin(@RequestParam String email,
-                          @RequestParam String password){
+    public boolean signin(@RequestParam String username, @RequestParam String password){
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        User u = userRepository.findUserByEmail(email);
-        if(u==null){
-            System.out.println("null");
-            return false;
+        User u = userRepository.findUserByUsername(username);
+        if(u == null){
+            // do nothing. Waits to exit loop
         } else if(encoder.matches(password,u.getPassword())){
             return true;
         }
-        System.out.println("no");
+
+        System.out.println("null");
         return false;
     }
 
@@ -66,6 +65,7 @@ public class UserController {
         u.setPhone(phone);
         return userRepository.save(u);
     }
+
     //tested
     @RequestMapping("/users/improvip/{id}")
     public User improPermission(@PathVariable(value = "id") Long id){
@@ -77,7 +77,7 @@ public class UserController {
     @RequestMapping("/users/refind")
     public String refindpassword(@RequestParam String email) {
         User u = userRepository.findUserByEmail(email);
-        if(u==null) {
+        if(u == null) {
             return "no such email";
         }else {
             //这里应该用验证用户邮箱的功能，现在未实现，先可以直接修改

@@ -17,6 +17,7 @@ public class TranslateController {
         return translateText.main(sentence);
     }
 
+    @Ignore
     @PostMapping("/translate/photo")
     public String getPicTranslation(@RequestParam("picture") String picture) throws IOException {
         TranslatePicture translatePicture = new TranslatePicture();
@@ -24,6 +25,7 @@ public class TranslateController {
         return translatePicture.main(picture);
     }
 
+    @Ignore
     @PostMapping("/translate/voice")
     public String getVoiceTranslation(@RequestParam("voice") String voice) throws IOException {
         TranslateVoice translateVoice = new TranslateVoice();

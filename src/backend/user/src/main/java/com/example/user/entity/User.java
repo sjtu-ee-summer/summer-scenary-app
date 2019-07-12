@@ -36,17 +36,17 @@ public class User
         return userId;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public int getIs_admin() {
-        return is_admin;
-    }
-
-    public void setIs_admin(int is_admin) {
-        this.is_admin = is_admin;
-    }
+//    public void setUserId(Long userId) {
+//        this.userId = userId;
+//    }
+//
+//    public int getIs_admin() {
+//        return is_admin;
+//    }
+//
+//    public void setIs_admin(int is_admin) {
+//        this.is_admin = is_admin;
+//    }
 
     public int getVip() {
         return vip;
@@ -56,41 +56,41 @@ public class User
         this.vip = vip;
     }
 
-    public String getSex() {
-        return sex;
-    }
+//    public String getSex() {
+//        return sex;
+//    }
 
     public void setSex(String sex) {
         this.sex = sex;
     }
 
-    public int getAge() {
-        return age;
-    }
+//    public int getAge() {
+//        return age;
+//    }
 
     public void setAge(int age) {
         this.age = age;
     }
 
-    public String getAddress() {
-        return address;
-    }
+//    public String getAddress() {
+//        return address;
+//    }
 
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public int getIsAdmin() {
-        return is_admin;
-    }
+//    public int getIsAdmin() {
+//        return is_admin;
+//    }
 
-    public void setIsAdmin(int is_admin) {
-        this.is_admin = is_admin;
-    }
+//    public void setIsAdmin(int is_admin) {
+//        this.is_admin = is_admin;
+//    }
 
-    public String getUsername() {
-        return username;
-    }
+//    public String getUsername() {
+//        return username;
+//    }
 
     public void setUsername(String username) {
         this.username = username;
@@ -107,17 +107,17 @@ public class User
 
     }
 
-    public String getPhone() {
-        return phone;
-    }
+//    public String getPhone() {
+//        return phone;
+//    }
 
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public String getEmail() {
-        return email;
-    }
+//    public String getEmail() {
+//        return email;
+//    }
 
     public void setEmail(String email) {
         this.email = email;
