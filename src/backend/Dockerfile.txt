@@ -1,0 +1,3 @@
+FROM alpine:edge
+MAINTAINER My
+RUN apk add --no-cache openjdk8
