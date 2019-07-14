@@ -1,0 +1,58 @@
+[
+    [
+        {
+            "image": "icon_1",
+            "title": "重庆"
+        },
+        {
+            "image": "icon_2",
+            "title": "成都"
+        },
+        {
+            "image": "icon_3",
+            "title": "上海"
+        },
+        {
+            "image": "icon_4",
+            "title": "北京"
+        },
+        {
+            "image": "icon_5",
+            "title": "新疆"
+        },
+        {
+            "image": "icon_6",
+            "title": "澳门"
+        },
+        {
+            "image": "icon_7",
+            "title": "湖南"
+        },
+        {
+            "image": "icon_8",
+            "title": "陕西"
+        },
+        {
+            "image": "icon_9",
+            "title": "甘肃"
+        },
+        {
+            "image": "icon_10",
+            "title": "云南"
+        }
+    ],
+    [
+        {
+            "image": "icon_11",
+            "title": "广东"
+        },
+        {
+            "image": "icon_4",
+            "title": "香港"
+        },
+        {
+            "image": "icon_3",
+            "title": "福建"
+        }
+    ]
+]
