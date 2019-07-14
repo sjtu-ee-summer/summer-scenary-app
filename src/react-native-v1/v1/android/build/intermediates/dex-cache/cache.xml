@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_486f7cc6cc96dea517d2a837441c728fe85c518e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2668e49e4e31c7d451b76a36009b902bf44e0d70">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-1.0.1_d4c95095a93d0f4522ef0404d73af24d2e0e914e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\DYFBuyApp\react-native-vector-icons\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="279750fed3c920d06351dbf32889c1b48203c7ad">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\DYFBuyApp-react-native-vector-icons-unspecified_e846c4d8ff0a8da3493d52d2a4e00233dde050fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1_8bc7517a4e68a4f6df7676eab49bd5c08702d249.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2668e49e4e31c7d451b76a36009b902bf44e0d70">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-1.0.1_85c0f40fe1bebc47be818a120f647c7e9cc67a2a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\DYFBuyApp\react-native-audio\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="88a88e0e79da5283fdb43757027d86736a1859fb">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\DYFBuyApp-react-native-audio-unspecified_9f2431e28c1989ccf733d8b19e5d908a797a0740.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.github.ybq\Android-SpinKit\1.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2e53788b5798212c6faea28e48743085e5b0106e">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.github.ybq-Android-SpinKit-1.2.0_1720fddf14ffffcc9145ff76b8d7c8767de9dead.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.1.0_ca675875cbd7b13f5ce4856acddd086653573c9d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\DYFBuyApp\react-native-spinkit\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="47b99616af6817e323d7b404b2f1922ca22228ad">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\DYFBuyApp-react-native-spinkit-unspecified_bdae36f831d2363b971ff5ebf0b17b3e796be251.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-okhttp3\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ba9b39366b723ccff6359d1117332968e98a4aca">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-okhttp3-1.0.1_5cede47e8390a87c640d1b749939bd6bc9b4b473.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="050f688115ea65a0292d8483a6ffe6bcdab1e2ef">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-1.0.1_be91f74e6a5fe7b9508d3112eb7fd6c1f5229d25.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\DYFBuyApp\react-native-linear-gradient\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="99730fcc9400089c06032732314c1ee57ef57fd5">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\DYFBuyApp-react-native-linear-gradient-unspecified_ad3c09afd2caea23939db6102866a623831151be.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.1_c50eaf24f2dfec0f47131ae675b30b9687e47567.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.fresco\drawee\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5a61f17cd72e20aa4323cbf5f909b7c609619275">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-1.0.1_c614fd24f8b04afeb5ddae695d580fe31021fcfa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.1.0_1c4389f8c4b999c6440d62bd8e7172900ea16c90.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp-urlconnection\3.4.1\63994437f62bc861bc20c605d12962f7246116d1\okhttp-urlconnection-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="63994437f62bc861bc20c605d12962f7246116d1">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\okhttp-urlconnection-3.4.1_ce3f31f6785efcbbf085f034dcbd0010936c7346.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.fresco\drawee\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5a61f17cd72e20aa4323cbf5f909b7c609619275">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-1.0.1_ffd2a8990061dbdb10cfb41fd6c29e7a435ab976.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\okio-1.9.0_630d751a94372e900c08e047a0ae0930300be4fb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.44.3\jars\libs\infer-annotations-1.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="dcac634e137395f79693ec760f081a86eb2bd84e">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\infer-annotations-1.5_4c4eb6079019163eb7257d39549ed0cb4a3e312b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_5a615b4eb574bb3d0bcb583e17a438eb73949574.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.44.3\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="af9665a44df26b4098e24c934c1109507845ef5e">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.react-react-native-0.44.3_ed97e593ff3b5024bdf85eab129fd935cedc4ec8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp-ws\3.4.1\8ace66ef7002d98f633377c9e67daeeb196d8c3b\okhttp-ws-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8ace66ef7002d98f633377c9e67daeeb196d8c3b">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\okhttp-ws-3.4.1_bd50b84e296985409bc4c99f78dfc30c6ab684e0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\.gradle\caches\modules-2\files-2.1\com.facebook.fbui.textlayoutbuilder\staticlayout-proxy\1.0\f162442a19fff13995fbd51ba414d9ee05579080\staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\staticlayout-proxy-1.0_2048e467c0091ba2a95b0d5b341c196a0aa940e5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.0\5871fb60dc68d67da54a663c3fd636a10a532948\jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\jsr305-3.0.0_f6675d0ebf2bc7cfaaea56fb126749e4243286fe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.4.1\c7c4f9e35c2fd5900da24f9872e3971801f08ce0\okhttp-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\okhttp-3.4.1_a585f387dd5eec466c244d51b5e07c6b133e3734.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.44.3\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="af9665a44df26b4098e24c934c1109507845ef5e">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.react-react-native-0.44.3_4e2ef2d59ee568e37f3fe08143e5240360539d79.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d9c4402c3057225d80cbbbec52154e7a25b0ebdf">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-1.0.1_cf514c865d6cafc31ee55d850385c7268dba0eb4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.fbui.textlayoutbuilder\textlayoutbuilder\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_72a253f000c4b9092160e20601a43835dea797b9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.44.3\jars\libs\infer-annotations-1.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="dcac634e137395f79693ec760f081a86eb2bd84e">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\infer-annotations-1.5_963c46fe2888bef8f0f4b1bba95646edef23987f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.0.1_f45f2498ef16c32189af226383777de041e91f2e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fresco\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="cf836a435a496eb22ff2aa69aa1e619462549f81">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fresco-1.0.1_13158633a57f03bdac77c9738998cd269794823d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1_4d73b882649cd810612e5396f12ae239189551aa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-okhttp3\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ba9b39366b723ccff6359d1117332968e98a4aca">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-okhttp3-1.0.1_86cc85fceb6b203403808862ed984bdfbffb2993.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\DYFBuyApp\react-native-vector-icons\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="279750fed3c920d06351dbf32889c1b48203c7ad">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\DYFBuyApp-react-native-vector-icons-unspecified_3eac92791111880cb49a060dafc12ac1589020ab.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d9c4402c3057225d80cbbbec52154e7a25b0ebdf">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-1.0.1_f33c207a0ec9ed98f87acbcdc10a6e0827479b98.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="050f688115ea65a0292d8483a6ffe6bcdab1e2ef">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-1.0.1_e4c5f1e71f1ab85abb7f6cded1352b06b1759645.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_385606e07fd64f0474b94de251d7d1d63e7742c1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.0_17e9896f8059f6c13fe8878d7be1fd7f238d4595.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\javax.inject-1_3f069911df0f5ed6c38f90bd3c2c8053873c46b0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\libs\internal_impl-23.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.0_d3ea9ff7edc5d74116c6870d08c83f57404c0d68.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fresco\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="cf836a435a496eb22ff2aa69aa1e619462549f81">
+        <dex dex="C:\Users\15826\Desktop\1\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fresco-1.0.1_c56f3a424f5426b9b0cd7ad809e83d8b8ad3cb56.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\exploded-aar\com.facebook.fbui.textlayoutbuilder\textlayoutbuilder\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="C:\Users\15826\Desktop\DYFBuyApp-master\DYFBuyApp-master\android\app\build\intermediates\pre-dexed\debug\com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_d57fe4fe58ac0e77561350b2ccf57146a77bc224.jar" />
+    </item>
+
+</items>
