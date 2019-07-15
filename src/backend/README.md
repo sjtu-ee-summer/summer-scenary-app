@@ -81,10 +81,10 @@ password: 0000
 
 ## Run microservices
 
-To run in background:  
+To run in background(with Java memory reducing policy):  
 ```
 > cd summer/project
-> nohup java -jar ?-0.0.1-SNAPSHOT.jar &
+> nohup java -jar -Xms256m -Xmx512m -XX:-TieredCompilation -Xss256k -XX:+UseG1GC -XX:+UseStringDeduplication ?-0.0.1-SNAPSHOT.jar &
 ```
 
 To get the running processes:  
