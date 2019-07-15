@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -55,5 +56,20 @@ public class TranslateApplicationTests {
 				.andExpect(status().is(405));
 	}
 
+//	@Test
+//	public void testSayHello(){
+//
+//		//Creating a spy instance of the EventLogger here.
+//		MyEventLogger logger = Mockito.spy(MyEventLogger.class);
+//
+//		//Passing the spy instance here to the constructor.
+//		Greeting greeting = new Greeting(logger);
+//
+//		//Telling the spy instance to return true in every case without executing the real method.
+//		doReturn(true).when(logger).writeEvent(anyString());
+//
+//		//Calling the method to be tested.
+//		greeting.sayHello("John");
+//	}
 
 }

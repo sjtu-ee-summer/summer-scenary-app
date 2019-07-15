@@ -2,47 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/__tests__/App-test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/BUCK" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/build_defs.bzl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/src/debug/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/src/main/java/com/newproject/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/src/main/java/com/newproject/MainApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/keystores/BUCK" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/keystores/debug.keystore.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/android/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/metro.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/yarn-error.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/Identification/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/controller/TranslateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/controller/TranslateController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../translate/src/test/java/com/example/translate/TranslateApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/src/test/java/com/example/translate/TranslateApplicationTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -100,7 +59,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/example/discovery/DiscoveryApplicationTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
+            <state relative-caret-position="362">
               <caret line="29" column="45" lean-forward="true" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -351,7 +310,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31083483" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31083483" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39964476" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -364,11 +323,11 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info anchor="right" id="Coverage" sideWeight="0.5025773" side_tool="true" visible="true" weight="0.32955465" />
+      <window_info anchor="right" id="Coverage" sideWeight="0.5008881" side_tool="true" visible="true" weight="0.32955465" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" sideWeight="0.4974227" visible="true" weight="0.32955465" />
+      <window_info anchor="right" id="Maven" order="3" sideWeight="0.4991119" visible="true" weight="0.32955465" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" />
@@ -419,7 +378,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/example/discovery/DiscoveryApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
+        <state relative-caret-position="362">
           <caret line="29" column="45" lean-forward="true" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
