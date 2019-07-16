@@ -1,0 +1,23 @@
+{
+    "leftData": {
+        "image1": "http://img1.cache.netease.com/catchpic/8/8D/8DB991E2392FA6287414E996F98BF8A9.jpg",
+        "image2": "http://www.hy61.com/WebEditor/UploadFile/201611215938233.jpg",
+        "title": "海南七日游",
+        "price": 3500,
+        "tips": "再减500"
+    },
+    "rightData": [
+        {
+            "title": "自由行",
+            "subtitle": "为您定制行程",
+            "image": "http://static.jisutui.vip/data/upload/2019/05/aecffdad86cgrkog.jpg",
+            "titlecolor": "green"
+        },
+        {
+            "title": "组团游",
+            "subtitle": "人多有优惠",
+            "image": "http://static.jisutui.vip/data/upload/2019/05/0cef53c7a2acqihy.jpg",
+            "titlecolor": "red"
+        }
+    ]
+}
