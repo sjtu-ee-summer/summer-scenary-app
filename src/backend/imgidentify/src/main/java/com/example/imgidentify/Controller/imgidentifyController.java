@@ -3,14 +3,13 @@ package com.example.imgidentify.Controller;
 
 import com.example.imgidentify.Service.ImgIdentifyObject;
 import com.example.imgidentify.Service.imgIdentifyLandmark;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
 @RestController
+@EnableResourceServer
 @RequestMapping("/imgidentify")
 public class imgidentifyController {
 
@@ -30,5 +29,10 @@ public class imgidentifyController {
         imgIdentifyLandmark imgIdentifyLandmark = new imgIdentifyLandmark();
 
         return imgIdentifyLandmark.main(img);
+    }
+
+    @RequestMapping("/hello/{id}")
+    public String hello(@PathVariable(value = "id") String id) {
+        return "hello"+id;
     }
 }
