@@ -10,9 +10,9 @@ public class User
 {
 
     @Id
-    @Column(name = "user_id", nullable = false)
+    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    private Long id;
 
     private String username;
 
@@ -32,21 +32,25 @@ public class User
 
     private String address="null";
 
-    public Long getUserId() {
-        return userId;
+
+    private int enabled = 1;
+
+    public int getEnabled() {
+        return enabled;
     }
 
-//    public void setUserId(Long userId) {
-//        this.userId = userId;
-//    }
-//
-//    public int getIs_admin() {
-//        return is_admin;
-//    }
-//
-//    public void setIs_admin(int is_admin) {
-//        this.is_admin = is_admin;
-//    }
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
+    }
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public int getVip() {
         return vip;
@@ -56,41 +60,19 @@ public class User
         this.vip = vip;
     }
 
-//    public String getSex() {
-//        return sex;
-//    }
 
     public void setSex(String sex) {
         this.sex = sex;
     }
 
-//    public int getAge() {
-//        return age;
-//    }
-
     public void setAge(int age) {
         this.age = age;
     }
-
-//    public String getAddress() {
-//        return address;
-//    }
 
     public void setAddress(String address) {
         this.address = address;
     }
 
-//    public int getIsAdmin() {
-//        return is_admin;
-//    }
-
-//    public void setIsAdmin(int is_admin) {
-//        this.is_admin = is_admin;
-//    }
-
-//    public String getUsername() {
-//        return username;
-//    }
 
     public void setUsername(String username) {
         this.username = username;
