@@ -1,9 +1,6 @@
 package com.example.translate.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class TranslateTextEntity {
@@ -12,8 +9,10 @@ public class TranslateTextEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Lob
     private String text;
 
+    @Lob
     private String result;
 
     private Long user_id;

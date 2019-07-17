@@ -20,6 +20,7 @@ public class imgidentifyController {
 
     @Autowired
     private IdelmkhisRepository idelmkhisRepository;
+    @Autowired
     private IdeobjhisRepository ideobjhisRepository;
 
     //通用物体识别
@@ -44,11 +45,16 @@ public class imgidentifyController {
         imgIdentifyLandmark imgIdentifyLandmark = new imgIdentifyLandmark();
         idelmkhis landmark = new idelmkhis();
 
+        System.out.println("1");
         String result = imgIdentifyLandmark.main(img);
+        System.out.println("2");
         landmark.setImage(img);
+        System.out.println("3");
         landmark.setResult(result);
+        System.out.println("4");
         landmark.setUser_id(id);
         idelmkhisRepository.save(landmark);
+        System.out.println("5");
 
         return result;
     }

@@ -2,22 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../oauth2/src/main/resources/bootstrap.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../config-server-repo/application-gateway.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config-server-repo/application-gateway.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config-server-repo/application-imgidentify.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config-server-repo/application-imgidentify.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config-server-repo/application-oauth.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config-server-repo/application-oauth.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config-server-repo/application-translate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config-server-repo/application-translate.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config-server-repo/application-user.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config-server-repo/application-user.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/ResourceServerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/ResourceServerConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../oauth2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../oauth2/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../oauth2/src/main/java/com/example/oauth2/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../oauth2/src/main/java/com/example/oauth2/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../oauth2/src/main/java/com/example/oauth2/WebSecurityConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../oauth2/src/main/java/com/example/oauth2/WebSecurityConfigurer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../oauth2/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/example/user/ResourceServerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/example/user/ResourceServerConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/example/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/example/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/example/user/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/example/user/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/Controller/imgidentifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/Controller/imgidentifyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/Entity/Ideobjhis.java" beforeDir="false" afterPath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/Entity/Ideobjhis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/Entity/idelmkhis.java" beforeDir="false" afterPath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/Entity/idelmkhis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imgidentify/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../imgidentify/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/controller/TranslateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/controller/TranslateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/entity/TranslatePicEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/entity/TranslatePicEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/entity/TranslateVoiceEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/entity/TranslateVoiceEntity.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -305,7 +299,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27961000" />
+    <option name="totallyTimeSpent" value="29034000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />

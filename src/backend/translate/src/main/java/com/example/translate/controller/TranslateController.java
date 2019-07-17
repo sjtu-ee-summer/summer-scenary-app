@@ -21,7 +21,9 @@ public class TranslateController {
 
     @Autowired
     private TranslateTextRepository translateTextRepository;
+    @Autowired
     private TranslatePicRepository translatePicRepository;
+    @Autowired
     private TranslateVoiceRepository translateVoiceRepository;
 
     @GetMapping("/translate/text/{sentence}")
@@ -44,11 +46,14 @@ public class TranslateController {
         TranslatePicEntity pic = new TranslatePicEntity();
 
         String result = translatePicture.main(picture);
+        System.out.println("1");
         pic.setImage(picture);
+        System.out.println("2");
         pic.setResult(result);
         pic.setUser_id(id);
+        System.out.println("3");
         translatePicRepository.save(pic);
-
+        System.out.println("4");
         return result;
     }
 
