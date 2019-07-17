@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/entity/TranslatePicEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/entity/TranslateTextEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/entity/TranslateVoiceEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/repository/TranslatePicRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/repository/TranslateTextRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/repository/TranslateVoiceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/Controller/imgidentifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/Controller/imgidentifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/controller/TranslateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/controller/TranslateController.java" afterDir="false" />
-    </list>
+    <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -303,6 +292,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28097165" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
