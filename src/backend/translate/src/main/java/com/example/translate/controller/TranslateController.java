@@ -9,7 +9,6 @@ import com.example.translate.repository.TranslateVoiceRepository;
 import com.example.translate.service.TranslatePicture;
 import com.example.translate.service.TranslateText;
 import com.example.translate.service.TranslateVoice;
-import org.graalvm.compiler.nodes.extended.ValueAnchorNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.*;
@@ -49,14 +48,11 @@ public class TranslateController {
         TranslatePicEntity pic = new TranslatePicEntity();
 
         String result = translatePicture.main(picture);
-        System.out.println("1");
         pic.setImage(picture);
-        System.out.println("2");
         pic.setResult(result);
         pic.setUser_id(id);
-        System.out.println("3");
         translatePicRepository.save(pic);
-        System.out.println("4");
+
         return result;
     }
 
