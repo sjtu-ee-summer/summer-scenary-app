@@ -4,9 +4,11 @@ import com.example.user.entity.User;
 import com.example.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@EnableResourceServer
 public class UserController {
     @Autowired
     private UserRepository userRepository;

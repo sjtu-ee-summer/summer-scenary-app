@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../loadbalancer/src/main/java/com/example/loadbalancer/RibbonConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../loadbalancer/src/main/java/com/example/loadbalancer/LoadbalancerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../loadbalancer/src/main/java/com/example/loadbalancer/LoadbalancerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -61,7 +61,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/example/discovery/DiscoveryApplicationTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
+            <state relative-caret-position="218">
               <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -213,7 +213,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../loadbalancer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../user" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -275,7 +275,7 @@
       <workItem from="1562810296999" duration="3811000" />
       <workItem from="1562823389376" duration="925000" />
       <workItem from="1562895428772" duration="4264000" />
-      <workItem from="1563158539038" duration="2042000" />
+      <workItem from="1563158539038" duration="1436000" />
     </task>
     <servers />
   </component>
@@ -297,7 +297,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27115000" />
+    <option name="totallyTimeSpent" value="26509000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -381,7 +381,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/example/discovery/DiscoveryApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
+        <state relative-caret-position="218">
           <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />

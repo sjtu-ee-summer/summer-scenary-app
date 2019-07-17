@@ -1,4 +1,4 @@
-package com.example.imgidentify;
+package com.example.user;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -13,8 +13,8 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     public void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers(HttpMethod.GET,"/imgidentify/**")
-                .hasRole("ADMIN")
+                .antMatchers(HttpMethod.GET,"/users/**")
+                .hasRole("USER")
                 .anyRequest()
                 .authenticated();
     }
