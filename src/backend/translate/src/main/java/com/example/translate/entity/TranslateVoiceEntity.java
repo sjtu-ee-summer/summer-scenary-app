@@ -1,10 +1,12 @@
-package com.example.translate.Entity;
+package com.example.translate.entity;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class Tranvoihis {
+@Entity
+public class TranslateVoiceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

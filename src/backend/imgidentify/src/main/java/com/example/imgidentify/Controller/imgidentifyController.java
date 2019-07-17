@@ -1,8 +1,13 @@
 package com.example.imgidentify.Controller;
 
 
+import com.example.imgidentify.Entity.Ideobjhis;
+import com.example.imgidentify.Entity.idelmkhis;
+import com.example.imgidentify.Repository.IdelmkhisRepository;
+import com.example.imgidentify.Repository.IdeobjhisRepository;
 import com.example.imgidentify.Service.ImgIdentifyObject;
 import com.example.imgidentify.Service.imgIdentifyLandmark;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,22 +18,39 @@ import java.io.IOException;
 @RequestMapping("/imgidentify")
 public class imgidentifyController {
 
+    @Autowired
+    private IdelmkhisRepository idelmkhisRepository;
+    private IdeobjhisRepository ideobjhisRepository;
 
     //通用物体识别
     @PostMapping("/object")
-    public String objectIdentify(@RequestParam String img) throws IOException {
+    public String objectIdentify(@RequestParam String img, @RequestParam Long id) throws IOException {
         ImgIdentifyObject imgIdentifyObject = new ImgIdentifyObject();
+        Ideobjhis object = new Ideobjhis();
 
-        return imgIdentifyObject.main(img);
+        String result = imgIdentifyObject.main(img);
+        object.setImage(img);
+        object.setResult(result);
+        object.setUser_id(id);
+        ideobjhisRepository.save(object);
+
+        return result;
     }
 
 
     //地标识别
     @PostMapping("/landmark")
-    public String markIdentify(@RequestParam String img) throws IOException {
+    public String markIdentify(@RequestParam String img, @RequestParam Long id) throws IOException {
         imgIdentifyLandmark imgIdentifyLandmark = new imgIdentifyLandmark();
+        idelmkhis landmark = new idelmkhis();
 
-        return imgIdentifyLandmark.main(img);
+        String result = imgIdentifyLandmark.main(img);
+        landmark.setImage(img);
+        landmark.setResult(result);
+        landmark.setUser_id(id);
+        idelmkhisRepository.save(landmark);
+
+        return result;
     }
 
     @RequestMapping("/hello/{id}")

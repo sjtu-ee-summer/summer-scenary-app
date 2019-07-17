@@ -1,10 +1,12 @@
-package com.example.translate.Entity;
+package com.example.translate.entity;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class Trantexhis {
+@Entity
+public class TranslateTextEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
