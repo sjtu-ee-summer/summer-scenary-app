@@ -32,6 +32,7 @@ public class User
 
     private String address="null";
 
+    @Lob
     private String profile_picture;
 
     public String getProfile_picture() {

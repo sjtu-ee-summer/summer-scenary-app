@@ -16,9 +16,9 @@ public class AppConfig {
     public DataSource dataSource() {
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
         driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/oauth2?serverTimezone=UTC");
+        driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/travelsy?serverTimezone=UTC");
         driverManagerDataSource.setUsername("root");
-        driverManagerDataSource.setPassword("123456");
+        driverManagerDataSource.setPassword("0000");
         return  driverManagerDataSource;
     }
 }

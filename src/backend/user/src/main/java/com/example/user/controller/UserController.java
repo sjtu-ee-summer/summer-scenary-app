@@ -32,7 +32,7 @@ public class UserController {
     }
 
     //tested
-    @RequestMapping("/signup")
+    @RequestMapping("/un/signup")
     public String addUser(@RequestParam String username,@RequestParam String password,
                         @RequestParam String email){
         User uTest = userRepository.findUserByUsername(username);
@@ -50,12 +50,12 @@ public class UserController {
         user_roles.setUsername(username);
         user_roles.setRole("ROLE_USER");
         userRolesReposiroty.save(user_roles);
-
-        return userRepository.save(u).toString();
+        userRepository.save(u);
+        return "register success";
     }
 
     //tested
-    @GetMapping("/signin")
+    @GetMapping("/un/signin")
     public boolean signin(@RequestParam String username, @RequestParam String password){
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         User u = userRepository.findUserByUsername(username);
@@ -91,7 +91,7 @@ public class UserController {
         return userRepository.save(u);
     }
 
-    @RequestMapping("/users/refind")
+    @RequestMapping("/un/refind")
     public String refindpassword(@RequestParam String email) {
         User u = userRepository.findUserByEmail(email);
         if(u == null) {
@@ -111,4 +111,6 @@ public class UserController {
         userRepository.save(u);
         return "success";
     }
+
+
 }

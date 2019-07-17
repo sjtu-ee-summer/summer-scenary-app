@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="" />
+    <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../oauth2/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config-server-repo/application-gateway.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config-server-repo/application-gateway.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config-server-repo/application-imgidentify.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config-server-repo/application-imgidentify.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config-server-repo/application-oauth.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config-server-repo/application-oauth.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config-server-repo/application-translate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config-server-repo/application-translate.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config-server-repo/application-user.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config-server-repo/application-user.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/ResourceServerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/ResourceServerConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../oauth2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../oauth2/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../oauth2/src/main/java/com/example/oauth2/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../oauth2/src/main/java/com/example/oauth2/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../oauth2/src/main/java/com/example/oauth2/WebSecurityConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../oauth2/src/main/java/com/example/oauth2/WebSecurityConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../oauth2/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/example/user/ResourceServerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/example/user/ResourceServerConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/example/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/example/user/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/example/user/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/example/user/entity/User.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,20 +53,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/bootstrap.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+              <caret line="1" column="46" lean-forward="true" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+            <state relative-caret-position="218">
+              <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -288,7 +305,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26509000" />
+    <option name="totallyTimeSpent" value="27961000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -304,7 +321,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31083483" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8987854" visible="true" weight="0.31083483" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39964476" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -312,7 +329,7 @@
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.10121457" side_tool="true" weight="0.31083483" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
@@ -359,14 +376,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/bootstrap.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+          <caret line="1" column="46" lean-forward="true" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -377,6 +387,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
         </state>
       </provider>
     </entry>

@@ -7,6 +7,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.annotation.Resource;
@@ -58,9 +59,9 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 //                .password("password2")
 //                .roles("USER", "ADMIN");l
             auth.jdbcAuthentication().dataSource(dataSource)
-                    .usersByUsernameQuery("select username,password,enabled from users where username = ?")
+                    .usersByUsernameQuery("select username,password,enabled from user where username = ?")
                     .authoritiesByUsernameQuery("select username, role from user_roles where username = ?")
-                    .passwordEncoder(new CustomPasswordEncoder());
+                    .passwordEncoder(new BCryptPasswordEncoder());
 
     }
 
