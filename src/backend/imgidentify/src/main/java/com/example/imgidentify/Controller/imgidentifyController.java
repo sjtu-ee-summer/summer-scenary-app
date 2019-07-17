@@ -12,6 +12,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @EnableResourceServer
@@ -62,5 +63,15 @@ public class imgidentifyController {
     @RequestMapping("/hello/{id}")
     public String hello(@PathVariable(value = "id") String id) {
         return "hello"+id;
+    }
+
+    @RequestMapping("/lmkhis/{id}")
+    public List<idelmkhis> landMarkHistory(@PathVariable(value = "id") Long id)  {
+        return idelmkhisRepository.findAllByUser_id(id);
+    }
+
+    @RequestMapping("/objhis/{id}")
+    List<Ideobjhis>  objectHistory(@PathVariable(value = "id") Long id) {
+        return ideobjhisRepository.findAllByUser_id(id);
     }
 }
