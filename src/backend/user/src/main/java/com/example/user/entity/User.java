@@ -32,6 +32,15 @@ public class User
 
     private String address="null";
 
+    private String profile_picture;
+
+    public String getProfile_picture() {
+        return profile_picture;
+    }
+
+    public void setProfile_picture(String profile_picture) {
+        this.profile_picture = profile_picture;
+    }
 
     private int enabled = 1;
 
