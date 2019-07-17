@@ -33,11 +33,11 @@ public class UserController {
 
     //tested
     @RequestMapping("/users/signup")
-    public User addUser(@RequestParam String username,@RequestParam String password,
+    public String addUser(@RequestParam String username,@RequestParam String password,
                         @RequestParam String email){
         User uTest = userRepository.findUserByUsername(username);
         if (uTest != null) {
-            return uTest;
+            return "username already exists";
         }
 
         User u = new User();
@@ -51,7 +51,7 @@ public class UserController {
         user_roles.setRole("ROLE_USER");
         userRolesReposiroty.save(user_roles);
 
-        return userRepository.save(u);
+        return userRepository.save(u).toString();
     }
 
     //tested
