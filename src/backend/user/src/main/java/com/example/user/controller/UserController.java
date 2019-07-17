@@ -32,7 +32,7 @@ public class UserController {
     }
 
     //tested
-    @RequestMapping("/users/signup")
+    @RequestMapping("/signup")
     public String addUser(@RequestParam String username,@RequestParam String password,
                         @RequestParam String email){
         User uTest = userRepository.findUserByUsername(username);
@@ -55,7 +55,7 @@ public class UserController {
     }
 
     //tested
-    @GetMapping("/users/signin")
+    @GetMapping("/signin")
     public boolean signin(@RequestParam String username, @RequestParam String password){
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         User u = userRepository.findUserByUsername(username);
