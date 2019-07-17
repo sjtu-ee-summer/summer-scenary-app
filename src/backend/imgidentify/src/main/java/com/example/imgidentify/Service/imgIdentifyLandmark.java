@@ -1,5 +1,7 @@
 package com.example.imgidentify.Service;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -49,9 +51,14 @@ public class imgIdentifyLandmark {
         String result = requestForHttp(url,params);
 
         /** 处理结果 */
-        System.out.println(result);
 
-        return result;
+        JsonObject jsonObject = new JsonObject();
+        JsonParser jsonParser = new JsonParser();
+        System.out.println(result);
+        jsonObject = (JsonObject)jsonParser.parse(result);
+        JsonObject end = jsonObject.get("result").getAsJsonObject();
+        return end.toString();
+//        return result;
     }
 
 

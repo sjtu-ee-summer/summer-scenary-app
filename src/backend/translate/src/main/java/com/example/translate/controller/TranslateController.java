@@ -3,11 +3,13 @@ package com.example.translate.controller;
 import com.example.translate.service.TranslatePicture;
 import com.example.translate.service.TranslateText;
 import com.example.translate.service.TranslateVoice;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
 @RestController
+@EnableResourceServer
 public class TranslateController {
 
     @GetMapping("/translate/text/{sentence}")
