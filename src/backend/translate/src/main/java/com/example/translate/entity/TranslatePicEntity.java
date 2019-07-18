@@ -5,17 +5,17 @@ import javax.persistence.*;
 @Entity
 public class TranslatePicEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+        @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        private long id;
 
-    @Lob
-    private String image;
+        @Lob
+        private String image;
 
-    @Lob
-    private String result;
+        @Lob
+        private String result;
 
-    private Long uid;
+        private Long uid;
 
     public Long getId() {
         return id;

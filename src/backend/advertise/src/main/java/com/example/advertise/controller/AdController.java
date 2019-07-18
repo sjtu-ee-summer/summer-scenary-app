@@ -4,7 +4,7 @@ package com.example.advertise.controller;
 import com.example.advertise.Entity.Ad;
 import com.example.advertise.repository.AdRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+//import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/ad")
-@EnableResourceServer
+//@EnableResourceServer
 public class AdController {
 
     @Autowired
