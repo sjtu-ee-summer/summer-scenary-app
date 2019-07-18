@@ -36,7 +36,7 @@ public class TranslateController {
         String result = translateText.main(sentence);
         text.setText(sentence);
         text.setResult(result);
-        text.setUser_id(id);
+        text.setUid(id);
         translateTextRepository.save(text);
 
         return result;
@@ -50,7 +50,7 @@ public class TranslateController {
         String result = translatePicture.main(picture);
         pic.setImage(picture);
         pic.setResult(result);
-        pic.setUser_id(id);
+        pic.setUid(id);
         translatePicRepository.save(pic);
 
         return result;
@@ -64,26 +64,26 @@ public class TranslateController {
         String result = translateVoice.main(voice);
         v.setVoice(voice);
         v.setResult(result);
-        v.setUser_id(id);
+        v.setUid(id);
         translateVoiceRepository.save(v);
         return result;
     }
 
     @RequestMapping("/pichit/{id}")
     public List<TranslatePicEntity> TransPicHis(@PathVariable(value = "id") Long id) {
-        return translatePicRepository.findAllByUser_id(id);
+        return translatePicRepository.findAllByUid(id);
     }
 
 
     @RequestMapping("/texthis/{id}")
     public List<TranslateTextEntity> TransTextHis(@PathVariable(value = "id") Long id)
     {
-        return translateTextRepository.findAllByUser_id(id);
+        return translateTextRepository.findAllByUid(id);
     }
 
     @RequestMapping("/voichis/{id}")
     public List<TranslateVoiceEntity> TransVoisHist(@PathVariable(value = "id") Long id)
     {
-        return translateVoiceRepository.findAllByUser_id(id);
+        return translateVoiceRepository.findAllByUid(id);
     }
 }

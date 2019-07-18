@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface TranslatePicRepository extends CrudRepository<TranslatePicEntity,Long> {
-    List<TranslatePicEntity> findAllByUser_id(Long user_id);
+    List<TranslatePicEntity> findAllByUid(Long user_id);
 }

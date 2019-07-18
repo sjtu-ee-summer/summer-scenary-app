@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface TranslateVoiceRepository extends CrudRepository<TranslateVoiceEntity,Long> {
-    List<TranslateVoiceEntity> findAllByUser_id(Long user_id);
+    List<TranslateVoiceEntity> findAllByUid(Long user_id);
 }

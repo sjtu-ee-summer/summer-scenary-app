@@ -1,12 +1,12 @@
 package com.example.imgidentify.Controller;
 
 
-import com.example.imgidentify.Entity.Ideobjhis;
-import com.example.imgidentify.Entity.idelmkhis;
+import com.example.imgidentify.Entity.Ideobjhi;
+import com.example.imgidentify.Entity.Idelmkhi;
 import com.example.imgidentify.Repository.IdelmkhisRepository;
 import com.example.imgidentify.Repository.IdeobjhisRepository;
 import com.example.imgidentify.Service.ImgIdentifyObject;
-import com.example.imgidentify.Service.imgIdentifyLandmark;
+import com.example.imgidentify.Service.ImgIdentifyLandmark;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 @EnableResourceServer
 @RequestMapping("/imgidentify")
-public class imgidentifyController {
+public class ImgidentifyController {
 
     @Autowired
     private IdelmkhisRepository idelmkhisRepository;
@@ -28,12 +28,12 @@ public class imgidentifyController {
     @PostMapping("/object")
     public String objectIdentify(@RequestParam String img, @RequestParam Long id) throws IOException {
         ImgIdentifyObject imgIdentifyObject = new ImgIdentifyObject();
-        Ideobjhis object = new Ideobjhis();
+        Ideobjhi object = new Ideobjhi();
 
         String result = imgIdentifyObject.main(img);
         object.setImage(img);
         object.setResult(result);
-        object.setUser_id(id);
+        object.setUid(id);
         ideobjhisRepository.save(object);
 
         return result;
@@ -43,13 +43,13 @@ public class imgidentifyController {
     //地标识别
     @PostMapping("/landmark")
     public String markIdentify(@RequestParam String img, @RequestParam Long id) throws IOException {
-        imgIdentifyLandmark imgIdentifyLandmark = new imgIdentifyLandmark();
-        idelmkhis landmark = new idelmkhis();
+        ImgIdentifyLandmark imgIdentifyLandmark = new ImgIdentifyLandmark();
+        Idelmkhi landmark = new Idelmkhi();
 
         String result = imgIdentifyLandmark.main(img);
         landmark.setImage(img);
         landmark.setResult(result);
-        landmark.setUser_id(id);
+        landmark.setUid(id);
         idelmkhisRepository.save(landmark);
 
         return result;
@@ -61,12 +61,12 @@ public class imgidentifyController {
     }
 
     @RequestMapping("/lmkhis/{id}")
-    public List<idelmkhis> landMarkHistory(@PathVariable(value = "id") Long id)  {
-        return idelmkhisRepository.findAllByUser_id(id);
+    public List<Idelmkhi> landMarkHistory(@PathVariable(value = "id") Long id)  {
+        return idelmkhisRepository.findAllByUid(id);
     }
 
     @RequestMapping("/objhis/{id}")
-    List<Ideobjhis>  objectHistory(@PathVariable(value = "id") Long id) {
-        return ideobjhisRepository.findAllByUser_id(id);
+    List<Ideobjhi>  objectHistory(@PathVariable(value = "id") Long id) {
+        return ideobjhisRepository.findAllByUid(id);
     }
 }

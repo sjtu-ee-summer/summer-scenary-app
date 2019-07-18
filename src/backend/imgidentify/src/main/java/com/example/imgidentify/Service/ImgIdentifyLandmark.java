@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.*;
 
-public class imgIdentifyLandmark {
+public class ImgIdentifyLandmark {
 
     private static Logger logger = LoggerFactory.getLogger(ImgIdentifyObject.class);
 

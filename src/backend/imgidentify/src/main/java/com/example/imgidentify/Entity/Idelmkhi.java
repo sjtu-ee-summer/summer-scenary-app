@@ -1,9 +1,10 @@
 package com.example.imgidentify.Entity;
 
+
 import javax.persistence.*;
 
 @Entity
-public class Ideobjhis {
+public class Idelmkhi {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,7 +16,7 @@ public class Ideobjhis {
     @Lob
     private String result;
 
-    private Long user_id;
+    private Long uid;
 
     public Long getId() {
         return id;
@@ -41,11 +42,11 @@ public class Ideobjhis {
         this.result = result;
     }
 
-    public Long getUser_id() {
-        return user_id;
+    public Long getUid() {
+        return uid;
     }
 
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
+    public void setUid(Long uid) {
+        this.uid = uid;
     }
 }
