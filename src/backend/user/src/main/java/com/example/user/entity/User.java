@@ -22,8 +22,6 @@ public class User
 
     private String email;
 
-    private int is_admin=0;
-
     private int vip=0;
 
     private String sex="null";

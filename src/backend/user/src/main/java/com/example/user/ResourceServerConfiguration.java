@@ -19,5 +19,9 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET,"/un/**")
                 .permitAll();
+        http
+                .authorizeRequests()
+                .antMatchers(HttpMethod.GET,"/admin/**")
+                .hasRole("ADMIN");
     }
 }
