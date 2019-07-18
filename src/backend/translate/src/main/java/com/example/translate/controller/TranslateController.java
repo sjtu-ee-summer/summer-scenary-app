@@ -28,8 +28,8 @@ public class TranslateController {
     @Autowired
     private TranslateVoiceRepository translateVoiceRepository;
 
-    @GetMapping("/text/{sentence}")
-    public String getTranslation(@PathVariable String sentence,@RequestParam Long id) throws IOException {
+    @PostMapping("/text")
+    public String getTranslation(@RequestParam String sentence,@RequestParam Long id) throws IOException {
         TranslateText translateText = new TranslateText();
         TranslateTextEntity text = new TranslateTextEntity();
 
