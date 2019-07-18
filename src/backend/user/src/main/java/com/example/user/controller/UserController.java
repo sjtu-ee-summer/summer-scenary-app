@@ -9,6 +9,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @EnableResourceServer
 public class UserController {
@@ -112,5 +114,8 @@ public class UserController {
         return "success";
     }
 
-
+    @RequestMapping("/admin/alluser")
+    public List<User> alluser() {
+        return (List<User>) userRepository.findAll();
+    }
 }
