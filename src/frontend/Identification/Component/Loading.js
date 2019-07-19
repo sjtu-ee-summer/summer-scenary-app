@@ -27,19 +27,18 @@ var Loading = createReactClass({
 
 const styles = StyleSheet.create({
     loadingBox: { // Loading居中
-                flex:1,
-                justifyContent:'center',
-                backgroundColor:'rgba(0, 0, 0, 0.5)', // 半透
-                alignItems:'center',
-                },
-                textStyle:{
-
-                   fontSize:30,
-                   textAlign:'center',
-                   justifyContent: 'center',
-                   color: '#FF4500',
-                   margin:5
-                  },
+            flex:1,
+            justifyContent:'center',
+            backgroundColor:'rgba(0, 0, 0, 0.5)', // 半透
+            alignItems:'center',
+            },
+            textStyle:{
+                fontSize:30,
+               textAlign:'center',
+               justifyContent: 'center',
+               margin:5,
+               color: '#FF4500'
+              },
 
 });
 
