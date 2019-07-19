@@ -9,4 +9,6 @@ public class TranslatorTextEntity {
     private long id;
 
     private String text;
+
+    private boolean valid;
 }
