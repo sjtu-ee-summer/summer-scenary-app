@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 public class TranslateVoiceEntity {
     @Id
+    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 

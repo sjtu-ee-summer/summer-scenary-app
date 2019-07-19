@@ -6,6 +6,7 @@ import javax.persistence.*;
 public class TranslatePicEntity {
 
         @Id
+        @Column(name = "id", nullable = false)
         @GeneratedValue(strategy = GenerationType.AUTO)
         private long id;
 
