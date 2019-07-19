@@ -24,7 +24,7 @@ class Translator extends Component {
 
     componentDidMount(){
         const that = this;
-        axios.get('http://localhost:8081/translate/getjob')
+        axios.get('/translator/getjob')
         .then(function (response) {
           // handle success
           console.log(response);
@@ -65,7 +65,7 @@ class Translator extends Component {
 
         axios({
             method: 'post',
-            url: 'http://localhost:8081/translate/sendresult',
+            url: '/translator/sendresult',
             data: formData,
             headers: {
                 'Content-Type': 'multipart/form-data'
