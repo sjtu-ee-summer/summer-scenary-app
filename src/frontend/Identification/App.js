@@ -11,6 +11,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Slider, Image } from 'react-n
 import { RNCamera } from 'react-native-camera';
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 //import { RNFS } from 'react-native-fs';
+//import Loading from './Loading';
 
 const landmarkSize = 2;
 
@@ -31,26 +32,47 @@ const wbOrder = {
 };
 
 var RNFS = require('react-native-fs');
+var Loading = require('./Component/Loading')
 
 class DetailsScreen extends React.Component {
+state = {
+    result: [],
+};
  render() {
-        const navigationOptions =  ({ navigation }) =>({
-            result: navigation.state.params.result,
-
-        });
-        console.log(navigationOptions);
-        console.log(result);
-        console.log(typeof(result));
-//        console.log(result[0].keyword);
+//        const navigationOptions =  ({ navigation }) =>({
+//            imageSource: navigation.state.params.imageSource,
+////            result: navigation.state.params.result,
+//        });
+        const { navigation } = this.props;
+        const imageSource = navigation.getParam('imageSource', 'NO-ID');
+        const landmark = navigation.getParam('landmark', 'landmark');
+//        console.log(navigationOptions);
+//        console.log(result);
+//        console.log(typeof(result));
+        console.log(imageSource.substring(0,30));
+        console.log(landmark);
 
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
-        <Text>result:{result}</Text>
+
+
      </View>
     );
   }
 }
+
+// <Text>result:{result.landmark }</Text>
+
+class NothingScreen extends React.Component {
+    render() {
+     return (
+             <View>
+                 <Text>什么都没有识别到噢</Text>
+             </View>
+         )
+    }
+}
+
 
 class CameraScreen extends React.Component {
   state = {
@@ -67,6 +89,8 @@ class CameraScreen extends React.Component {
     photos: [],
     faces: [],
     tmp: '',
+    landmark: '',
+    visible: false,
     result: [],
     recordOptions: {
       mute: false,
@@ -135,52 +159,72 @@ class CameraScreen extends React.Component {
     });
   }
 
-
-
-  takePicture = async function() {
+takePicture = async function() {
+    var _this3 = this;
     if (this.camera) {
       this.camera.takePictureAsync().then(data => {
         console.log('data: ', data.uri);
-//        CameraRoll.saveToCameraRoll(data.uri, 'photo');
+        this.setState({
+            visible: true,
+        });
         RNFS.readFile(data.uri, 'base64')
               .then((content) => {
-            // 得到的结果就可以 传给接口了 ，如果想要在网页上预览效果不要忘记格式转换
                 console.log('content: ', content.substring(0,30));
                 this.tmp = content
                 console.log("转换成功")
-                let url = "https://aip.baidubce.com/rest/2.0/image-classify/v2/advanced_general"
-//                let url = "http://202.120.40.8:30454/imgidentify/imgidentify/object"
+//                let url = "https://aip.baidubce.com/rest/2.0/image-classify/v2/advanced_general"
+//                let url = "http://202.120.40.8:30454/imgidentify/imgidentify/landmark"
+                let url = "https://aip.baidubce.com/rest/2.0/image-classify/v1/landmark";
                 let formData = new FormData();
+                let isSuccess = 2;
+
                 formData.append("image", this.tmp);
                 formData.append("access_token", "24.5b49d85263914dca13b0271757861c4c.2592000.1565142299.282335-16731893");
+
+//                this.props.navigation.navigate('Details',{result: 0, imageSource: this.tmp});
+
                 fetch(url, {
                     credentials: 'include',
                     method: 'POST',
                     header: new Headers({
-                                'Content-Type': 'application/x-www-form-urlencoded'
+                          'Content-Type': 'application/x-www-form-urlencoded'
                     }),
                     body: formData
                 }).then(function(response) {
                       if(!response.ok){
                         console.log("Network response was not ok.");
                       }
-//                      this.result = response.result;
-//                      console.log("result");
-//                      console.log('result:', this.result[0]);
                       return response.json();
                     })
                     .then(function(myJson) {
                       console.log(myJson);
                       this.result = myJson.result;
-                      alert(this.result[0].keyword);
-                      console.log("result", this.result)
+                      console.log("result", this.result);
+                      if(myJson.result.landmark===""){
+                        isSuccess = 3;
+                      }
+                      _this3.landmark = myJson.result.landmark;
+                      console.log(_this3.landmark);
                     }).then(() =>{
+                    if(isSuccess === 3){
+                        console.log("识别为空");
+                        this.setState({
+                              visible: false,
+                        });
+                        this.props.navigation.navigate('Nothing');
+                        return;
+                    }
+                       console.log(this.tmp.substring(0,30));
+                       this.setState({
+                            visible: false,
+                       });
+                       console.log(this.state.visible)
                        console.log(this.tmp.substring(0,30))
-                       this.props.navigation.navigate('Details',{result: this.result,});
+                       this.props.navigation.navigate('Details',{imageSource: this.tmp, landmark: _this3.landmark});
                     })
-
-              }).catch((err) => {
-                toastShort("图片读取失败")
+            }).catch((err) => {
+              console.log("图片读取失败")
+//                toastShort("图片读取失败")
               });
       });
     }
@@ -341,58 +385,28 @@ class CameraScreen extends React.Component {
           }}
         >
           <TouchableOpacity
-            style={[styles.flipButton, {
-              flex: 0.3,
-              alignSelf: 'flex-end',
-              backgroundColor: this.state.isRecording ? 'white' : 'darkred',
-            }]}
-            onPress={this.state.isRecording ? () => {} : this.takeVideo.bind(this)}
-          >
-            {
-              this.state.isRecording ?
-              <Text style={styles.flipText}> ☕ </Text>
-              :
-              <Text style={styles.flipText}> REC </Text>
-            }
-          </TouchableOpacity>
-        </View>
-        <View
-          style={{
-            flex: 0.1,
-            backgroundColor: 'transparent',
-            flexDirection: 'row',
-            alignSelf: 'flex-end',
-          }}
-        >
-          <TouchableOpacity
-            style={[styles.flipButton, { flex: 0.1, alignSelf: 'flex-end' }]}
+            style={[styles.flipButton, { flex: 0.15, alignSelf: 'flex-end' }]}
             onPress={this.zoomIn.bind(this)}
           >
             <Text style={styles.flipText}> + </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={[styles.flipButton, { flex: 0.1, alignSelf: 'flex-end' }]}
+            style={[styles.flipButton, { flex: 0.15, alignSelf: 'flex-end' }]}
             onPress={this.zoomOut.bind(this)}
           >
             <Text style={styles.flipText}> - </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={[styles.flipButton, { flex: 0.25, alignSelf: 'flex-end' }]}
+            style={[styles.flipButton, { flex: 0.35, alignSelf: 'flex-end' }]}
             onPress={this.toggleFocus.bind(this)}
           >
             <Text style={styles.flipText}> AF : {this.state.autoFocus} </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={[styles.flipButton, styles.picButton, { flex: 0.3, alignSelf: 'flex-end' }]}
+            style={[styles.flipButton, styles.picButton, { flex: 0.35, alignSelf: 'flex-end' }]}
             onPress={this.takePicture.bind(this)}
           >
             <Text style={styles.flipText}> SNAP </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.flipButton, styles.galleryButton, { flex: 0.25, alignSelf: 'flex-end' }]}
-            onPress={this.toggleView.bind(this)}
-          >
-            <Text style={styles.flipText}> Gallery </Text>
           </TouchableOpacity>
         </View>
         {this.renderFaces()}
@@ -402,7 +416,9 @@ class CameraScreen extends React.Component {
   }
 
   render() {
-    return <View style={styles.container}>{this.renderCamera()}</View>;
+    return <View style={styles.container}>{
+    this.state.visible == true ? (<Loading/>) : (null)
+    }{this.renderCamera()}</View>;
   }
 }
 
@@ -490,6 +506,9 @@ const AppNavigator = createStackNavigator({
   Camera: {
     screen: CameraScreen,
   },
+  Nothing: {
+      screen: NothingScreen,
+    },
   Details: {
     screen: DetailsScreen,
   },
@@ -504,5 +523,3 @@ export default class App extends React.Component {
     return <AppContainer />;
   }
 }
-
-//export default createAppContainer(AppNavigator);
