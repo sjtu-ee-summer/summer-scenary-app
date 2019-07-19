@@ -43,14 +43,17 @@ public class User
 
     private int enabled = 1;
 
-    public int getEnabled() {
-        return enabled;
+    // using Spring provided password hashing encryption algorithm to encrypt password
+    public void setPassword(String password) {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        this.password = encoder.encode(password);
+
     }
 
-    public void setEnabled(int enabled) {
-        this.enabled = enabled;
-    }
 
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public Long getId() {
         return id;
@@ -58,6 +61,14 @@ public class User
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public int getVip() {
@@ -68,49 +79,54 @@ public class User
         this.vip = vip;
     }
 
+    public String getSex() {
+        return sex;
+    }
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    public int getAge() {
+        return age;
     }
 
     public void setAge(int age) {
         this.age = age;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
     public void setAddress(String address) {
         this.address = address;
     }
 
+    public int getEnabled() {
+        return enabled;
+    }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
     }
 
     public String getPassword() {
         return password;
     }
 
-    // using Spring provided password hashing encryption algorithm to encrypt password
-    public void setPassword(String password) {
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        this.password = encoder.encode(password);
-
+    public String getPhone() {
+        return phone;
     }
 
-//    public String getPhone() {
-//        return phone;
-//    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public String getEmail() {
+        return email;
     }
-
-//    public String getEmail() {
-//        return email;
-//    }
 
     public void setEmail(String email) {
         this.email = email;
     }
+
+
 
 }

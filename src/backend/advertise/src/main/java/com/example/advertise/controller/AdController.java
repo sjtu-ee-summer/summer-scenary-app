@@ -35,8 +35,11 @@ public class AdController {
     }
 
     @RequestMapping("/add")
-    public String addad(@RequestParam String entername,@RequestParam String picture, @RequestParam String detail) {
+    public String addad(@RequestParam String entername,@RequestParam String picture, @RequestParam String detail,
+                        @RequestParam String title,@RequestParam String video) {
         Ad ad = new Ad();
+        ad.setTitle(title);
+        ad.setVideo(video);
         ad.setPicture(picture);
         ad.setDetail(detail);
         ad.setEntername(entername);

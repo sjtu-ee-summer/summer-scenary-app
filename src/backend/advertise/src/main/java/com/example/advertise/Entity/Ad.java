@@ -13,9 +13,15 @@ public class Ad {
 
     private String entername;
 
+    private String title;
+
     @Lob
     private String picture;
 
+    @Lob
+    private String video;
+
+    @Lob
     private String detail;
 
     public Long getId() {
@@ -44,6 +50,22 @@ public class Ad {
 
     public String getDetail() {
         return detail;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getVideo() {
+        return video;
+    }
+
+    public void setVideo(String video) {
+        this.video = video;
     }
 
     public void setDetail(String detail) {
