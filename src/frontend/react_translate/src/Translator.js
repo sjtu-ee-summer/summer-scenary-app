@@ -11,9 +11,8 @@ class Translator extends Component {
         this.state = { 
             text: "", 
             translateText: "No Job Currently, Please refresh later.", 
-            translatorId: 0, 
+            translatorId: null, 
             textId: 0, 
-            result: ""
         };
 
         this.handleTextInput = this.handleTextInput.bind(this);
@@ -58,8 +57,7 @@ class Translator extends Component {
     translateText() {
         const text = this.state.text;
         let formData = new FormData();
-        this.setState({result: this.state.text});
-        formData.append("result", this.state.result);
+        formData.append("result", text);
         formData.append("textId", this.state.textId);
         formData.append("translatorId", this.state.translatorId);
 

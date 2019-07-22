@@ -1,4 +1,4 @@
-package com.example.translate.service;
+package com.example.translate.translate.service;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;

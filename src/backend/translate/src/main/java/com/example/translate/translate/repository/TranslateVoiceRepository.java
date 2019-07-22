@@ -1,7 +1,6 @@
-package com.example.translate.repository;
+package com.example.translate.translate.repository;
 
-import com.example.translate.entity.TranslateTextEntity;
-import com.example.translate.entity.TranslateVoiceEntity;
+import com.example.translate.translate.entity.TranslateVoiceEntity;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

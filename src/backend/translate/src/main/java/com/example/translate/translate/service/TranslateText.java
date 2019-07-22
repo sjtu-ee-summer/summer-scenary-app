@@ -1,4 +1,4 @@
-package com.example.translate.service;
+package com.example.translate.translate.service;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
