@@ -2,6 +2,7 @@ package com.example.pytest;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.DataInputStream;
@@ -18,12 +19,10 @@ public class Controller {
 
 
     @RequestMapping("/py")
-    public String py() throws IOException, InterruptedException {
-        String exe = "python";
-        String command = "./1.py";
-        String num1 = "7";
-        String num2 = "2";
-        String[] cmdArr = new String[] {exe, command, num1, num2};
+    public String py(@RequestParam String url) throws IOException, InterruptedException {
+        String exe = "python3";
+        String command = "./crawlertest.py";
+        String[] cmdArr = new String[] {exe, command, url};
         Process process = Runtime.getRuntime().exec(cmdArr);
         InputStream is = process.getInputStream();
         DataInputStream dis = new DataInputStream(is);
