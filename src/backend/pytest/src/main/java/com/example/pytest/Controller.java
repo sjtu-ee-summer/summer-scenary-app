@@ -20,7 +20,7 @@ public class Controller {
     @RequestMapping("/py")
     public String py() throws IOException, InterruptedException {
         String exe = "python";
-        String command = "/home/summer/summer-scenary-app/src/backend/1.py";
+        String command = "C:\\Users\\19643\\Desktop\2.py";
         String num1 = "1";
         String num2 = "2";
         String[] cmdArr = new String[] {exe, command, num1, num2};
@@ -29,6 +29,7 @@ public class Controller {
         DataInputStream dis = new DataInputStream(is);
         String str = dis.readLine();
         process.waitFor();
+        System.out.println(str);
         return str;
     }
 }
