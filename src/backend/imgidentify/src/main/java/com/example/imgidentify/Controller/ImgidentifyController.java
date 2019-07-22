@@ -57,18 +57,21 @@ public class ImgidentifyController {
         return result;
     }
 
-    @RequestMapping("/py")
-    public String py() throws IOException, InterruptedException {
-        String exe = "python";
-        String command = "./2.py";
-        String num1 = "1";
-        String num2 = "2";
-        String[] cmdArr = new String[] {exe, command, num1, num2};
+    @PostMapping("/py")
+    public String py(@RequestParam String url) throws IOException, InterruptedException {
+        String exe = "python3";
+        String command = "./crawlertest.py";
+        String[] cmdArr = new String[] {exe, command, url};
         Process process = Runtime.getRuntime().exec(cmdArr);
         InputStream is = process.getInputStream();
         DataInputStream dis = new DataInputStream(is);
-        String str = dis.readLine();
+        String a,str;
+        str="";
+        while((a = dis.readLine())!=null){
+            str+=a;
+        }
         process.waitFor();
+        System.out.println(str);
         return str;
 
     }
