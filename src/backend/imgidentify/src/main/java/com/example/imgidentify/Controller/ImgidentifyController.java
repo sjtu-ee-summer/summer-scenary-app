@@ -60,7 +60,7 @@ public class ImgidentifyController {
     @RequestMapping("/py")
     public String py() throws IOException, InterruptedException {
         String exe = "python";
-        String command = "D:\\calculator_simple.py";
+        String command = "./2.py";
         String num1 = "1";
         String num2 = "2";
         String[] cmdArr = new String[] {exe, command, num1, num2};

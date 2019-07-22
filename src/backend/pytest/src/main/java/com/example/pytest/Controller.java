@@ -20,7 +20,7 @@ public class Controller {
     @RequestMapping("/py")
     public String py() throws IOException, InterruptedException {
         String exe = "python";
-        String command = "C:\\Users\\19643\\Desktop\2.py";
+        String command = "./1.py";
         String num1 = "1";
         String num2 = "2";
         String[] cmdArr = new String[] {exe, command, num1, num2};
