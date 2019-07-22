@@ -21,13 +21,17 @@ public class Controller {
     public String py() throws IOException, InterruptedException {
         String exe = "python";
         String command = "./1.py";
-        String num1 = "1";
+        String num1 = "7";
         String num2 = "2";
         String[] cmdArr = new String[] {exe, command, num1, num2};
         Process process = Runtime.getRuntime().exec(cmdArr);
         InputStream is = process.getInputStream();
         DataInputStream dis = new DataInputStream(is);
-        String str = dis.readLine();
+        String a,str;
+        str="";
+        while((a = dis.readLine())!=null){
+            str+=a;
+        }
         process.waitFor();
         System.out.println(str);
         return str;
