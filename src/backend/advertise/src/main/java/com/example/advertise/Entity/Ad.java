@@ -16,10 +16,10 @@ public class Ad {
     private String title;
 
     @Lob
-    private String picture;
+    private byte[] picture;
 
     @Lob
-    private String video;
+    private byte[] video;
 
     @Lob
     private String detail;
@@ -40,18 +40,6 @@ public class Ad {
         this.entername = entername;
     }
 
-    public String getPicture() {
-        return picture;
-    }
-
-    public void setPicture(String picture) {
-        this.picture = picture;
-    }
-
-    public String getDetail() {
-        return detail;
-    }
-
     public String getTitle() {
         return title;
     }
@@ -60,12 +48,24 @@ public class Ad {
         this.title = title;
     }
 
-    public String getVideo() {
+    public byte[] getPicture() {
+        return picture;
+    }
+
+    public void setPicture(byte[] picture) {
+        this.picture = picture;
+    }
+
+    public byte[] getVideo() {
         return video;
     }
 
-    public void setVideo(String video) {
+    public void setVideo(byte[] video) {
         this.video = video;
+    }
+
+    public String getDetail() {
+        return detail;
     }
 
     public void setDetail(String detail) {
