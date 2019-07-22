@@ -1,4 +1,4 @@
-package com.example.translate.service;
+package com.example.translate.translate.service;
 
 import net.coobird.thumbnailator.Thumbnails;
 import org.apache.http.HttpEntity;

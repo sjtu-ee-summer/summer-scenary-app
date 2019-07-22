@@ -1,14 +1,8 @@
-package com.example.translate.controller;
+package com.example.translate.translate.controller;
 
-import com.example.translate.entity.TranslatePicEntity;
-import com.example.translate.entity.TranslateTextEntity;
-import com.example.translate.entity.TranslateVoiceEntity;
-import com.example.translate.repository.TranslatePicRepository;
-import com.example.translate.repository.TranslateTextRepository;
-import com.example.translate.repository.TranslateVoiceRepository;
-import com.example.translate.service.TranslatePicture;
-import com.example.translate.service.TranslateText;
-import com.example.translate.service.TranslateVoice;
+import com.example.translate.translate.entity.*;
+import com.example.translate.translate.repository.*;
+import com.example.translate.translate.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.*;

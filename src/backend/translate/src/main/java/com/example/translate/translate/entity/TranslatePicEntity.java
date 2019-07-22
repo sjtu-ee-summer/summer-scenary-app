@@ -1,4 +1,4 @@
-package com.example.translate.entity;
+package com.example.translate.translate.entity;
 
 import javax.persistence.*;
 

@@ -1,17 +1,16 @@
-package com.example.translate.entity;
+package com.example.translate.translate.entity;
 
 import javax.persistence.*;
 
 @Entity
-public class TranslateTextEntity {
-
+public class TranslateVoiceEntity {
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Lob
-    private String text;
+    private String voice;
 
     @Lob
     private String result;
@@ -26,12 +25,12 @@ public class TranslateTextEntity {
         this.id = id;
     }
 
-    public String getText() {
-        return text;
+    public String getVoice() {
+        return voice;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setVoice(String voice) {
+        this.voice = voice;
     }
 
     public String getResult() {
