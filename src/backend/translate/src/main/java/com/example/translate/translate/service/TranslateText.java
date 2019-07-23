@@ -30,13 +30,15 @@ public class TranslateText {
 
     private static final String APP_SECRET = "MRYTJISyhxTZsYUZgkEBd3LVXyMAsfHX";
 
-    public static String main(String text) throws IOException {
+    public static String main(String text, String from, String to) throws IOException {
 
         Map<String,String> params = new HashMap<String,String>();
         String q = text;
         String salt = String.valueOf(System.currentTimeMillis());
-        params.put("from", "auto");
-        params.put("to", "zh-CHS");
+//        params.put("from", "auto");
+//        params.put("to", "zh-CHS");
+        params.put("from", from);
+        params.put("to", to);
         params.put("signType", "v3");
         String curtime = String.valueOf(System.currentTimeMillis() / 1000);
         params.put("curtime", curtime);

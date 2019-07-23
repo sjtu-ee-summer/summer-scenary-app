@@ -29,13 +29,13 @@ public class TranslatePicture {
 
     private static Logger logger = LoggerFactory.getLogger(TranslatePicture.class);
 
-    public static String main(String file64) throws IOException {
+    public static String main(String file64, String from, String to) throws IOException {
 
         String appKey = "356a681fd478dcea";
         String appSecret = "MRYTJISyhxTZsYUZgkEBd3LVXyMAsfHX";
         String base64Picture = file64;
 
-        return ocrtrans(appKey,appSecret,base64Picture);
+        return ocrtrans(appKey,appSecret,base64Picture, from, to);
     }
 
     /**
@@ -44,7 +44,7 @@ public class TranslatePicture {
      * @param appSecret 应用密钥
      * @param base64Picture 图片路径
      */
-    public static String ocrtrans(String appKey,String appSecret,String base64Picture) throws IOException {
+    public static String ocrtrans(String appKey,String appSecret,String base64Picture, String from, String to) throws IOException {
         /** 图片翻译接口地址 */
         String url = "http://openapi.youdao.com/ocrtransapi";
 
@@ -52,8 +52,8 @@ public class TranslatePicture {
         Map<String,String> params = new HashMap<String,String>();
 
         String salt = String.valueOf(System.currentTimeMillis());
-        String from = "auto";
-        String to = "zh-CHS";
+//        String from = "auto";
+//        String to = "zh-CHS";
         String type = "1";
         String sign = null;
         params.put("appKey",appKey);

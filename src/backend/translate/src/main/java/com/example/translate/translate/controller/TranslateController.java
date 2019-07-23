@@ -24,11 +24,12 @@ public class TranslateController {
     private TranslateVoiceRepository translateVoiceRepository;
 
     @PostMapping("/text")
-    public String getTranslation(@RequestParam String sentence,@RequestParam Long id) throws IOException {
+    public String getTranslation(@RequestParam String sentence, @RequestParam Long id,
+                                 @RequestParam String from, @RequestParam String to) throws IOException {
         TranslateText translateText = new TranslateText();
         TranslateTextEntity text = new TranslateTextEntity();
 
-        String result = translateText.main(sentence);
+        String result = translateText.main(sentence, from, to);
         text.setText(sentence);
         text.setResult(result);
         text.setUid(id);
@@ -38,12 +39,13 @@ public class TranslateController {
     }
 
     @PostMapping("/photo")
-    public String getPicTranslation(@RequestParam("picture") String picture, @RequestParam("id") Long id) throws Exception {
+    public String getPicTranslation(@RequestParam("picture") String picture, @RequestParam("id") Long id,
+                                    @RequestParam String from, @RequestParam String to) throws Exception {
         TranslatePicture translatePicture = new TranslatePicture();
         TranslatePicEntity pic = new TranslatePicEntity();
         TextAdder textAdder = new TextAdder();
 
-        String json = translatePicture.main(picture); // json returned from API
+        String json = translatePicture.main(picture, from, to); // json returned from API
         String result = textAdder.main(json, picture);
         pic.setImage(picture);
         pic.setResult(json);
@@ -56,11 +58,11 @@ public class TranslateController {
 
     @PostMapping("/voice")
     public String getVoiceTranslation(@RequestParam("voice") String voice, @RequestParam("id") Long id,
-                                      @RequestParam("language") String language) throws IOException {
+                                      @RequestParam String from, @RequestParam String to) throws IOException {
         TranslateVoice translateVoice = new TranslateVoice();
         TranslateVoiceEntity v = new TranslateVoiceEntity();
 
-        String result = translateVoice.main(voice, language);
+        String result = translateVoice.main(voice, from, to);
         v.setVoice(voice);
         v.setResult(result);
         v.setUid(id);
