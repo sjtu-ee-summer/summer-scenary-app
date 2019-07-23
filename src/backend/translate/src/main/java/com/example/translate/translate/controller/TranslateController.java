@@ -65,6 +65,7 @@ public class TranslateController {
         v.setResult(result);
         v.setUid(id);
         translateVoiceRepository.save(v);
+
         return result;
     }
 

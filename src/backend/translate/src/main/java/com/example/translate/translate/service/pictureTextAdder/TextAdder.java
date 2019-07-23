@@ -11,6 +11,7 @@ import sun.misc.BASE64Encoder;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.*;
 
@@ -67,12 +68,26 @@ public class TextAdder {
     public static String processImage(String base64Image, String content, int x, int y) throws IOException {
         final BufferedImage image = convertStringToBufferedImage(base64Image);
 
+        // uncomment these to set highlighting opacity
+//        int alpha = 127; // 50% transparent
+//        Color myColour = new Color(105,105,105, alpha);
+
         Graphics g = image.getGraphics();
-        g.setFont(g.getFont().deriveFont(20f)); // set font type and size
-        g.setColor(Color.RED);
+
+        // set highlight
+        Color bgColor = Color.WHITE; // set this to myColour for semi-transparent background(first uncomment!)
+        FontMetrics fm = g.getFontMetrics();
+        Rectangle2D rect = fm.getStringBounds(content, g);
+        g.setColor(bgColor);
+        g.fillRect(x,
+                y - fm.getAscent(),
+                (int) rect.getWidth(),
+                (int) rect.getHeight());
+        // set text content
+//        g.setFont(g.getFont().deriveFont(20f)); // set font type and size
+        g.setColor(Color.BLACK);
         g.drawString(content, x, y);
         g.dispose();
-
 
         // bufferImage->base64
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
