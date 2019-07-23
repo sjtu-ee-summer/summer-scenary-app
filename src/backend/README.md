@@ -10,8 +10,9 @@ This README file is added to prevent duplicate work that might mess up our cloud
 - Installed Docker
 - Installed Java 1.8 | Java 8
 - Installed Maven
-- Configuring Jenkins' Job
-- Configuring Jenkins' pipeline
+- Configured Jenkins' Job
+- Configured Jenkins' pipeline
+- Compile projects' services
 
 ## Ongoing
 
@@ -19,9 +20,9 @@ This README file is added to prevent duplicate work that might mess up our cloud
 
 ## Pending
 
-- Compile projects' services
-- Run project container
+- Containerize
 - Kubernetes
+- Uninstall Redis
 
 ## Conecting to Server
 
@@ -70,13 +71,6 @@ password: 0000
 ```
 > sudo service mysql start
 > mysql -uroot -p
-```
-
-## Copy configuration file from git repo to config-server-repo
-```
-> git pull
-> cd into config-server-repo
-> cp * ~/summer/config-server-repo/ 
 ```
 
 ## Run microservices
