@@ -58,7 +58,7 @@ public class TextAdder {
     // get JSON from translate API based on a base64 formatted image input
     public String getJSON(String base64) throws IOException {
         TranslatePicture translatePicture = new TranslatePicture();
-        String result = translatePicture.main(base64);
+        String result = translatePicture.main(base64, "auto", "en");
         System.out.println(result);
 
         return result;
