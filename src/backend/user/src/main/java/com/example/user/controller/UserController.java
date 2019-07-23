@@ -9,6 +9,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -47,6 +49,11 @@ public class UserController {
         u.setUsername(username);
         u.setEmail(email);
         u.setProfile_picture(girlpicture);
+        //获得当前日期
+        Date d = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String dateNowStr = sdf.format(d);
+        u.setVipdate(java.sql.Date.valueOf(dateNowStr));
 
         User_roles user_roles = new User_roles();
         user_roles.setUsername(username);
