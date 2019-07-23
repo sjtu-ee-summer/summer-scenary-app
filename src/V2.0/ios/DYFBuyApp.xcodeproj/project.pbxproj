@@ -60,6 +60,22 @@
 		B69057B5DD7842B299B34B4E /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A94377BF9C8F4A73B01F5E73 /* libRNGestureHandler.a */; };
 		278FA7A4EC284746B9664036 /* libRNGestureHandler-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EACFE1AAB9AC424E918ABA27 /* libRNGestureHandler-tvOS.a */; };
 		DBCF9F5358E74D93B6C2862D /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59580D369FBD4511B4F30318 /* libRNCamera.a */; };
+		DA846576E06D4EE796AF4FD6 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D633E9A1B94ACBAEB56869 /* Lottie.framework */; };
+		D1A4C3B0DE8B4017BA95C863 /* libLottie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF98D4D827443AE80BA78B6 /* libLottie.a */; };
+		7BE1B715B9114EF19EE1AD2E /* libLottieReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AD3964091D47F6842C9857 /* libLottieReactNative.a */; };
+		753B148A24354C7CB5377A71 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B759469A1214C08AF868F94 /* AntDesign.ttf */; };
+		27CAFC2222D54DAB98FF9824 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A37828A10D3E4EA1845F04DD /* Fontisto.ttf */; };
+		30754EFCB6874610BFDB714F /* libAuroraIMUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB0747F8ED84F7E8106922A /* libAuroraIMUI.a */; };
+		9367F28D69B946868CC4A3B6 /* RCTAuroraIMUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE6F9141A5C41A981D2CEBF /* RCTAuroraIMUI.framework */; };
+		68ABFBCB90D04708A3699938 /* RCTAuroraIMUITests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 1D743660954040A19E31951B /* RCTAuroraIMUITests.xctest */; };
+		37802AB88C4F4A1486552884 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CEE358799748A7BBB8D6CA /* libz.tbd */; };
+		81BEF6D0360149E097AD1938 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 643B10A321444D88A0F8FDA4 /* CoreTelephony.framework */; };
+		196D4A649C1D4F64B79B87E6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A64D5EDEDC04779B89F6377 /* CFNetwork.framework */; };
+		2026272DF5424E83B475071B /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC405B272FC84861A25EDAAC /* CoreFoundation.framework */; };
+		3A3E58194D6645DD843A2D66 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A6EEE5F7774281974267EC /* SystemConfiguration.framework */; };
+		07B791E93DD043159941EEEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12CAF29FA0934AA39C7AFD3B /* Foundation.framework */; };
+		BC0B3307BEC64643BAEA7C7B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BD66C8DA524624BB7C40C1 /* UIKit.framework */; };
+		8E47F53925CE4F66BDEE2130 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 755481492B7C4E0397A3AD75 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -321,6 +337,25 @@
 		EACFE1AAB9AC424E918ABA27 /* libRNGestureHandler-tvOS.a */ = {isa = PBXFileReference; name = "libRNGestureHandler-tvOS.a"; path = "libRNGestureHandler-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		D6853A7CCE044CCDA1FE9A9A /* RNCamera.xcodeproj */ = {isa = PBXFileReference; name = "RNCamera.xcodeproj"; path = "../node_modules/react-native-camera/ios/RNCamera.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		59580D369FBD4511B4F30318 /* libRNCamera.a */ = {isa = PBXFileReference; name = "libRNCamera.a"; path = "libRNCamera.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		458D71D8BABC49A2B6266827 /* Lottie.xcodeproj */ = {isa = PBXFileReference; name = "Lottie.xcodeproj"; path = "../node_modules/lottie-ios/Lottie.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		50D633E9A1B94ACBAEB56869 /* Lottie.framework */ = {isa = PBXFileReference; name = "Lottie.framework"; path = "System/Library/Frameworks/Lottie.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		DDF98D4D827443AE80BA78B6 /* libLottie.a */ = {isa = PBXFileReference; name = "libLottie.a"; path = "libLottie.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		CBB23012E8FD4066B17F9B3F /* LottieReactNative.xcodeproj */ = {isa = PBXFileReference; name = "LottieReactNative.xcodeproj"; path = "../node_modules/lottie-react-native/src/ios/LottieReactNative.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		72AD3964091D47F6842C9857 /* libLottieReactNative.a */ = {isa = PBXFileReference; name = "libLottieReactNative.a"; path = "libLottieReactNative.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		4B759469A1214C08AF868F94 /* AntDesign.ttf */ = {isa = PBXFileReference; name = "AntDesign.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A37828A10D3E4EA1845F04DD /* Fontisto.ttf */ = {isa = PBXFileReference; name = "Fontisto.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0169275FA56746CEA2962784 /* RCTAuroraIMUI.xcodeproj */ = {isa = PBXFileReference; name = "RCTAuroraIMUI.xcodeproj"; path = "../node_modules/aurora-imui-react-native/ReactNative/ios/RCTAuroraIMUI.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		AAB0747F8ED84F7E8106922A /* libAuroraIMUI.a */ = {isa = PBXFileReference; name = "libAuroraIMUI.a"; path = "libAuroraIMUI.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		9DE6F9141A5C41A981D2CEBF /* RCTAuroraIMUI.framework */ = {isa = PBXFileReference; name = "RCTAuroraIMUI.framework"; path = "System/Library/Frameworks/RCTAuroraIMUI.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		1D743660954040A19E31951B /* RCTAuroraIMUITests.xctest */ = {isa = PBXFileReference; name = "RCTAuroraIMUITests.xctest"; path = "RCTAuroraIMUITests.xctest"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.cfbundle; explicitFileType = undefined; includeInIndex = 0; };
+		71CEE358799748A7BBB8D6CA /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
+		643B10A321444D88A0F8FDA4 /* CoreTelephony.framework */ = {isa = PBXFileReference; name = "CoreTelephony.framework"; path = "System/Library/Frameworks/CoreTelephony.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		7A64D5EDEDC04779B89F6377 /* CFNetwork.framework */ = {isa = PBXFileReference; name = "CFNetwork.framework"; path = "System/Library/Frameworks/CFNetwork.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		DC405B272FC84861A25EDAAC /* CoreFoundation.framework */ = {isa = PBXFileReference; name = "CoreFoundation.framework"; path = "System/Library/Frameworks/CoreFoundation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		D1A6EEE5F7774281974267EC /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		12CAF29FA0934AA39C7AFD3B /* Foundation.framework */ = {isa = PBXFileReference; name = "Foundation.framework"; path = "System/Library/Frameworks/Foundation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		A1BD66C8DA524624BB7C40C1 /* UIKit.framework */ = {isa = PBXFileReference; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		755481492B7C4E0397A3AD75 /* CoreGraphics.framework */ = {isa = PBXFileReference; name = "CoreGraphics.framework"; path = "System/Library/Frameworks/CoreGraphics.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,6 +392,20 @@
 				A212CB02EA8A44C4B179160F /* libRNFetchBlob.a in Frameworks */,
 				B69057B5DD7842B299B34B4E /* libRNGestureHandler.a in Frameworks */,
 				DBCF9F5358E74D93B6C2862D /* libRNCamera.a in Frameworks */,
+				DA846576E06D4EE796AF4FD6 /* Lottie.framework in Frameworks */,
+				D1A4C3B0DE8B4017BA95C863 /* libLottie.a in Frameworks */,
+				7BE1B715B9114EF19EE1AD2E /* libLottieReactNative.a in Frameworks */,
+				30754EFCB6874610BFDB714F /* libAuroraIMUI.a in Frameworks */,
+				9367F28D69B946868CC4A3B6 /* RCTAuroraIMUI.framework in Frameworks */,
+				68ABFBCB90D04708A3699938 /* RCTAuroraIMUITests.xctest in Resources */,
+				37802AB88C4F4A1486552884 /* libz.tbd in Frameworks */,
+				81BEF6D0360149E097AD1938 /* CoreTelephony.framework in Frameworks */,
+				196D4A649C1D4F64B79B87E6 /* CFNetwork.framework in Frameworks */,
+				2026272DF5424E83B475071B /* CoreFoundation.framework in Frameworks */,
+				3A3E58194D6645DD843A2D66 /* SystemConfiguration.framework in Frameworks */,
+				07B791E93DD043159941EEEB /* Foundation.framework in Frameworks */,
+				BC0B3307BEC64643BAEA7C7B /* UIKit.framework in Frameworks */,
+				8E47F53925CE4F66BDEE2130 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +558,8 @@
 				21387B56F8F647C393621D6A /* Octicons.ttf */,
 				729930FB3F09460EB0C05463 /* SimpleLineIcons.ttf */,
 				0BA57FDE1DE3471F89139EA9 /* Zocial.ttf */,
+				4B759469A1214C08AF868F94 /* AntDesign.ttf */,
+				A37828A10D3E4EA1845F04DD /* Fontisto.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -555,6 +606,9 @@
 				3B800D2F15C34D0FA534C12E /* RNFetchBlob.xcodeproj */,
 				F7AAF54E6C7049DDA30D8A26 /* RNGestureHandler.xcodeproj */,
 				D6853A7CCE044CCDA1FE9A9A /* RNCamera.xcodeproj */,
+				458D71D8BABC49A2B6266827 /* Lottie.xcodeproj */,
+				CBB23012E8FD4066B17F9B3F /* LottieReactNative.xcodeproj */,
+				0169275FA56746CEA2962784 /* RCTAuroraIMUI.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -577,6 +631,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				52083B4BDF844010A93EE85C /* Resources */,
 				9597996F215F567800119DE9 /* Recovered References */,
+				6C3CCE569F594EFD8EFF1E05 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -608,6 +663,22 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		6C3CCE569F594EFD8EFF1E05 /* Frameworks */ = {
+			isa = "PBXGroup";
+			children = (
+				71CEE358799748A7BBB8D6CA /* libz.tbd */,
+				643B10A321444D88A0F8FDA4 /* CoreTelephony.framework */,
+				7A64D5EDEDC04779B89F6377 /* CFNetwork.framework */,
+				DC405B272FC84861A25EDAAC /* CoreFoundation.framework */,
+				D1A6EEE5F7774281974267EC /* SystemConfiguration.framework */,
+				12CAF29FA0934AA39C7AFD3B /* Foundation.framework */,
+				A1BD66C8DA524624BB7C40C1 /* UIKit.framework */,
+				755481492B7C4E0397A3AD75 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -992,6 +1063,8 @@
 				61FAAEB597794C2EAB8540B0 /* Octicons.ttf in Resources */,
 				A7B4B7B0221A417083B1A58D /* SimpleLineIcons.ttf in Resources */,
 				49643D22816344CE891EE6C9 /* Zocial.ttf in Resources */,
+				753B148A24354C7CB5377A71 /* AntDesign.ttf in Resources */,
+				27CAFC2222D54DAB98FF9824 /* Fontisto.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1126,6 +1199,8 @@
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
+					"$(SRCROOT)\..\node_modules\lottie-react-native\src\ios\LottieReactNative",
+					"$(SRCROOT)\..\node_modules\aurora-imui-react-native\iOS\IMUIMessageCollectionView/**",
 				);
 				INFOPLIST_FILE = DYFBuyAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1142,6 +1217,12 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1170,6 +1251,8 @@
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
+					"$(SRCROOT)\..\node_modules\lottie-react-native\src\ios\LottieReactNative",
+					"$(SRCROOT)\..\node_modules\aurora-imui-react-native\iOS\IMUIMessageCollectionView/**",
 				);
 				INFOPLIST_FILE = DYFBuyAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1186,6 +1269,12 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1216,6 +1305,8 @@
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
+					"$(SRCROOT)\..\node_modules\lottie-react-native\src\ios\LottieReactNative",
+					"$(SRCROOT)\..\node_modules\aurora-imui-react-native\iOS\IMUIMessageCollectionView/**",
 				);
 				INFOPLIST_FILE = DYFBuyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1247,6 +1338,8 @@
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
+					"$(SRCROOT)\..\node_modules\lottie-react-native\src\ios\LottieReactNative",
+					"$(SRCROOT)\..\node_modules\aurora-imui-react-native\iOS\IMUIMessageCollectionView/**",
 				);
 				INFOPLIST_FILE = DYFBuyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1284,6 +1377,8 @@
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
+					"$(SRCROOT)\..\node_modules\lottie-react-native\src\ios\LottieReactNative",
+					"$(SRCROOT)\..\node_modules\aurora-imui-react-native\iOS\IMUIMessageCollectionView/**",
 				);
 				INFOPLIST_FILE = "DYFBuyApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1299,6 +1394,12 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1337,6 +1438,8 @@
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
+					"$(SRCROOT)\..\node_modules\lottie-react-native\src\ios\LottieReactNative",
+					"$(SRCROOT)\..\node_modules\aurora-imui-react-native\iOS\IMUIMessageCollectionView/**",
 				);
 				INFOPLIST_FILE = "DYFBuyApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1352,6 +1455,12 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1392,6 +1501,12 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.DYFBuyApp-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1426,6 +1541,12 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.DYFBuyApp-tvOSTests";

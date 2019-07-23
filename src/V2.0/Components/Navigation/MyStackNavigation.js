@@ -11,6 +11,7 @@ import TabMainScreen from "./TabMainScreen";
 import MainPage from "../MainPage/Main"
 import DetailScreen from "../CameraPage/DetailScreen"
 import NothinScreen from "../CameraPage/NothingScreen"
+import UserPage from "../MinePage/Mine"
 
 const MyStackNavigation = createStackNavigator({
     Main: {
@@ -64,6 +65,23 @@ const MyStackNavigation = createStackNavigator({
 
     DetailScreen: {
         screen: DetailScreen,
+        navigationOptions: ({ navigation }) => ({
+            headerTitleStyle: {
+                alignSelf: 'center',
+            },
+            headerLeft: (
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <Image
+                        source={require('../Assets/NavigationPage/back_icon.png')}
+                        style={{ width: 30, height: 30 }}
+                    />
+                </TouchableOpacity>
+            ),
+        }),
+    },
+
+    UserPage: {
+        screen: UserPage,
         navigationOptions: ({ navigation }) => ({
             headerTitleStyle: {
                 alignSelf: 'center',

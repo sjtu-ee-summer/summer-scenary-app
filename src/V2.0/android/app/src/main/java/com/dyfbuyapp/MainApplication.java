@@ -2,7 +2,9 @@ package com.dyfbuyapp;
 
 import android.app.Application;
 
+import cn.jiguang.imui.messagelist.ReactIMUIPackage;
 import com.facebook.react.ReactApplication;
+import com.airbnb.android.react.lottie.LottiePackage;
 import cn.qiuxiang.react.amap3d.AMap3DPackage;
 import org.reactnative.camera.RNCameraPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
@@ -36,6 +38,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new ReactIMUIPackage(),
+            new LottiePackage(),
             new AMap3DPackage(),
             new RNCameraPackage(),
             new RNGestureHandlerPackage(),

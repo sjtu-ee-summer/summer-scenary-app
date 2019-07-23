@@ -13,7 +13,7 @@ import {
 import { StackNavigator } from 'react-navigation';
 export default class SecondScreen extends React.Component {
     static navigationOptions = {
-        tabBarLabel: '个人中心',
+        tabBarLabel: '行程规划',
         headerTitle: 'Second',
         tabBarIcon: ({ tintColor }) => (
             <Image
