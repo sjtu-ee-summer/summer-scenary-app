@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: loadbalancer
+
+server:
+  port: 30458
+
+ping-server:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:9092,localhost:9999
+    ServerListRefreshInterval: 15000

@@ -1,0 +1,89 @@
+.clear {
+    clear: both;
+}
+
+.translator {
+    width: 80%;
+    margin: 0 10%;
+}
+.translator__title {
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.translator__workarea {
+    display: flex;
+    justify-content: space-between;
+}
+
+.translator__half {
+    width: 48%;
+}
+
+.translator__textarea {
+    height: 200px;  /* fixed */
+}
+
+.translator__buttonarea {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.translator__button {
+    margin-top: 3px;
+    margin-right: 20px;
+}
+
+.translator__confbutton {
+    float: right;
+}
+
+.textarea-1 {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: solid 1px #777777
+}
+
+.button-1 {
+    padding: 8px 0;
+    width: 130px;
+    text-align: center;
+    transition-duration: 0.4s;
+    border-radius: 3px;
+    border: solid 2px #555555;
+    cursor: pointer;
+    background-color: #fff;
+    color: #555555;
+    outline: none;
+}
+
+.button-1:hover {
+    background-color: #555555;
+    color: white;
+}
+
+.gearbutton {
+    background: url(./gear.svg) center no-repeat;
+    cursor: pointer;
+    border: none;
+    width: 26px;
+    height: 26px;
+    outline: none;
+}
+
+.textfield-row {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    padding: 8px 0;
+}
+
+.textfield-row__label {
+    margin-right: 5px;
+}
+.textfield-row__input {
+    width: 86%;
+}
