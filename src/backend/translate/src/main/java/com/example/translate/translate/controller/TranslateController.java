@@ -3,6 +3,7 @@ package com.example.translate.translate.controller;
 import com.example.translate.translate.entity.*;
 import com.example.translate.translate.repository.*;
 import com.example.translate.translate.service.*;
+import com.example.translate.translate.service.pictureTextAdder.TextAdder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.*;
@@ -37,25 +38,29 @@ public class TranslateController {
     }
 
     @PostMapping("/photo")
-    public String getPicTranslation(@RequestParam("picture") String picture, @RequestParam("id") Long id) throws IOException {
+    public String getPicTranslation(@RequestParam("picture") String picture, @RequestParam("id") Long id) throws Exception {
         TranslatePicture translatePicture = new TranslatePicture();
         TranslatePicEntity pic = new TranslatePicEntity();
+        TextAdder textAdder = new TextAdder();
 
-        String result = translatePicture.main(picture);
+        String json = translatePicture.main(picture); // json returned from API
+        String result = textAdder.main(json, picture);
         pic.setImage(picture);
-        pic.setResult(result);
+        pic.setResult(json);
         pic.setUid(id);
+        pic.setResultInBase64(result);
         translatePicRepository.save(pic);
 
         return result;
     }
 
     @PostMapping("/voice")
-    public String getVoiceTranslation(@RequestParam("voice") String voice, @RequestParam("id") Long id) throws IOException {
+    public String getVoiceTranslation(@RequestParam("voice") String voice, @RequestParam("id") Long id,
+                                      @RequestParam("language") String language) throws IOException {
         TranslateVoice translateVoice = new TranslateVoice();
         TranslateVoiceEntity v = new TranslateVoiceEntity();
 
-        String result = translateVoice.main(voice);
+        String result = translateVoice.main(voice, language);
         v.setVoice(voice);
         v.setResult(result);
         v.setUid(id);

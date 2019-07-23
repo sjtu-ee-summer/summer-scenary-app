@@ -16,6 +16,9 @@ public class TranslatePicEntity {
         @Lob
         private String result;
 
+        @Lob
+        private String resultInBase64;
+
         private Long uid;
 
     public Long getId() {
@@ -48,5 +51,13 @@ public class TranslatePicEntity {
 
     public void setUid(Long uid) {
         this.uid = uid;
+    }
+
+    public String getResultInBase64() {
+        return resultInBase64;
+    }
+
+    public void setResultInBase64(String resultInBase64) {
+        this.resultInBase64 = resultInBase64;
     }
 }

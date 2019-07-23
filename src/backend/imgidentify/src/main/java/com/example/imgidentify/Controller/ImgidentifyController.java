@@ -73,7 +73,6 @@ public class ImgidentifyController {
         process.waitFor();
         System.out.println(str);
         return str;
-
     }
 
     @RequestMapping("/hello/{id}")

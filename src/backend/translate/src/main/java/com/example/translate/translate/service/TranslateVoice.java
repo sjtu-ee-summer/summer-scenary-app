@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 public class TranslateVoice {
-    public static String main(String voiceIn64) throws IOException {
+    public static String main(String voiceIn64, String language) throws IOException {
         /** openapiurl */
         String url = "http://openapi.youdao.com/speechtransapi";
         /** 请求参数 */
@@ -34,7 +34,7 @@ public class TranslateVoice {
         /** 音频参数部分 */
         String q = voiceIn64;
         /** 源语言 */
-        String from = "en";
+        String from = "language";
         /** 目标语言 */
         String to = "zh-CHS";
         /** 音频格式：目前支持pcm和wav(pcm编码) */
