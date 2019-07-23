@@ -3,6 +3,7 @@ package com.example.user.entity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table(name="user")
@@ -23,6 +24,8 @@ public class User
     private String email;
 
     private int vip=0;
+
+    private Date vipdate ;
 
     private String sex="null";
 
@@ -50,6 +53,13 @@ public class User
 
     }
 
+    public Date getVipdate() {
+        return vipdate;
+    }
+
+    public void setVipdate(Date vipdate) {
+        this.vipdate = vipdate;
+    }
 
     public void setPhone(String phone) {
         this.phone = phone;
