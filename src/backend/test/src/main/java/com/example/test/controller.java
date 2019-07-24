@@ -5,9 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URLDecoder;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -31,16 +29,24 @@ public class controller
     public String baike(@RequestParam String keyword) throws IOException, InterruptedException {
         String exe = "python";
         String command = "./baike.py";
-        String[] cmdArr = new String[] {exe, command, keyword};
+        String[] cmdArr = new String[] {exe, command,keyword};
         Process process = Runtime.getRuntime().exec(cmdArr);
-        InputStream is = process.getInputStream();
-        DataInputStream dis = new DataInputStream(is);
-        String a,str;
-        str="";
-        while((a = dis.readLine())!=null){
-            str+=a;
-        }
+//        InputStream is = process.getInputStream();
+//        DataInputStream dis = new DataInputStream(is);
+//        String a,str;
+//        str="";
+//        while((a = dis.readLine())!=null){
+//            str+=a;
+//        }
         process.waitFor();
+        BufferedReader in = new BufferedReader(new FileReader("py"));
+        String str,a;
+        str="";
+        while((a=in.readLine())!=null){
+            str = str + a;
+        }
+
+
 //        String ppp = "b'\\xe5\\xa4\\xa9\\xe5\\xae\\x89\\xe9\\x97\\xa8'";
 //        byte[] b = ppp.getBytes();
 //        String sa = new String(b,"utf-8");

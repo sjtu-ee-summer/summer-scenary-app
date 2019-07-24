@@ -11,9 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.List;
 
 @RestController
@@ -71,6 +69,25 @@ public class ImgidentifyController {
             str+=a;
         }
         process.waitFor();
+        System.out.println(str);
+        return str;
+    }
+
+    @RequestMapping("/baike")
+    public String baike(@RequestParam String keyword) throws IOException, InterruptedException {
+        String exe = "python";
+        String command = "./baike.py";
+        String[] cmdArr = new String[] {exe, command,keyword};
+        Process process = Runtime.getRuntime().exec(cmdArr);
+
+        process.waitFor();
+        BufferedReader in = new BufferedReader(new FileReader("py"));
+        String str,a;
+        str="";
+        while((a=in.readLine())!=null){
+            str = str + a;
+        }
+
         System.out.println(str);
         return str;
     }
