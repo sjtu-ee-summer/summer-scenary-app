@@ -1,0 +1,37 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\15826\\Desktop\\rn3\\rn3\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh\\values-zh.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\15826\\.gradle\\caches\\transforms-1\\files-1.1\\WheelPicker-1.0.3.aar\\3f06d38a6ec89c377ee11656b5dca1b3\\res\\values-zh\\values-zh.xml",
+                    "from": {
+                        "startLines": "2,16",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,425",
+                        "endLines": "15,29",
+                        "endColumns": "19,19",
+                        "endOffsets": "420,759"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\15826\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.8.aar\\6db52dc0e3a37889d63f6e42a15a5aeb\\res\\values-zh\\values-zh.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,98,153,194,239,287,333,378,422,467,509,551,592,641",
+                        "endColumns": "42,54,40,44,47,45,44,43,44,41,41,40,48,42",
+                        "endOffsets": "93,148,189,234,282,328,373,417,462,504,546,587,636,679"
+                    },
+                    "to": {
+                        "startLines": "30,31,32,33,34,35,36,37,38,39,40,41,42,43",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "764,807,862,903,948,996,1042,1087,1131,1176,1218,1260,1301,1350",
+                        "endColumns": "42,54,40,44,47,45,44,43,44,41,41,40,48,42",
+                        "endOffsets": "802,857,898,943,991,1037,1082,1126,1171,1213,1255,1296,1345,1388"
+                    }
+                }
+            ]
+        }
+    ]
+}

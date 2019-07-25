@@ -1,0 +1,10 @@
+#Wed Jul 24 14:05:43 CST 2019
+path.2=classes3.dex
+path.1=classes2.dex
+path.0=classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+base.2=C\:\\Users\\15826\\Desktop\\rn3\\rn3\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+base.1=C\:\\Users\\15826\\Desktop\\rn3\\rn3\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+base.0=C\:\\Users\\15826\\Desktop\\rn3\\rn3\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0

@@ -45,8 +45,8 @@ class TabMainScreen extends React.Component {
                 />
                 <View style={{ backgroundColor: "#fff", height: 20}}/>
                 <Button
-                    onPress={() => this.props.navigation.navigate('NothingScreen')}
-                    title="Go to NothinScreen"
+                    onPress={() => this.props.navigation.navigate('ChangeLang')}
+                    title="Go to ChangeLang"
                 />
             </View>
 

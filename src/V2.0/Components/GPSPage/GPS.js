@@ -1,267 +1,237 @@
 import React from 'react';
 import {
-    AppRegistry,
-    Text,
-    View,
-    Button,
-    StyleSheet,
-    Image,
-    Switch,
-    ScrollView,
-    ListView, FlatList
+  AppRegistry,
+  Text,
+  View,
+  Button,
+  StyleSheet,
+  Image,
+  Switch,
+  ScrollView,
+  ListView, FlatList,
+  TouchableOpacity
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { requestLocationPermission } from './utils'
 import styles from './styles'
 
-var Dimensions = require('Dimensions');
-var screenWidth = Dimensions.get('window').width;
-var GuestYouLikeView = require('./Round')
-var createReactClass = require('create-react-class');
-
-var guestData = require('../../Component1/Home/GuestYouLikeData.json')
-var ShopTopCommonView = require('../../Component1/Home/ShopTopCommonView')
-
 import { MapView } from 'react-native-amap3d'
+import VectorIcon from 'react-native-vector-icons/MaterialIcons';
 
 var longtitude = ''
 var latitude = ''
-var roundData = ''
-
+var result = []
 
 export default class Trans extends React.Component {
-    static navigationOptions = {
-        tabBarLabel: '定位',
-        headerTitle: 'Second',
-        tabBarIcon: ({ tintColor }) => (
-            <Image
-                source={require('../Assets/GPSPage/GPS_unpress.png')}
-                style={[styles.icon, { tintColor: tintColor }]}
-            />
-        ),
-    };
+  static navigationOptions = {
+    tabBarLabel: '定位',
+    headerTitle: 'Second',
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require('../Assets/GPSPage/GPS_unpress.png')}
+        style={[styles.icon, { tintColor: tintColor }]}
+      />
+    ),
+  };
 
-    state = {
-        showsCompass: true,
-        showsScale: true,
-        showsZoomControls: true,
-        showsLocationButton: true,
-        logs: [],
-    }
+  state = {
+    showsCompass: true,
+    showsScale: true,
+    showsZoomControls: true,
+    showsLocationButton: true,
+    logs: [],
+  }
 
-    componentDidMount() {
-        requestLocationPermission()
-    }
+  componentDidMount() {
+    requestLocationPermission()
+  }
 
-    _log(event, data) {
-        this.setState({
-            logs: [
-                {
-                    key: Date.now().toString(),
-                    time: new Date().toLocaleString(),
-                    event,
-                    data: JSON.stringify(data, null, 2),
-                },
-                ...this.state.logs,
-            ],
-        })
-        if (this.state.logs.length > 0) {
-            var location = JSON.parse(this.state.logs[0].data)
-            longtitude = location.longitude
-            latitude = location.latitude
-            console.log(longtitude)
-            console.log(latitude)
-        }
-        // console.log("地理信息")
-        // console.log(this.state.logs[0])
-        // longtitude = this.state.logs[0].longitude
-        // latitude = this.state.logs[0].latitude
-        // console.log(longtitude)
-        // console.log(latitude)
-    }
+  _log(event, data) {
+    this.setState({
+      logs: [
+        {
+          key: Date.now().toString(),
+          time: new Date().toLocaleString(),
+          event,
+          data: JSON.stringify(data, null, 2),
+        },
+        ...this.state.logs,
+      ],
+    }, () => {
 
-    _logPressEvent = ({ nativeEvent }) => this._log('onPress', nativeEvent)
-    _logLongPressEvent = ({ nativeEvent }) => this._log('onLongPress', nativeEvent)
-    _logLocationEvent = ({ nativeEvent }) => this._log('onLocation', nativeEvent)
-    _logStatusChangeCompleteEvent = ({ nativeEvent }) => this._log('onStatusChangeComplete', nativeEvent)
-
-    _renderItem = ({ item }) =>
-        <Text style={styles.logText}>{item.time} {item.event}: {item.data}</Text>
-
-    render() {
-        return (
-
-            // <Button
-            //     onPress={() => this.props.navigation.goBack()}
-            //     title="Go back home"
-            // />
-            <View>
-                <View style={styles.mapStyle}>
-
-                    <View style={styles.controls}>
-                        <View style={styles.control}>
-                            <Text>指南针</Text>
-                            <Switch
-                                style={styles.switch}
-                                onValueChange={showsCompass => this.setState({ showsCompass })}
-                                value={this.state.showsCompass}
-                            />
-                        </View>
-                        <View style={styles.control}>
-                            <Text>比例尺</Text>
-                            <Switch
-                                style={styles.switch}
-                                onValueChange={showsScale => this.setState({ showsScale })}
-                                value={this.state.showsScale}
-                            />
-                        </View>
-                        <View style={styles.control}>
-                            <Text>定位</Text>
-                            <Switch
-                                style={styles.switch}
-                                onValueChange={showsLocationButton => this.setState({ showsLocationButton })}
-                                value={this.state.showsLocationButton}
-                            />
-                        </View>
-                        <View style={styles.control}>
-                            <Text>缩放</Text>
-                            <Switch
-                                style={styles.switch}
-                                onValueChange={showsZoomControls => this.setState({ showsZoomControls })}
-                                value={this.state.showsZoomControls}
-                            />
-                        </View>
-                    </View>
-                    <MapView
-                        locationEnabled
-                        locationInterval={1000000}
-                        distanceFilter={10}
-                        onPress={this._logPressEvent}
-                        onLongPress={this._logLongPressEvent}
-                        onLocation={this._logLocationEvent}
-                        // onStatusChangeComplete={this._logStatusChangeCompleteEvent}
-                        // style={styles.body}
-                        // locationEnabled={this.state.showsLocationButton}
-                        showsCompass={this.state.showsCompass}
-                        showsScale={this.state.showsScale}
-                        showsLocationButton={this.state.showsLocationButton}
-                        showsZoomControls={this.state.showsZoomControls}
-                        style={styles.map}
-                    />
-                </View>
-                {/* <FlatList
-          style={styles.logs}
-          data={this.state.logs}
-          renderItem={this._renderItem}
-        /> */}
-                <ScrollView
-                    directionalLockEnabled={true}
-                    showsVerticalScrollIndicator={false}
-                    bounces={false}
-                >
-                    <Round></Round>
-                </ScrollView>
-            </View>
-
-        );
-    }
-}
-
-var Round = createReactClass({
-
-    getDefaultProps() {
-      return {
-        guestData: guestData,
-        roundData: ''
-      }
-    },
-  
-    getInitialState() {
-      const { guestData } = this.props;
-      var listData = guestData.data.poiInfos;
-  
-      var ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-      return {
-        dataSource: ds.cloneWithRows(listData),
-      }
-    },
-  
-    
-  
-    getRoundData() {
-      console.log(latitude)
+      var location = JSON.parse(this.state.logs[0].data)
+      longtitude = location.longitude
+      latitude = location.latitude
+      console.log('地理信息1')
       console.log(longtitude)
-      var boundary = 'nearby(' + latitude + ',' + longtitude + ',' + '1000)'
-      console.log(boundary)
-      return fetch('https://apis.map.qq.com/ws/place/v1/search?boundary='
-        + boundary + '&page_size=' + '20' + '&page_index=' + '1' + '&keyword=' +
-        '美食' + '&orderby=' + '_distance' + '&key=' + 'TVHBZ-WUDCI-UZQGY-5544C-Z6IUV-WCFKD')
-        .then((response) => {
-          console.log(response)
-          return response.json()
+      console.log(latitude)
+      // this._UpLocation1Async();
+      // this._UpLocation2Async();
+      // console.log('地理信息2')
+      // AsyncStorage.getItem('longtitude')
+      // .then((value) => {
+      //   const data = JSON.parse(value);
+      //   console.log(data);
+      // });
+      // AsyncStorage.getItem('latitude')
+      // .then((value) => {
+      //   const data = JSON.parse(value);
+      //   console.log(data);
+      // });
+
+    })
+  }
+
+  // _UpLocation1Async = async () => {
+  //   await AsyncStorage.setItem('longtitude', JSON.stringify(longtitude));
+  // }
+
+  // _UpLocation2Async = async () => {
+  //   await AsyncStorage.setItem('latitude', JSON.stringify(latitude));
+  // }
+
+  _logPressEvent = ({ nativeEvent }) => this._log('onPress', nativeEvent)
+  _logLongPressEvent = ({ nativeEvent }) => this._log('onLongPress', nativeEvent)
+  _logLocationEvent = ({ nativeEvent }) => this._log('onLocation', nativeEvent)
+  _logStatusChangeCompleteEvent = ({ nativeEvent }) => this._log('onStatusChangeComplete', nativeEvent)
+
+  _renderItem = ({ item }) =>
+    <Text style={styles.logText}>{item.time} {item.event}: {item.data}</Text>
+
+  async toFood() {
+    await this.getRoundData()
+  }
+
+  getRoundData() {
+    var location = latitude + ',' + longtitude
+    return fetch('http://api.map.baidu.com/place/v2/search?query=美食&location=' +
+      location + '&radius=2000&output=json&ak=GVtyjdY7UzwghWplLuGgGcoSiDYHcqb6&scope=2&output=json&page_size=5')
+      .then((response) => {
+        console.log(response)
+        return response.json()
+      })
+      .then((responseJson) => {
+        roundData = responseJson.results
+        console.log(roundData)
+      })
+      .then(() => {
+        this.getResult().then(() => {
+          console.log('result')
+          console.log(result)
+          this.props.navigation.navigate('FoodPage', { longtitude: longtitude, latitude: latitude, result: result })
+
         })
-        .then((responseJson) => {
-          console.log(responseJson.data)
-          roundData = responseJson.data
-          console.log(roundData)
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    },
-  
-    render() {
-      if (longtitude != '') {
-        console.log("round")
-        this.getRoundData()
-  
-      }
-  
-      // console.log(this.props.showsCompass)
-      const { guestData } = this.props;
-  
-      return (
-        <View style={styles.containerStyle}>
-          <ShopTopCommonView
-            data={guestData.topData}
-          >
-          </ShopTopCommonView>
-          <ListView
-            contentContainerStyle={styles.listContainerStyle}
-            dataSource={this.state.dataSource}
-            renderRow={this.renderRow}
-          >
-          </ListView>
-          {/* <FlatList
-            style={styles.listContainerStyle}
-            data={roundData}
-            renderItem={this.renderRow}
-          /> */}
-  
-  
-        </View>
-      );
-    },
-  
-    renderRow(data) {
-  
-      return (
-        <View style={styles.cellStyle}>
-          {/* <Image source={{ uri: data.frontImg }} style={styles.cellImageStyle}></Image> */}
-          <View style={styles.cellRightStyle}>
-            <Text style={{ fontSize: 14, fontWeight: 'bold' }}>{data.title}</Text>
-            <Text style={{ fontSize: 10, color: 'gray', marginVertical: 5 }}>{data.address}</Text>
-            <View style={styles.cellRightBottomStyle}>
-              {/* <Text style={{ fontSize: 10, color: 'gray' }}>{`人均¥${data.avgPrice}`}</Text> */}
-              {/* <Text style={{ fontSize: 10, color: 'orange', marginLeft: 100 }}>{`${data.allCommentNum}条评论`}</Text> */}
-            </View>
-          </View>
-        </View>
-  
-      )
-  
-  
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
+  async getResult() {
+    for (var i = 0; i < roundData.length; i++) {
+      var url = roundData[i].detail_info.detail_url
+      console.log("url")
+      console.log(url)
+      await this.getPic(url, i)
+      console.log(result)
     }
-  
-  })
+
+  }
+
+  getPic(pic, i) {
+    let url = "http://202.120.40.8:30454/imgidentify/imgidentify/py"
+    let formData = new FormData()
+    formData.append("url", pic)
+    return fetch(url, {
+      credentials: 'include',
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer b634ba05-9718-49c3-9e1d-89a02bbc848a'
+      },
+      body: formData
+    }).then((response) => {
+      console.log("fetch")
+      return response.text()
+    }).then((r) => {
+      console.log(r)
+      result[i] = r
+    }).catch((error) => {
+      console.log(error)
+    })
+
+  }
+
+  render() {
+    return (
+
+      // <Button
+      //     onPress={() => this.props.navigation.goBack()}
+      //     title="Go back home"
+      // />
+      <View>
+        <View style={styles.mapStyle}>
+          <MapView
+            locationEnabled
+            locationInterval={1000000}
+            distanceFilter={10}
+            onPress={this._logPressEvent}
+            onLongPress={this._logLongPressEvent}
+            onLocation={this._logLocationEvent}
+            onStatusChangeComplete={this._logStatusChangeCompleteEvent}
+            // style={styles.body}
+            // locationEnabled={this.state.showsLocationButton}
+            showsCompass={this.state.showsCompass}
+            showsScale={this.state.showsScale}
+            showsLocationButton={this.state.showsLocationButton}
+            showsZoomControls={this.state.showsZoomControls}
+            style={styles.map}
+          />
+        </View>
+        <ScrollView
+          directionalLockEnabled={true}
+          showsVerticalScrollIndicator={false}
+          bounces={false}
+        >
+          <View style={styles.containerStyle1}>
+            <TouchableOpacity onPress={() => { this.props.navigation.navigate('FoodPage', { longtitude: longtitude, latitude: latitude})}}>
+              <View style={styles.containerStyle}>
+                <View style={styles.leftStyle}>
+                  <Image style={{ width: 20, height: 20, resizeMode: 'contain' }} source={require('../Assets/GPSPage/food.png')}></Image>
+                  <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 5 }}>美食</Text>
+                </View>
+                <View style={styles.rightStyle}>
+                  <VectorIcon name="chevron-right" size={25} color={'gray'}></VectorIcon>
+                </View>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => { this.props.navigation.navigate('HotelPage', { longtitude: longtitude, latitude: latitude}) }}>
+              <View style={styles.containerStyle}>
+                <View style={styles.leftStyle}>
+                  <Image style={{ width: 20, height: 20, resizeMode: 'contain' }} source={require('../Assets/GPSPage/hotel.png')}></Image>
+                  <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 5 }}>酒店</Text>
+                </View>
+                <View style={styles.rightStyle}>
+                  <VectorIcon name="chevron-right" size={25} color={'gray'}></VectorIcon>
+                </View>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => { this.props.navigation.navigate('ShopPage', { longtitude: longtitude, latitude: latitude}) }}>
+              <View style={styles.containerStyle}>
+                <View style={styles.leftStyle}>
+                  <Image style={{ width: 20, height: 20, resizeMode: 'contain' }} source={require('../Assets/GPSPage/shop.png')}></Image>
+                  <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 5 }}>购物</Text>
+                </View>
+                <View style={styles.rightStyle}>
+                  <VectorIcon name="chevron-right" size={25} color={'gray'}></VectorIcon>
+                </View>
+              </View>
+            </TouchableOpacity>
+
+          </View>
+        </ScrollView>
+      </View>
+
+    );
+  }
+}
 

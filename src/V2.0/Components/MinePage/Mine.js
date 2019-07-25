@@ -89,7 +89,7 @@ export default class Main extends React.Component {
     }
 
     _signOutAsync = async () => {
-        await AsyncStorage.clear();
+        await AsyncStorage.setItem('userToken', '');
         this.props.navigation.navigate('Auth');
     };
 

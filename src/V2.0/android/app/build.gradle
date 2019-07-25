@@ -140,6 +140,7 @@ dependencies {
     implementation project(':react-native-fetch-blob')
     implementation project(':react-native-fs')
     implementation project(':react-native-file-selector')
+    compile project(':react-native-wheel-picker')
     compile project(':aurora-imui-react-native')
     compile project(':react-native-sound')
     compile project(':react-native-audio')

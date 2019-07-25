@@ -7,16 +7,18 @@ import {
     StyleSheet,
     View,
     LayoutAnimation,
+    Platform,
+    UIManager,
 } from 'react-native';
 import { createStackNavigator, createSwitchNavigator, createAppContainer } from 'react-navigation';
-import Background from '../components/background'
-import LogoCircle from '../components/login_screen/logo_circle'
-import InitialView from '../components/login_screen/initial_view'
-import SignInForm from '../components/login_screen/signIn_form'
-import SignUpForm from '../components/login_screen/signUp_form'
-import ForgotPassForm from '../components/login_screen/forgotPassword_form'
+import Background from './background'
+import LogoCircle from './login_screen/logo_circle'
+import InitialView from './login_screen/initial_view'
+import SignInForm from './login_screen/signIn_form'
+import SignUpForm from './login_screen/signUp_form'
+import ForgotPassForm from './login_screen/forgotPassword_form'
 import * as Animatable from 'react-native-animatable'
-import { getColor } from '../components/config'
+import { getColor } from './config'
 
 export default class SignInScreen extends React.Component {
     static navigationOptions = {
@@ -33,6 +35,10 @@ export default class SignInScreen extends React.Component {
             signIn: false,
             signUp: false,
             forgotPass: false
+        }
+
+        if (Platform.OS === 'android') {
+            UIManager.setLayoutAnimationEnabledExperimental(true)
         }
     }
 
@@ -72,6 +78,23 @@ export default class SignInScreen extends React.Component {
                 onBackFromForgotPass={this._onBackFromForgotPass.bind(this)} />
             : null
 
+        let hello_bg
+
+        if(this.state.signIn | this.state.signUp | this.state.forgotPass)
+            hello_bg = require('../Assets/LoginPage/login_back1.png')
+
+        else
+            hello_bg = require('../Assets/LoginPage/login_back.jpg')
+
+
+        let logo
+
+        if (this.state.signUp)
+            logo = null
+
+        else
+            logo = <LogoCircle />
+
         return (
             // <View style={styles.container}>
             //     <Button title="Sign in!" onPress={this._signInAsync} />
@@ -82,13 +105,13 @@ export default class SignInScreen extends React.Component {
                     animated={true}
                 />
 
-                <Background imgSrouce={require('../Assets/LoginPage/login_back.jpg')} />
+                <Background imgSrouce={hello_bg} />
 
                 <Animatable.View
                     animation="bounceInDown"
                     style={styles.logoContainer}
                     delay={animationDelay}>
-                    <LogoCircle />
+                    {logo}
                 </Animatable.View>
 
                 {initialView}

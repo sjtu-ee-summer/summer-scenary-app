@@ -12,6 +12,11 @@ import MainPage from "../MainPage/Main"
 import DetailScreen from "../CameraPage/DetailScreen"
 import NothinScreen from "../CameraPage/NothingScreen"
 import UserPage from "../MinePage/Mine"
+import ChangeLang from "../TransPage/ChangeLang"
+import MasterPage from "../TransPage/MasterPage"
+import Shop from "../GPSPage/Shop"
+import Food from "../GPSPage/Food"
+import Hotel from "../GPSPage/Hotel"
 
 const MyStackNavigation = createStackNavigator({
     Main: {
@@ -113,5 +118,97 @@ const MyStackNavigation = createStackNavigator({
             ),
         }),
     },
+
+    ChangeLang: {
+        screen: ChangeLang,
+        navigationOptions: ({ navigation }) => ({
+            headerTitleStyle: {
+                alignSelf: 'center',
+            },
+            title: '语种选择',
+            headerLeft: (
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <Image
+                        source={require('../Assets/NavigationPage/back_icon.png')}
+                        style={{ width: 30, height: 30 }}
+                    />
+                </TouchableOpacity>
+            ),
+        }),
+    },
+
+    MasterPage: {
+        screen: MasterPage,
+        navigationOptions: ({ navigation }) => ({
+            headerTitleStyle: {
+                alignSelf: 'center',
+            },
+            title: '专家翻译',
+            headerLeft: (
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <Image
+                        source={require('../Assets/NavigationPage/back_icon.png')}
+                        style={{ width: 30, height: 30 }}
+                    />
+                </TouchableOpacity>
+            ),
+        }),
+    },
+
+    ShopPage: {
+        screen: Shop,
+        navigationOptions: ({ navigation }) => ({
+            headerTitleStyle: {
+                alignSelf: 'center',
+            },
+            title: '购物中心',
+            headerLeft: (
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <Image
+                        source={require('../Assets/NavigationPage/back_icon.png')}
+                        style={{ width: 30, height: 30 }}
+                    />
+                </TouchableOpacity>
+            ),
+        }),
+    },
+
+    HotelPage: {
+        screen: Hotel,
+        navigationOptions: ({ navigation }) => ({
+            headerTitleStyle: {
+                alignSelf: 'center',
+            },
+            title: '附近酒店',
+            headerLeft: (
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <Image
+                        source={require('../Assets/NavigationPage/back_icon.png')}
+                        style={{ width: 30, height: 30 }}
+                    />
+                </TouchableOpacity>
+            ),
+        }),
+    },
+
+    FoodPage: {
+        screen: Food,
+        navigationOptions: ({ navigation }) => ({
+            headerTitleStyle: {
+                alignSelf: 'center',
+            },
+            title: '周边美食',
+            headerLeft: (
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <Image
+                        source={require('../Assets/NavigationPage/back_icon.png')}
+                        style={{ width: 30, height: 30 }}
+                    />
+                </TouchableOpacity>
+            ),
+        }),
+    },
+
+
 });
 export default createAppContainer(MyStackNavigation);

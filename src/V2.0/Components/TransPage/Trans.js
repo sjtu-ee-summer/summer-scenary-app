@@ -1,77 +1,3 @@
-// import React from 'react';
-// import {
-//     AppRegistry,
-//     Text,
-//     View,
-//     Button,
-//     StyleSheet,
-//     Image,
-// } from 'react-native';
-// import { StackNavigator } from 'react-navigation';
-// import { GiftedChat } from 'react-native-gifted-chat'
-// export default class Trans extends React.Component {
-//     static navigationOptions = {
-//         tabBarLabel: '翻译',
-//         headerTitle: 'Second',
-//         tabBarIcon: ({ tintColor }) => (
-//             <Image
-//                 source={require('../Assets/TransPage/trans_icon.png')}
-//                 style={[styles.icon, { tintColor: tintColor }]}
-//             />
-//         ),
-//     };
-//     state = {
-//         messages: [],
-//     }
-
-//     componentWillMount() {
-//         this.setState({
-//             messages: [
-//                 {
-//                     _id: 1,
-//                     text: 'Hello developer',
-//                     createdAt: new Date(),
-//                     user: {
-//                         _id: 2,
-//                         name: 'React Native',
-//                         avatar: 'https://placeimg.com/140/140/any',
-//                     },
-//                 },
-//             ],
-//         })
-//     }
-
-//     onSend(messages = []) {
-//         this.setState(previousState => ({
-//             messages: GiftedChat.append(previousState.messages, messages),
-//         }))
-//     }
-
-//     render() {
-//         return (
-//             <GiftedChat
-//                 messages={this.state.messages}
-//                 onSend={messages => this.onSend(messages)}
-//                 user={{
-//                     _id: 1,
-//                 }}
-//             />
-
-//             // <Button
-//             //     onPress={() => this.props.navigation.goBack()}
-//             //     title="Go back home"
-//             // />
-//         );
-//     }
-// }
-
-// const styles = StyleSheet.create({
-//     icon: {
-//         width: 26,
-//         height: 26,
-//     },
-// });
-
 import React, { Component } from 'react'
 
 import {
@@ -82,10 +8,14 @@ import {
     Button,
     Platform,
     Image,
-    StatusBar
+    StatusBar,
+    TouchableOpacity
 } from 'react-native'
+import ActionButton from 'react-native-action-button';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 var RNFS = require('react-native-fs')
+var forge = require('node-forge');
 
 var ReactNative = require('react-native')
 import IMUI from 'aurora-imui-react-native'
@@ -93,7 +23,6 @@ var InputView = IMUI.ChatInput
 var MessageListView = IMUI.MessageList
 const AuroraIController = IMUI.AuroraIMUIController
 const window = Dimensions.get('window')
-
 
 var themsgid = 1
 
@@ -107,13 +36,13 @@ function constructNormalMessage() {
     var date = new Date()
     message.timeString = date.getHours() + ":" + date.getMinutes()
     var user = {
-        userId: "",
-        displayName: "replace your nickname",
-        avatarPath: "images"
+        userId: "didi",
+        displayName: "didi",
+        avatarPath: "http://pv18mucav.bkt.clouddn.com/IMG_7948.JPG"
     }
-    if (Platform.OS === "ios") {
-        user.avatarPath = RNFS.MainBundlePath + '/default_header.png'
-    }
+    // if (Platform.OS === "ios") {
+    //     user.avatarPath = RNFS.MainBundlePath + '/default_header.png'
+    // }
     message.fromUser = user
 
     return message
@@ -155,7 +84,7 @@ export default class TestRNIMUI extends Component {
         if (Platform.OS === "ios") {
             initHeight = 46
         } else {
-            initHeight = 100
+            initHeight = 50
         }
         this.state = {
             inputLayoutHeight: initHeight,
@@ -192,7 +121,7 @@ export default class TestRNIMUI extends Component {
         var messages = []
         for (var index in imageUrlArray) {
             var message = constructNormalMessage()
-            message.fromUser.avatarUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534926548887&di=f107f4f8bd50fada6c5770ef27535277&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F11%2F67%2F23%2F69i58PICP37.jpg",//1
+            message.fromUser.avatarUrl = "http://pv18mucav.bkt.clouddn.com/IMG_7948.JPG",//1
                 message.msgType = 'image'
             message.mediaPath = imageUrlArray[index]
             message.contentSize = { 'height': 100, 'width': 200 }
@@ -203,30 +132,6 @@ export default class TestRNIMUI extends Component {
         }
         AuroraIController.appendMessages(messages)
         AuroraIController.scrollToBottom(true)
-
-        // for (var i = 0; i < 10; i++) {
-        //   var message = constructNormalMessage()
-        //   message.msgType = 'custom'
-
-        //   if (Platform.OS === "ios") {
-        //     message.content = `
-        //     <h5>This is a custom message. </h5>
-        //     <img src="file://${RNFS.MainBundlePath}/default_header.png"/>
-        //     `
-        //   } else {
-        //     message.content = '<body bgcolor="#ff3399"><h5>This is a custom message. </h5>\
-        //     <img src="/storage/emulated/0/XhsEmoticonsKeyboard/Emoticons/wxemoticons/icon_040_cover.png"></img></body>'
-        //   }
-
-        //   var eventMessage = constructNormalMessage()
-        //   eventMessage.msgType = "event"
-        //   eventMessage.text = 'fsadfad'
-
-        //   message.contentSize = { 'height': 100, 'width': 200 }
-        //   message.extras = { "extras": "fdfsf" }
-        //   AuroraIController.appendMessages([message, eventMessage])
-        //   AuroraIController.scrollToBottom(true)
-        // }
     }
 
     onInputViewSizeChange = (size) => {
@@ -283,22 +188,22 @@ export default class TestRNIMUI extends Component {
     }
 
     onAvatarClick = (message) => {
-        Alert.alert()
-        AuroraIController.removeMessage(message.msgId)
+        // Alert.alert("删除消息")
+        // AuroraIController.removeMessage(message.msgId)
     }
 
     onMsgClick(message) {
-        console.log(message)
-        Alert.alert("message", JSON.stringify(message))
+        // console.log(message)
+        // Alert.alert("message", JSON.stringify(message))
     }
 
     onMsgLongClick = (message) => {
-        Alert.alert('message bubble on long press', 'message bubble on long press')
+        // Alert.alert('message bubble on long press', 'message bubble on long press')
     }
 
     onStatusViewClick = (message) => {
-        message.status = 'send_succeed'
-        AuroraIController.updateMessage(message)
+        // message.status = 'send_succeed'
+        // AuroraIController.updateMessage(message)
     }
 
     onBeginDragMessageList = () => {
@@ -313,21 +218,21 @@ export default class TestRNIMUI extends Component {
     onPullToRefresh = () => {
         console.log("on pull to refresh")
         var messages = []
-        for (var i = 0; i < 14; i++) {
-            var message = constructNormalMessage()
-            // if (index%2 == 0) {
-            message.msgType = "text"
-            message.text = "" + i
-            // }
+        // for (var i = 0; i < 3; i++) {
+        //     var message = constructNormalMessage()
+        //     // if (index%2 == 0) {
+        //     message.msgType = "text"
+        //     message.text = "" + i
+        //     // }
 
-            if (i % 3 == 0) {
-                message.msgType = "video"
-                message.text = "" + i
-                message.mediaPath = "/storage/emulated/0/ScreenRecorder/screenrecorder.20180323101705.mp4"
-                message.duration = 12
-            }
-            messages.push(message)
-        }
+        //     if (i % 3 == 0) {
+        //         message.msgType = "video"
+        //         message.text = "" + i
+        //         message.mediaPath = "/storage/emulated/0/ScreenRecorder/screenrecorder.20180323101705.mp4"
+        //         message.duration = 12
+        //     }
+        //     messages.push(message)
+        // }
         AuroraIController.insertMessagesToTop(messages)
         if (Platform.OS === 'android') {
             this.refs["MessageList"].refreshComplete()
@@ -343,6 +248,75 @@ export default class TestRNIMUI extends Component {
         message.text = text
 
         AuroraIController.appendMessages([message])
+
+        var getResult = this.getTextTranslationFromApiAsync(text)
+
+        console.log(getResult)
+
+    }
+
+    getTextTranslationFromApiAsync(text) {
+
+        var appid = '20190718000319144';
+        var md = forge.md.md5.create();
+        var salt = '123';
+        var key = 'S3PZKNS_brMlFuxMCNP5';
+        var sign = appid + text + salt + key;
+        md.update(sign);
+        var password = md.digest().toHex();
+
+        fetch('https://fanyi-api.baidu.com/api/trans/vip/translate?q=' + text + '&from=' + 'en' +
+            '&to=' + 'zh' + '&appid=' + '20190718000319144' + '&salt=' + '123' + '&sign=' + password)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Invalid')
+                }
+                console.log(response)
+                return response.json()
+            })
+            .then((responseJson) => {
+                console.log(responseJson);
+                return responseJson.trans_result[0].dst
+            })
+            .then((getResult) => {
+                var message = constructNormalMessage()
+                message.msgType = "custom"
+                message.msgId = "10"
+                message.status = "send_going"
+                message.isOutgoing = false
+                message.content = '翻译结果：' + getResult
+                // message.contentSize = { 'height': 100, 'width': 200 }
+                message.extras = { "extras": "fdfsf" }
+                var user = {
+                    userId: "",
+                    displayName: "",
+                    avatarPath: ""
+                }
+                user.displayName = ""
+                user.avatarPath = "http://pv18mucav.bkt.clouddn.com/Qs.Picture.view.png"
+                message.fromUser = user
+                AuroraIController.appendMessages([message]);
+            })
+            .catch((error) => {
+                console.error(error);
+                var message = constructNormalMessage()
+                message.msgType = "custom"
+                message.msgId = "10"
+                message.status = "send_going"
+                message.isOutgoing = false
+                message.content = '哎呀，出错啦'
+                // message.contentSize = { 'height': 100, 'width': 200 }
+                message.extras = { "extras": "fdfsf" }
+                var user = {
+                    userId: "",
+                    displayName: "",
+                    avatarPath: ""
+                }
+                user.displayName = ""
+                user.avatarPath = "http://pv18mucav.bkt.clouddn.com/Qs.Picture.view.png"
+                message.fromUser = user
+                AuroraIController.appendMessages([message]);
+            });
     }
 
     onTakePicture = (media) => {
@@ -367,6 +341,79 @@ export default class TestRNIMUI extends Component {
         message.duration = duration
         AuroraIController.appendMessages([message])
         console.log("on finish record voice")
+        this.UploadVoice(mediaPath)
+    }
+
+    UploadVoice(pathTo) {
+        RNFS.readFile(pathTo, 'base64')
+            .then((content) => {
+                console.log(content)
+                let url = "http://202.120.40.8:30454/translate/translate/voice"
+                let formData = new FormData();
+                this.tmp = content
+                formData.append("voice", this.tmp);
+                formData.append("id", '1');
+
+                fetch(url, {
+                    credentials: 'include',
+                    method: 'POST',
+                    headers: {
+                        // 'Content-Type': 'application/x-www-form-urlencoded',
+                        'Authorization': 'Bearer 5d650d28-b487-4c88-94e9-5970f37291f1'
+                    },
+                    body: formData
+                }).then((response) => {
+                    return response.json();
+                })
+                    .then((myJson) => {
+                        console.log(myJson)
+                        return myJson.translation
+                    })
+                    .then((result) => {
+                        console.log(result[0])
+                        return result[0]
+                    })
+                    .then((getResult) => {
+                        var message = constructNormalMessage()
+                        message.msgType = "custom"
+                        message.msgId = "10"
+                        message.status = "send_going"
+                        message.isOutgoing = false
+                        message.content = '翻译结果：' + getResult
+                        // message.contentSize = { 'height': 100, 'width': 200 }
+                        message.extras = { "extras": "fdfsf" }
+                        var user = {
+                            userId: "",
+                            displayName: "",
+                            avatarPath: ""
+                        }
+                        user.displayName = ""
+                        user.avatarPath = "http://pv18mucav.bkt.clouddn.com/Qs.Picture.view.png"
+                        message.fromUser = user
+                        AuroraIController.appendMessages([message]);
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                        var message = constructNormalMessage()
+                        message.msgType = "custom"
+                        message.msgId = "10"
+                        message.status = "send_going"
+                        message.isOutgoing = false
+                        message.content = '糟糕，服务器坏掉啦，请稍后再试'
+                        // message.contentSize = { 'height': 100, 'width': 200 }
+                        message.extras = { "extras": "fdfsf" }
+                        var user = {
+                            userId: "",
+                            displayName: "",
+                            avatarPath: ""
+                        }
+                        user.displayName = ""
+                        user.avatarPath = "http://pv18mucav.bkt.clouddn.com/Qs.Picture.view.png"
+                        message.fromUser = user
+                        AuroraIController.appendMessages([message]);
+                    })
+
+            });
     }
 
     onCancelRecordVoice = () => {
@@ -398,7 +445,7 @@ export default class TestRNIMUI extends Component {
          * 
          * 代码用例不做裁剪操作。
          */
-        Alert.alert('fas', JSON.stringify(mediaFiles))
+        // Alert.alert('fas', JSON.stringify(mediaFiles))
         for (index in mediaFiles) {
             var message = constructNormalMessage()
             if (mediaFiles[index].mediaType == "image") {
@@ -409,13 +456,90 @@ export default class TestRNIMUI extends Component {
             }
 
             message.mediaPath = mediaFiles[index].mediaPath
-            message.timeString = "8:00"
-            message.status = "send_going"
+            message.timeString = ""
+            message.status = "send_succeed"
             AuroraIController.appendMessages([message])
             AuroraIController.scrollToBottom(true)
+            this.UploadVoice(message.mediaPath)
         }
 
         this.resetMenu()
+    }
+
+    UploadVoice(pathTo) {
+        RNFS.readFile(pathTo, 'base64')
+            .then((content) => {
+                let url = "http://202.120.40.8:30454/translate/translate/photo"
+                let formData = new FormData();
+                this.tmp = content
+                formData.append("picture", this.tmp);
+                formData.append("id", '1');
+
+                fetch(url, {
+                    credentials: 'include',
+                    method: 'POST',
+                    headers: {
+                        // 'Content-Type': 'application/x-www-form-urlencoded',
+                        'Authorization': 'Bearer 5d650d28-b487-4c88-94e9-5970f37291f1'
+                    },
+                    body: formData
+                }).then((response) => {
+                    return response.json();
+                })
+                    .then((myJson) => {
+                        console.log("result");
+                        console.log(myJson);
+                        return myJson.resRegions
+                    })
+                    .then((result) => {
+                        console.log(result)
+                        var data = ''
+                        for (var i = 0; i < result.length; i++) {
+                            data += result[i].tranContent
+                            console.log(result[i])
+                        }
+                        return data
+                    })
+                    .then((getResult) => {
+                        var message = constructNormalMessage()
+                        message.msgType = "custom"
+                        message.msgId = "10"
+                        message.status = "send_going"
+                        message.isOutgoing = false
+                        message.content = '翻译结果：' + getResult
+                        // message.contentSize = { 'height': 100, 'width': 200 }
+                        message.extras = { "extras": "fdfsf" }
+                        var user = {
+                            userId: "",
+                            displayName: "",
+                            avatarPath: ""
+                        }
+                        user.displayName = ""
+                        user.avatarPath = "http://pv18mucav.bkt.clouddn.com/Qs.Picture.view.png"
+                        message.fromUser = user
+                        AuroraIController.appendMessages([message]);
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                        var message = constructNormalMessage()
+                        message.msgType = "custom"
+                        message.msgId = "10"
+                        message.status = "send_going"
+                        message.isOutgoing = false
+                        message.content = '糟糕，服务器坏掉啦，请稍后再试'
+                        // message.contentSize = { 'height': 100, 'width': 200 }
+                        message.extras = { "extras": "fdfsf" }
+                        var user = {
+                            userId: "",
+                            displayName: "",
+                            avatarPath: ""
+                        }
+                        user.displayName = ""
+                        user.avatarPath = "http://pv18mucav.bkt.clouddn.com/Qs.Picture.view.png"
+                        message.fromUser = user
+                        AuroraIController.appendMessages([message]);
+                    })
+            });
     }
 
     onSwitchToMicrophoneMode = () => {
@@ -477,52 +601,6 @@ export default class TestRNIMUI extends Component {
     render() {
         return (
             <View style={styles.container}>
-                
-
-                <View style={this.state.navigationBar}
-                    ref="NavigatorView">
-                    <Button
-                        style={styles.sendCustomBtn}
-                        title="Custom Message"
-                        onPress={() => {
-                            if (Platform.OS === 'ios') {
-                                var message = constructNormalMessage()
-                                message.msgType = 'custom'
-                                message.content = `
-                <h5>This is a custom message. </h5>
-                <img src="file://${RNFS.MainBundlePath}/default_header.png"/>
-                `
-                                console.log(message.content)
-                                message.contentSize = { 'height': 100, 'width': 200 }
-                                message.extras = { "extras": "fdfsf" }
-                                AuroraIController.appendMessages([message])
-                                AuroraIController.scrollToBottom(true)
-                            } else {
-                                var message = constructNormalMessage()
-                                message.msgType = "custom"
-                                message.msgId = "10"
-                                message.status = "send_going"
-                                message.isOutgoing = true
-                                message.content = `
-                <body bgcolor="#ff3399">
-                  <h5>This is a custom message. </h5>
-                  <img src="/storage/emulated/0/XhsEmoticonsKeyboard/Emoticons/wxemoticons/icon_040_cover.png"></img>
-                </body>`
-                                message.contentSize = { 'height': 100, 'width': 200 }
-                                message.extras = { "extras": "fdfsf" }
-                                var user = {
-                                    userId: "1",
-                                    displayName: "",
-                                    avatarPath: ""
-                                }
-                                user.displayName = "0001"
-                                user.avatarPath = "ironman"
-                                message.fromUser = user
-                                AuroraIController.appendMessages([message]);
-                            }
-                        }}>
-                    </Button>
-                </View>
                 <MessageListView style={this.state.messageListLayout}
                     ref="MessageList"
                     isAllowPullToRefresh={true}
@@ -533,14 +611,16 @@ export default class TestRNIMUI extends Component {
                     onTapMessageCell={this.onTapMessageCell}
                     onBeginDragMessageList={this.onBeginDragMessageList}
                     onPullToRefresh={this.onPullToRefresh}
-                    avatarSize={{ width: 50, height: 50 }}
+                    avatarSize={{ width: 30, height: 30 }}
                     avatarCornerRadius={25}
                     messageListBackgroundColor={"#f3f3f3"}
-                    sendBubbleTextSize={18}
+                    sendBubbleTextSize={15}
                     sendBubbleTextColor={"#000000"}
-                    sendBubblePadding={{ left: 10, top: 10, right: 15, bottom: 10 }}
+                    sendBubblePadding={{ left: 10, top: 2, right: 15, bottom: 2 }}
+                    receiveBubbleTextSize={15}
                     datePadding={{ left: 5, top: 5, right: 5, bottom: 5 }}
                     dateBackgroundColor={"#F3F3F3"}
+                    dateTextColor="#000000"
                     photoMessageRadius={5}
                     maxBubbleWidth={0.7}
                     videoDurationTextColor={"#ffffff"}
@@ -569,16 +649,28 @@ export default class TestRNIMUI extends Component {
                     showSelectAlbumBtn={true}
                     showRecordVideoBtn={false}
                     onClickSelectAlbum={this.onClickSelectAlbum}
-                    inputPadding={{ left: 30, top: 10, right: 10, bottom: 10 }}
-                    galleryScale={0.6}//default = 0.5
+                    inputPadding={{ left: 8, top: 0, right: 8, bottom: 0 }}
+                    inputTextSize={15}
+                    galleryScale={0.5}//default = 0.5
                     compressionQuality={0.6}
-                    cameraQuality={0.7}//default = 0.5
+                    cameraQuality={0.5}//default = 0.5
                     customLayoutItems={{
-                        left: [],
+                        left: [''],
                         right: ['send'],
-                        bottom: ['voice', 'gallery', 'emoji', 'camera']
+                        bottom: ['gallery', 'camera', 'voice']
                     }}
                 />
+                <ActionButton buttonColor="#e85a71" size={30} offsetX={5} offsetY={5} verticalOrientation="down" >
+                    <ActionButton.Item buttonColor='#fc9d9a' title="主页" onPress={() => this.props.navigation.goBack()}>
+                        <Icon name="ios-home" style={styles.actionButtonIcon} />
+                    </ActionButton.Item>
+                    <ActionButton.Item buttonColor='#f9cdad' title="语种选择" onPress={() => this.props.navigation.navigate('ChangeLang')}>
+                        <Icon name="ios-brush" style={styles.actionButtonIcon} />
+                    </ActionButton.Item>
+                    <ActionButton.Item buttonColor='#c8c8a9' title="专家翻译" onPress={() => this.props.navigation.navigate('MasterPage')}>
+                        <Icon name="md-contacts" style={styles.actionButtonIcon} />
+                    </ActionButton.Item>
+                </ActionButton>
             </View>
         );
     }
@@ -610,6 +702,11 @@ const styles = StyleSheet.create({
         width: 26,
         height: 26,
     },
+    actionButtonIcon: {
+        fontSize: 20,
+        height: 22,
+        color: 'white'
+    }
 });
 
 

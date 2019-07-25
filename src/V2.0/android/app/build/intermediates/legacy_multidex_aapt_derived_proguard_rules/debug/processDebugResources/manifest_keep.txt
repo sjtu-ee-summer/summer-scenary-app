@@ -1,0 +1,2 @@
+# Referenced at C:\Users\15826\Desktop\rn3\rn3\android\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:39
+-keep class com.dyfbuyapp.MainApplication { <init>(); }

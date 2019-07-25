@@ -3,41 +3,67 @@ var Dimensions = require('Dimensions');
 var sWidth = Dimensions.get('window').width;
 
 export default StyleSheet.create({
+  containerStyle3: {
+    flex: 1,
+    // justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5F1ED',
+},
+  containerStyle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: sWidth,
+    height: 45,
+    borderBottomColor: '#F5F5F9',
+    borderBottomWidth: 1,
+  },
+  leftStyle: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 5,
+  },
+  rightStyle: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 5,
+  },
   icon: {
     width: 26,
     height: 26,
-},
-  containerStyle: {
-    marginTop: 15,
+  },
+  containerStyle1: {
     backgroundColor: '#F5F1ED',
-},
-listContainerStyle: {
+  },
+  listContainerStyle: {
     width: sWidth,
-},
-cellStyle: {
+  },
+  cellStyle: {
     flexDirection: 'row',
     alignItems: 'center',
     borderBottomColor: '#F5F1ED',
     borderBottomWidth: 1,
     padding: 10,
-},
-cellImageStyle: {
+  },
+  cellImageStyle: {
     width: 100,
     height: 50,
-},
-cellRightStyle: {
+  },
+  cellRightStyle: {
     marginLeft: 10,
     alignItems: 'flex-start',
     marginRight: 5,
-},
-cellRightBottomStyle: {
+  },
+  cellRightBottomStyle: {
     flexDirection: 'row',
     // justifyContent: 'space-between',
     alignItems: 'center',
-},
+  },
 
   mapStyle: {
-    height: 300,
+    height: 375,
     backgroundColor: '#F5F5F9'
   },
   map: {
@@ -77,5 +103,26 @@ cellRightBottomStyle: {
   },
   switch: {
     marginTop: 5,
+  },
+  cellStyle: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderBottomColor: '#F5F1ED',
+    borderBottomWidth: 1,
+    padding: 10,
+  },
+  cellImageStyle: {
+    width: 100,
+    height: 50,
+  },
+  cellRightStyle: {
+    marginLeft: 10,
+    alignItems: 'flex-start',
+    marginRight: 5,
+  },
+  cellRightBottomStyle: {
+    flexDirection: 'row',
+    // justifyContent: 'space-between',
+    alignItems: 'center',
   },
 })
