@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/TranslateApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/TranslateApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/example/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/example/user/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/Controller/ImgidentifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/Controller/ImgidentifyController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -277,7 +275,7 @@
       <workItem from="1563760576528" duration="648000" />
       <workItem from="1564035179214" duration="1243000" />
       <workItem from="1564062872892" duration="606000" />
-      <workItem from="1564101833093" duration="901000" />
+      <workItem from="1564101833093" duration="1588000" />
     </task>
     <servers />
   </component>
@@ -299,10 +297,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34223000" />
+    <option name="totallyTimeSpent" value="34910000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29473683" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
