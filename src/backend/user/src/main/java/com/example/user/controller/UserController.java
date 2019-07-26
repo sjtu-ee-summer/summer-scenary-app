@@ -43,17 +43,35 @@ public class UserController {
     //tested
     @RequestMapping("/un/signup")
     public String addUser(@RequestParam String username,@RequestParam String password,
-                        @RequestParam String email){
-        User uTest = userRepository.findUserByUsername(username);
-        if (uTest != null) {
+                        @RequestParam String email, @RequestParam String phone, @RequestParam String sex){
+        User uTest1 = userRepository.findUserByUsername(username);
+        if (uTest1 != null) {
             return "username already exists";
+        }
+
+        User uTest2 = userRepository.findUserByEmail(email);
+        if (uTest2 != null) {
+            return "email already exists";
+        }
+
+        User uTest3 = userRepository.findUserByPhone(phone);
+        if (uTest3 != null) {
+            return "phone number already exists";
         }
 
         User u = new User();
         u.setPassword(password);
         u.setUsername(username);
         u.setEmail(email);
-        u.setProfile_picture(girlpicture);
+        u.setPhone(phone);
+        u.setSex(sex);
+        if (sex == "female") {
+            u.setProfile_picture(girlpicture);
+        } else if (sex == "male") {
+            u.setProfile_picture(boypicture);
+        } else {
+            u.setProfile_picture(null); // no profile picture for gays or lesbians
+        }
         //获得当前日期
         Date d = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -65,6 +83,7 @@ public class UserController {
         user_roles.setRole("ROLE_USER");
         userRolesReposiroty.save(user_roles);
         userRepository.save(u);
+
         return "register success";
     }
 
@@ -74,12 +93,11 @@ public class UserController {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         User u = userRepository.findUserByUsername(username);
         if(u == null){
-            // do nothing. Waits to exit loop
+            return false;
         } else if(encoder.matches(password,u.getPassword())){
             return true;
         }
 
-        System.out.println("null");
         return false;
     }
 
@@ -121,11 +139,8 @@ public class UserController {
     public String changePassword(@RequestParam Long id,
                                  @RequestParam String oldPassword, @RequestParam String newPassword){
         User u = userRepository.findById(id).get();
-        String tempOldPassword1 = u.getPassword();
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        String tempOldPassword2 = encoder.encode(oldPassword);
-
-        if (tempOldPassword1 != tempOldPassword2) {
+        if (!encoder.matches(oldPassword, u.getPassword())) {
             return "Password not match! Not successful!";
         }
 
@@ -144,11 +159,11 @@ public class UserController {
     public String sendMail(@RequestParam String email) throws MessagingException {
         User u = userRepository.findUserByEmail(email);
 
-        if(u == null) {
+        if (u == null) {
             return "no such email";
         }
 
-        int n = 15;
+        int n = 15; // length of new password
         // chose a Character random from this String
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 + "0123456789"
