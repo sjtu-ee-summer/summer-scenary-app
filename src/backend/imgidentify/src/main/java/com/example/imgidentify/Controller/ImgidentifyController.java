@@ -75,7 +75,7 @@ public class ImgidentifyController {
 
     @RequestMapping("/baike")
     public String baike(@RequestParam String keyword) throws IOException, InterruptedException {
-        String exe = "python";
+        String exe = "python3";
         String command = "./baike.py";
         String[] cmdArr = new String[] {exe, command,keyword};
         Process process = Runtime.getRuntime().exec(cmdArr);
