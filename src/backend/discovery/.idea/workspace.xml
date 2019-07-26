@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/Controller/ImgidentifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/Controller/ImgidentifyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/example/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/example/user/controller/UserController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />

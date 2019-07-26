@@ -117,12 +117,21 @@ public class UserController {
 
     }
 
-    @RequestMapping("/users/changepassword/{id}")
-    public String changePassword(@PathVariable(value = "id") Long id,
-                                 @RequestParam String password){
+    @RequestMapping("/users/changepassword")
+    public String changePassword(@RequestParam Long id,
+                                 @RequestParam String oldPassword, @RequestParam String newPassword){
         User u = userRepository.findById(id).get();
-        u.setPassword(password);
+        String tempOldPassword1 = u.getPassword();
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        String tempOldPassword2 = encoder.encode(oldPassword);
+
+        if (tempOldPassword1 != tempOldPassword2) {
+            return "Password not match! Not successful!";
+        }
+
+        u.setPassword(newPassword);
         userRepository.save(u);
+
         return "success";
     }
 
