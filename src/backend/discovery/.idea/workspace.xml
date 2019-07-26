@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../user/src/main/java/com/example/user/service/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user/src/main/java/com/example/user/service/EmailServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user/src/main/java/com/example/user/service/SmtpMailSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/example/user/ResourceServerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/example/user/ResourceServerConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/example/user/UserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/example/user/UserApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/TranslateApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/TranslateApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../user/src/main/java/com/example/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/java/com/example/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../user/src/main/resources/bootstrap.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,7 +22,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/discovery/DiscoveryApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
@@ -57,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="218">
@@ -69,7 +61,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/example/discovery/DiscoveryApplicationTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="325">
               <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -142,8 +134,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -209,6 +199,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -219,7 +211,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../config" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -284,6 +276,8 @@
       <workItem from="1563158539038" duration="1436000" />
       <workItem from="1563760576528" duration="648000" />
       <workItem from="1564035179214" duration="1243000" />
+      <workItem from="1564062872892" duration="606000" />
+      <workItem from="1564101833093" duration="901000" />
     </task>
     <servers />
   </component>
@@ -305,12 +299,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32716000" />
+    <option name="totallyTimeSpent" value="34223000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29068825" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29473683" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -358,13 +352,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/discovery.properties" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/bootstraping.properties" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/discovery/DiscoveryApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -379,9 +366,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/example/discovery/DiscoveryApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="325">
           <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -389,10 +383,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/discovery/DiscoveryApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        <state relative-caret-position="85">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
         </state>
       </provider>
     </entry>
