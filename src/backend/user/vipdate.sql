@@ -9,8 +9,10 @@ end $$
 
 delimiter ;
 
+
 set global event_scheduler = 1;
+drop event if exists e_updateA;
 create event if not exists e_updateA
-on schedule every 10 second 
+on schedule every 86400 second
 on completion preserve
 do call update_vipdate();
