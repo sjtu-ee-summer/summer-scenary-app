@@ -19,15 +19,15 @@ public class User
 
     private String password;
 
-    private String phone="null";
+    private String phone;
 
     private String email;
 
-    private int vip=0;
+    private int vip = 0;
 
-    private Date vipdate ;
+    private Date vipdate;
 
-    private String sex="null";
+    private String sex;
 
     private int age=0;
 
