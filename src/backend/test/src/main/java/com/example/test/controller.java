@@ -16,6 +16,24 @@ import java.util.Date;
 @RestController
 public class controller
 {
+
+    @RequestMapping("/date")
+    public String date() {
+        Date d = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String dateNowStr = sdf.format(d);
+//        java.sql.Date vipdate = java.sql.Date.valueOf("2019-6-27");
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.setTime(vipdate);
+//        calendar.add(Calendar.DATE,4);
+//        Date end = calendar.getTime();
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE,30);
+        return calendar.getTime().toString();
+
+    }
+
+
     @RequestMapping("/he")
     public String time() {
         Date d = new Date();

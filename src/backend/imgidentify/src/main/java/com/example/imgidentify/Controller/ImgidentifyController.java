@@ -73,6 +73,8 @@ public class ImgidentifyController {
         return str;
     }
 
+
+
     @RequestMapping("/baike")
     public String baike(@RequestParam String keyword) throws IOException, InterruptedException {
         String exe = "python3";
@@ -105,5 +107,57 @@ public class ImgidentifyController {
     @RequestMapping("/objhis/{id}")
     List<Ideobjhi>  objectHistory(@PathVariable(value = "id") Long id) {
         return ideobjhisRepository.findAllByUid(id);
+    }
+
+    @PostMapping("/getfood")
+    public String getfood(@RequestParam String url) throws IOException, InterruptedException {
+        String exe = "python3";
+        String command = "./get_food_images.py";
+        String[] cmdArr = new String[] {exe, command, url};
+        Process process = Runtime.getRuntime().exec(cmdArr);
+        InputStream is = process.getInputStream();
+        DataInputStream dis = new DataInputStream(is);
+        String a,str;
+        str="";
+        while((a = dis.readLine())!=null){
+            str+=a;
+        }
+        process.waitFor();
+        System.out.println(str);
+        return str;
+    }
+    @PostMapping("/gethotel")
+    public String gethotel(@RequestParam String url) throws IOException, InterruptedException {
+        String exe = "python3";
+        String command = "./get_hotel_images.py";
+        String[] cmdArr = new String[] {exe, command, url};
+        Process process = Runtime.getRuntime().exec(cmdArr);
+        InputStream is = process.getInputStream();
+        DataInputStream dis = new DataInputStream(is);
+        String a,str;
+        str="";
+        while((a = dis.readLine())!=null){
+            str+=a;
+        }
+        process.waitFor();
+        System.out.println(str);
+        return str;
+    }
+    @PostMapping("/getshopping")
+    public String getshopping(@RequestParam String url) throws IOException, InterruptedException {
+        String exe = "python3";
+        String command = "./get_shopping_images.py";
+        String[] cmdArr = new String[] {exe, command, url};
+        Process process = Runtime.getRuntime().exec(cmdArr);
+        InputStream is = process.getInputStream();
+        DataInputStream dis = new DataInputStream(is);
+        String a,str;
+        str="";
+        while((a = dis.readLine())!=null){
+            str+=a;
+        }
+        process.waitFor();
+        System.out.println(str);
+        return str;
     }
 }

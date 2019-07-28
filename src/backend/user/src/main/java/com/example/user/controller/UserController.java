@@ -11,7 +11,9 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.web.bind.annotation.*;
 
 import javax.mail.MessagingException;
+import javax.sql.DataSource;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -280,7 +282,27 @@ public class UserController {
     @RequestMapping("/users/improvip/{id}")
     public User improPermission(@PathVariable(value = "id") Long id){
         User u = userRepository.findById(id).get();
-        u.setVip(u.getVip()+1);
+        int vip = u.getVip();
+        if(vip == 1) {
+            java.sql.Date olddate = u.getVipdate();
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(olddate);
+            calendar.add(Calendar.DATE,30);
+            Date newdate = calendar.getTime();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String newsdate = sdf.format(newdate);
+            java.sql.Date newsqldate = java.sql.Date.valueOf(newsdate);
+            u.setVipdate(newsqldate);
+        }else {
+            u.setVip(1);
+            Calendar calendar = Calendar.getInstance();
+            calendar.add(Calendar.DATE,30);
+            Date newdate = calendar.getTime();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String newsdate = sdf.format(newdate);
+            java.sql.Date newsqldate = java.sql.Date.valueOf(newsdate);
+            u.setVipdate(newsqldate);
+        }
         return userRepository.save(u);
     }
 
