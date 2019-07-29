@@ -279,7 +279,7 @@ public class UserController {
     }
 
     //tested
-    @RequestMapping("/users/improvip/{id}")
+    @RequestMapping("/un/improvip/{id}")
     public User improPermission(@PathVariable(value = "id") Long id){
         User u = userRepository.findById(id).get();
         int vip = u.getVip();

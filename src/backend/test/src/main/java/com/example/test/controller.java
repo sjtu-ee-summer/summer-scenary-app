@@ -1,6 +1,7 @@
 package com.example.test;
 
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,13 @@ import java.util.Date;
 @RestController
 public class controller
 {
+    @RequestMapping("/hello/{id}")
+    public String hello(@PathVariable(value = "id") Long id) {
+        System.out.println(id);
+        System.out.println("hello world");
+        return "hello";
+    }
+
 
     @RequestMapping("/date")
     public String date() {
