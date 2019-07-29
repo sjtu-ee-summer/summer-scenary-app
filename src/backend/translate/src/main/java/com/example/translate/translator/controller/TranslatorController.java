@@ -78,4 +78,15 @@ public class TranslatorController {
 
         return null;
     }
+
+    @CrossOrigin
+    @PostMapping("/registertranslator")
+    public String registertranslator(@RequestParam String name) {
+        TranslatorProfileEntity translatorProfileEntity = new TranslatorProfileEntity();
+        translatorProfileEntity.setName(name);
+        translatorProfileRepository.save(translatorProfileEntity);
+
+        return "success";
+    }
+
 }
