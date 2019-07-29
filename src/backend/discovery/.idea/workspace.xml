@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feae16ea-2dc3-497e-b1b1-5563c6037870" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../advertise/src/main/resources/bootstrap.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../advertise/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../advertise/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../advertise/src/main/java/com/example/advertise/AdvertiseApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../advertise/src/main/java/com/example/advertise/AdvertiseApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../advertise/src/main/java/com/example/advertise/ResourceServerConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../advertise/src/main/java/com/example/advertise/controller/AdController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../advertise/src/main/java/com/example/advertise/controller/AdController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../advertise/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config/src/main/java/com/example/config/ConfigApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../config/src/main/java/com/example/config/ConfigApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/translator/controller/TranslatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/translator/controller/TranslatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/translator/repository/TranslatorProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../translate/src/main/java/com/example/translate/translator/repository/TranslatorProfileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../user/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/ResourceServerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../imgidentify/src/main/java/com/example/imgidentify/ResourceServerConfiguration.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +48,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../configdiscovery" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -123,7 +116,7 @@
       <workItem from="1564062872892" duration="606000" />
       <workItem from="1564101833093" duration="1588000" />
       <workItem from="1564131843778" duration="667000" />
-      <workItem from="1564368760397" duration="2341000" />
+      <workItem from="1564368760397" duration="3265000" />
     </task>
     <servers />
   </component>

@@ -21,6 +21,5 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
                 .hasRole("USER")
                 .anyRequest()
                 .authenticated();
-
     }
 }
