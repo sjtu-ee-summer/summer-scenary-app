@@ -1,0 +1,3 @@
+rootProject.name = 'Haerbin'
+
+include ':app'
