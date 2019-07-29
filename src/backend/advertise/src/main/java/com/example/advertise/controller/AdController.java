@@ -38,15 +38,14 @@ public class AdController {
         BufferedOutputStream out = new BufferedOutputStream(
                 new FileOutputStream(new File("p.jpg")));
         out.write(ad.getPicture());
-        return "succss";
+        return "success";
     }
 
-
     @CrossOrigin
-    @RequestMapping("/uploadimg")
+    @RequestMapping("/uploading")
     public String upload(@RequestParam("file") MultipartFile file) {
-        if(!file.isEmpty()) {
-            try{
+        if (!file.isEmpty()) {
+            try {
                 BufferedOutputStream out = new BufferedOutputStream(
                         new FileOutputStream(new File(
                                 file.getOriginalFilename())));
@@ -55,22 +54,22 @@ public class AdController {
                 out.write((file.getBytes()));
                 out.flush();
                 out.close();
-            }catch (FileNotFoundException e) {
+            } catch (FileNotFoundException e) {
                 e.printStackTrace();
                 return "上传失败" + e.getMessage();
-            }catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
                 return "上传失败" + e.getMessage();
             }
             System.out.println("上传成功");
             return "上传成功";
-        }else{
+        } else {
             return "文件为空";
         }
     }
 
     @CrossOrigin
-    @RequestMapping(value = "/upload",method = RequestMethod.POST)
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public String upload(HttpServletRequest request) throws IOException {
         MultipartHttpServletRequest params=((MultipartHttpServletRequest) request);
         MultipartFile imgfile = params.getFile("imgfile");
@@ -86,7 +85,7 @@ public class AdController {
         a.setDetail(detail);
         a.setTitle(title);
         adRepository.save(a);
-        return "upload succss";
-    }
 
+        return "upload success";
+    }
 }

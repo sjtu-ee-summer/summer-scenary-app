@@ -81,12 +81,14 @@ public class TranslatorController {
 
     @CrossOrigin
     @PostMapping("/registertranslator")
-    public String registertranslator(@RequestParam String name) {
+    public Long registertranslator(@RequestParam String name) {
         TranslatorProfileEntity translatorProfileEntity = new TranslatorProfileEntity();
         translatorProfileEntity.setName(name);
         translatorProfileRepository.save(translatorProfileEntity);
+        translatorProfileEntity = translatorProfileRepository.findByName(name);
+        Long translatorJobID = translatorProfileEntity.getId();
 
-        return "success";
+        return translatorJobID; // returns Job ID upon successful registration
     }
 
 }
