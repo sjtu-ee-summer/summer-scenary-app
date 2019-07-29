@@ -1,17 +1,15 @@
-package com.example.configdiscovery;
+package com.example.discovery;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @SpringBootApplication
-@EnableConfigServer
 @EnableEurekaServer
-public class ConfigdiscoveryApplication {
+public class DiscoveryApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ConfigdiscoveryApplication.class, args);
+		SpringApplication.run(DiscoveryApplication.class, args);
 	}
 
 }
