@@ -15,11 +15,14 @@ public class Ad {
 
     private String title;
 
-    @Lob
-    private byte[] picture;
+//    @Lob
+//    private byte[] picture;
 
     @Lob
-    private byte[] video;
+    private String base64picture;
+
+//    @Lob
+//    private byte[] video;
 
     @Lob
     private String detail;
@@ -48,21 +51,21 @@ public class Ad {
         this.title = title;
     }
 
-    public byte[] getPicture() {
-        return picture;
-    }
-
-    public void setPicture(byte[] picture) {
-        this.picture = picture;
-    }
-
-    public byte[] getVideo() {
-        return video;
-    }
-
-    public void setVideo(byte[] video) {
-        this.video = video;
-    }
+//    public byte[] getPicture() {
+//        return picture;
+//    }
+//
+//    public void setPicture(byte[] picture) {
+//        this.picture = picture;
+//    }
+//
+//    public byte[] getVideo() {
+//        return video;
+//    }
+//
+//    public void setVideo(byte[] video) {
+//        this.video = video;
+//    }
 
     public String getDetail() {
         return detail;
@@ -70,5 +73,13 @@ public class Ad {
 
     public void setDetail(String detail) {
         this.detail = detail;
+    }
+
+    public String getBase64picture() {
+        return base64picture;
+    }
+
+    public void setBase64picture(String base64picture) {
+        this.base64picture = base64picture;
     }
 }

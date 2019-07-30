@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
+import java.util.Base64;
 import java.util.List;
 
 @RestController
@@ -32,14 +33,14 @@ public class AdController {
         return (List<Ad>) adRepository.findAll();
     }
 
-    @RequestMapping("/hello")
-    public String hello() throws IOException {
-        Ad ad = adRepository.findById(1l).get();
-        BufferedOutputStream out = new BufferedOutputStream(
-                new FileOutputStream(new File("p.jpg")));
-        out.write(ad.getPicture());
-        return "success";
-    }
+//    @RequestMapping("/hello")
+//    public String hello() throws IOException {
+//        Ad ad = adRepository.findById(1l).get();
+//        BufferedOutputStream out = new BufferedOutputStream(
+//                new FileOutputStream(new File("p.jpg")));
+//        out.write(ad.getPicture());
+//        return "success";
+//    }
 
     @CrossOrigin
     @RequestMapping("/uploading")
@@ -73,19 +74,27 @@ public class AdController {
     public String upload(HttpServletRequest request) throws IOException {
         MultipartHttpServletRequest params=((MultipartHttpServletRequest) request);
         MultipartFile imgfile = params.getFile("imgfile");
-        MultipartFile vidfile = params.getFile("vidfile");
+        String base64image = Base64.getEncoder().encodeToString(imgfile.getBytes());
+//        MultipartFile vidfile = params.getFile("vidfile");
         String entername = params.getParameter("entername");
         String title = params.getParameter("title");
         String detail = params.getParameter("detail");
         System.out.println(entername+title+detail);
         Ad a = new Ad();
-        a.setPicture(imgfile.getBytes());
-        a.setVideo(imgfile.getBytes());
+//        a.setPicture(imgfile.getBytes());
+//        a.setVideo(vidfile.getBytes());
         a.setEntername(entername);
         a.setDetail(detail);
         a.setTitle(title);
+        a.setBase64picture(base64image);
         adRepository.save(a);
 
         return "upload success";
+    }
+
+    @CrossOrigin
+    @RequestMapping("/getad")
+    public List<Ad> getAd() {
+        return adRepository.findAll();
     }
 }
