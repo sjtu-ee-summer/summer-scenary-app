@@ -24,7 +24,7 @@ public class UserController {
     private UserRepository userRepository;
 
     @Autowired
-    private UserRolesReposiroty userRolesReposiroty;
+    private UserRolesReposiroty userRolesRepository;
 
     @Autowired
     SmtpMailSender smtpMailSender;
@@ -244,7 +244,7 @@ public class UserController {
         User_roles user_roles = new User_roles();
         user_roles.setUsername(username);
         user_roles.setRole("ROLE_USER");
-        userRolesReposiroty.save(user_roles);
+        userRolesRepository.save(user_roles);
         userRepository.save(u);
 
         return "register success";
@@ -255,9 +255,9 @@ public class UserController {
     public boolean signin(@RequestParam String username, @RequestParam String password){
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         User u = userRepository.findUserByUsername(username);
-        if(u == null){
+        if (u == null) {
             return false;
-        } else if(encoder.matches(password,u.getPassword())){
+        } else if (encoder.matches(password,u.getPassword())) {
             return true;
         }
 

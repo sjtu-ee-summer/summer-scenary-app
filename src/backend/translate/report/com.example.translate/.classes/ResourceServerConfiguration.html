@@ -1,0 +1,125 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ResourceServerConfiguration</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.translate</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ResourceServerConfiguration (com.example.translate)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ResourceServerConfiguration</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (16/ 16)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ResourceServerConfiguration$$EnhancerBySpringCGLIB$$b811bd0c</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (16/ 16)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.translate;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import org.springframework.context.annotation.Configuration;
+<i>4</i>&nbsp;import org.springframework.http.HttpMethod;
+<i>5</i>&nbsp;import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+<i>6</i>&nbsp;import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;@Configuration
+<b class="fc"><i>10</i>&nbsp;public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {</b>
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;    @Override
+<i>13</i>&nbsp;    public void configure(HttpSecurity http) throws Exception {
+<i>14</i>&nbsp;
+<b class="fc"><i>15</i>&nbsp;        http</b>
+<b class="fc"><i>16</i>&nbsp;                .authorizeRequests()</b>
+<b class="fc"><i>17</i>&nbsp;                .antMatchers(&quot;/**&quot;)</b>
+<b class="fc"><i>18</i>&nbsp;                .permitAll();</b>
+<i>19</i>&nbsp;
+<b class="fc"><i>20</i>&nbsp;        http</b>
+<b class="fc"><i>21</i>&nbsp;                .authorizeRequests()</b>
+<b class="fc"><i>22</i>&nbsp;                .antMatchers(&quot;/translator/**&quot;)</b>
+<b class="fc"><i>23</i>&nbsp;                .permitAll();</b>
+<i>24</i>&nbsp;
+<b class="fc"><i>25</i>&nbsp;        http</b>
+<b class="fc"><i>26</i>&nbsp;                .authorizeRequests()</b>
+<b class="fc"><i>27</i>&nbsp;                .antMatchers(HttpMethod.GET,&quot;/translate/**&quot;)</b>
+<b class="fc"><i>28</i>&nbsp;                .hasRole(&quot;USER&quot;)</b>
+<b class="fc"><i>29</i>&nbsp;                .anyRequest()</b>
+<b class="fc"><i>30</i>&nbsp;                .authenticated();</b>
+<b class="fc"><i>31</i>&nbsp;    }</b>
+<i>32</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-07-30 17:14</div>
+</div>
+</body>
+</html>

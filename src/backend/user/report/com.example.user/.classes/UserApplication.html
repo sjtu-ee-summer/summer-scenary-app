@@ -55,7 +55,7 @@
 </td>
 </tr>
   <tr>
-    <td class="name">UserApplication$$EnhancerBySpringCGLIB$$e3cc9d3b</td>
+    <td class="name">UserApplication$$EnhancerBySpringCGLIB$$bf0539a2</td>
   </tr>
 <tr>
   <td class="name"><strong>total</strong></td>
@@ -84,23 +84,38 @@
 
 <div class="sourceCode"><i>1</i>&nbsp;package com.example.user;
 <i>2</i>&nbsp;
-<i>3</i>&nbsp;import org.springframework.boot.SpringApplication;
-<i>4</i>&nbsp;import org.springframework.boot.autoconfigure.SpringBootApplication;
-<i>5</i>&nbsp;
-<i>6</i>&nbsp;@SpringBootApplication
-<b class="fc"><i>7</i>&nbsp;public class UserApplication {</b>
-<i>8</i>&nbsp;
-<i>9</i>&nbsp;	public static void main(String[] args) {
-<b class="nc"><i>10</i>&nbsp;		SpringApplication.run(UserApplication.class, args);</b>
-<b class="nc"><i>11</i>&nbsp;	}</b>
+<i>3</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i>4</i>&nbsp;import org.springframework.boot.CommandLineRunner;
+<i>5</i>&nbsp;import org.springframework.boot.SpringApplication;
+<i>6</i>&nbsp;import org.springframework.boot.autoconfigure.SpringBootApplication;
+<i>7</i>&nbsp;import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+<i>8</i>&nbsp;import org.springframework.core.io.ClassPathResource;
+<i>9</i>&nbsp;import org.springframework.mail.SimpleMailMessage;
+<i>10</i>&nbsp;import org.springframework.mail.javamail.JavaMailSender;
+<i>11</i>&nbsp;import org.springframework.mail.javamail.MimeMessageHelper;
 <i>12</i>&nbsp;
-<i>13</i>&nbsp;}
+<i>13</i>&nbsp;import javax.mail.MessagingException;
+<i>14</i>&nbsp;import javax.mail.internet.MimeMessage;
+<i>15</i>&nbsp;import java.io.IOException;
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;@EnableEurekaClient
+<i>18</i>&nbsp;@SpringBootApplication
+<b class="fc"><i>19</i>&nbsp;public class UserApplication {</b>
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;	@Autowired
+<i>22</i>&nbsp;	private JavaMailSender javaMailSender;
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;	public static void main(String[] args) {
+<b class="nc"><i>25</i>&nbsp;		SpringApplication.run(UserApplication.class, args);</b>
+<b class="nc"><i>26</i>&nbsp;	}</b>
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2019-07-12 16:24</div>
+    <div style="float:right;">generated on 2019-07-30 16:36</div>
 </div>
 </body>
 </html>

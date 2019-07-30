@@ -23,12 +23,9 @@
 <h1>Coverage Summary for Class: User (com.example.user.entity)</h1>
 
 <table class="coverageStats">
+
 <tr>
   <th class="name">Class</th>
-<th class="coverageStat 
-">
-  Class, %
-</th>
 <th class="coverageStat 
 ">
   Method, %
@@ -42,30 +39,43 @@
   <td class="name">User</td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    92%
   </span>
   <span class="absValue">
-    (1/ 1)
+    (23/ 25)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    90.5%
   </span>
   <span class="absValue">
-    (12/ 12)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (27/ 27)
+    (38/ 42)
   </span>
 </td>
 </tr>
-
+  <tr>
+    <td class="name">User$HibernateProxy$R3k102jH</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    92%
+  </span>
+  <span class="absValue">
+    (23/ 25)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90.5%
+  </span>
+  <span class="absValue">
+    (38/ 42)
+  </span>
+</td>
+</tr>
 </table>
 
 <br/>
@@ -77,133 +87,149 @@
 <i>3</i>&nbsp;import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 <i>4</i>&nbsp;
 <i>5</i>&nbsp;import javax.persistence.*;
-<i>6</i>&nbsp;
-<i>7</i>&nbsp;@Entity
-<i>8</i>&nbsp;@Table(name=&quot;user&quot;)
-<b class="fc"><i>9</i>&nbsp;public class User</b>
-<i>10</i>&nbsp;{
-<i>11</i>&nbsp;
-<i>12</i>&nbsp;    @Id
-<i>13</i>&nbsp;    @Column(name = &quot;user_id&quot;, nullable = false)
-<i>14</i>&nbsp;    @GeneratedValue(strategy = GenerationType.IDENTITY)
-<i>15</i>&nbsp;    private Long userId;
-<i>16</i>&nbsp;
-<i>17</i>&nbsp;    private String username;
-<i>18</i>&nbsp;
-<i>19</i>&nbsp;    private String password;
-<i>20</i>&nbsp;
-<b class="fc"><i>21</i>&nbsp;    private String phone=&quot;null&quot;;</b>
-<i>22</i>&nbsp;
-<i>23</i>&nbsp;    private String email;
-<i>24</i>&nbsp;
-<b class="fc"><i>25</i>&nbsp;    private int is_admin=0;</b>
-<i>26</i>&nbsp;
-<b class="fc"><i>27</i>&nbsp;    private int vip=0;</b>
-<i>28</i>&nbsp;
-<b class="fc"><i>29</i>&nbsp;    private String sex=&quot;null&quot;;</b>
-<i>30</i>&nbsp;
-<b class="fc"><i>31</i>&nbsp;    private int age=0;</b>
-<i>32</i>&nbsp;
-<b class="fc"><i>33</i>&nbsp;    private String address=&quot;null&quot;;</b>
-<i>34</i>&nbsp;
-<i>35</i>&nbsp;    public Long getUserId() {
-<b class="fc"><i>36</i>&nbsp;        return userId;</b>
-<i>37</i>&nbsp;    }
+<i>6</i>&nbsp;import java.sql.Date;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;@Entity
+<i>9</i>&nbsp;@Table(name=&quot;user&quot;)
+<b class="fc"><i>10</i>&nbsp;public class User</b>
+<i>11</i>&nbsp;{
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;    @Id
+<i>14</i>&nbsp;    @Column(name = &quot;id&quot;, nullable = false)
+<i>15</i>&nbsp;    @GeneratedValue(strategy = GenerationType.IDENTITY)
+<i>16</i>&nbsp;    private Long id;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    private String username;
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    private String password;
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    private String phone;
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;    private String email;
+<i>25</i>&nbsp;
+<b class="fc"><i>26</i>&nbsp;    private int vip = 0;</b>
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;    private Date vipdate;
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    private String sex;
+<i>31</i>&nbsp;
+<b class="fc"><i>32</i>&nbsp;    private int age=0;</b>
+<i>33</i>&nbsp;
+<b class="fc"><i>34</i>&nbsp;    private String address=&quot;null&quot;;</b>
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    @Lob
+<i>37</i>&nbsp;    private String profile_picture;
 <i>38</i>&nbsp;
-<i>39</i>&nbsp;//    public void setUserId(Long userId) {
-<i>40</i>&nbsp;//        this.userId = userId;
-<i>41</i>&nbsp;//    }
-<i>42</i>&nbsp;//
-<i>43</i>&nbsp;//    public int getIs_admin() {
-<i>44</i>&nbsp;//        return is_admin;
-<i>45</i>&nbsp;//    }
-<i>46</i>&nbsp;//
-<i>47</i>&nbsp;//    public void setIs_admin(int is_admin) {
-<i>48</i>&nbsp;//        this.is_admin = is_admin;
-<i>49</i>&nbsp;//    }
-<i>50</i>&nbsp;
-<i>51</i>&nbsp;    public int getVip() {
-<b class="fc"><i>52</i>&nbsp;        return vip;</b>
-<i>53</i>&nbsp;    }
-<i>54</i>&nbsp;
-<i>55</i>&nbsp;    public void setVip(int vip) {
-<b class="fc"><i>56</i>&nbsp;        this.vip = vip;</b>
-<b class="fc"><i>57</i>&nbsp;    }</b>
-<i>58</i>&nbsp;
-<i>59</i>&nbsp;//    public String getSex() {
-<i>60</i>&nbsp;//        return sex;
-<i>61</i>&nbsp;//    }
-<i>62</i>&nbsp;
-<i>63</i>&nbsp;    public void setSex(String sex) {
-<b class="fc"><i>64</i>&nbsp;        this.sex = sex;</b>
-<b class="fc"><i>65</i>&nbsp;    }</b>
-<i>66</i>&nbsp;
-<i>67</i>&nbsp;//    public int getAge() {
-<i>68</i>&nbsp;//        return age;
-<i>69</i>&nbsp;//    }
-<i>70</i>&nbsp;
-<i>71</i>&nbsp;    public void setAge(int age) {
-<b class="fc"><i>72</i>&nbsp;        this.age = age;</b>
-<b class="fc"><i>73</i>&nbsp;    }</b>
-<i>74</i>&nbsp;
-<i>75</i>&nbsp;//    public String getAddress() {
-<i>76</i>&nbsp;//        return address;
-<i>77</i>&nbsp;//    }
-<i>78</i>&nbsp;
-<i>79</i>&nbsp;    public void setAddress(String address) {
-<b class="fc"><i>80</i>&nbsp;        this.address = address;</b>
-<b class="fc"><i>81</i>&nbsp;    }</b>
-<i>82</i>&nbsp;
-<i>83</i>&nbsp;//    public int getIsAdmin() {
-<i>84</i>&nbsp;//        return is_admin;
-<i>85</i>&nbsp;//    }
-<i>86</i>&nbsp;
-<i>87</i>&nbsp;//    public void setIsAdmin(int is_admin) {
-<i>88</i>&nbsp;//        this.is_admin = is_admin;
-<i>89</i>&nbsp;//    }
-<i>90</i>&nbsp;
-<i>91</i>&nbsp;//    public String getUsername() {
-<i>92</i>&nbsp;//        return username;
-<i>93</i>&nbsp;//    }
-<i>94</i>&nbsp;
-<i>95</i>&nbsp;    public void setUsername(String username) {
-<b class="fc"><i>96</i>&nbsp;        this.username = username;</b>
-<b class="fc"><i>97</i>&nbsp;    }</b>
-<i>98</i>&nbsp;
-<i>99</i>&nbsp;    public String getPassword() {
-<b class="fc"><i>100</i>&nbsp;        return password;</b>
-<i>101</i>&nbsp;    }
-<i>102</i>&nbsp;
-<i>103</i>&nbsp;    // using Spring provided password hashing encryption algorithm to encrypt password
-<i>104</i>&nbsp;    public void setPassword(String password) {
-<b class="fc"><i>105</i>&nbsp;        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();</b>
-<b class="fc"><i>106</i>&nbsp;        this.password = encoder.encode(password);</b>
+<i>39</i>&nbsp;    public String getProfile_picture() {
+<b class="fc"><i>40</i>&nbsp;        return profile_picture;</b>
+<i>41</i>&nbsp;    }
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;    public void setProfile_picture(String profile_picture) {
+<b class="fc"><i>44</i>&nbsp;        this.profile_picture = profile_picture;</b>
+<b class="fc"><i>45</i>&nbsp;    }</b>
+<i>46</i>&nbsp;
+<b class="fc"><i>47</i>&nbsp;    private int enabled = 1;</b>
+<i>48</i>&nbsp;
+<i>49</i>&nbsp;    // using Spring provided password hashing encryption algorithm to encrypt password
+<i>50</i>&nbsp;    public void setPassword(String password) {
+<b class="fc"><i>51</i>&nbsp;        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();</b>
+<b class="fc"><i>52</i>&nbsp;        this.password = encoder.encode(password);</b>
+<i>53</i>&nbsp;
+<b class="fc"><i>54</i>&nbsp;    }</b>
+<i>55</i>&nbsp;
+<i>56</i>&nbsp;    public Date getVipdate() {
+<b class="fc"><i>57</i>&nbsp;        return vipdate;</b>
+<i>58</i>&nbsp;    }
+<i>59</i>&nbsp;
+<i>60</i>&nbsp;    public void setVipdate(Date vipdate) {
+<b class="fc"><i>61</i>&nbsp;        this.vipdate = vipdate;</b>
+<b class="fc"><i>62</i>&nbsp;    }</b>
+<i>63</i>&nbsp;
+<i>64</i>&nbsp;    public void setPhone(String phone) {
+<b class="fc"><i>65</i>&nbsp;        this.phone = phone;</b>
+<b class="fc"><i>66</i>&nbsp;    }</b>
+<i>67</i>&nbsp;
+<i>68</i>&nbsp;    public Long getId() {
+<b class="fc"><i>69</i>&nbsp;        return id;</b>
+<i>70</i>&nbsp;    }
+<i>71</i>&nbsp;
+<i>72</i>&nbsp;    public void setId(Long id) {
+<b class="nc"><i>73</i>&nbsp;        this.id = id;</b>
+<b class="nc"><i>74</i>&nbsp;    }</b>
+<i>75</i>&nbsp;
+<i>76</i>&nbsp;    public String getUsername() {
+<b class="fc"><i>77</i>&nbsp;        return username;</b>
+<i>78</i>&nbsp;    }
+<i>79</i>&nbsp;
+<i>80</i>&nbsp;    public void setUsername(String username) {
+<b class="fc"><i>81</i>&nbsp;        this.username = username;</b>
+<b class="fc"><i>82</i>&nbsp;    }</b>
+<i>83</i>&nbsp;
+<i>84</i>&nbsp;    public int getVip() {
+<b class="fc"><i>85</i>&nbsp;        return vip;</b>
+<i>86</i>&nbsp;    }
+<i>87</i>&nbsp;
+<i>88</i>&nbsp;    public void setVip(int vip) {
+<b class="fc"><i>89</i>&nbsp;        this.vip = vip;</b>
+<b class="fc"><i>90</i>&nbsp;    }</b>
+<i>91</i>&nbsp;
+<i>92</i>&nbsp;    public String getSex() {
+<b class="fc"><i>93</i>&nbsp;        return sex;</b>
+<i>94</i>&nbsp;    }
+<i>95</i>&nbsp;
+<i>96</i>&nbsp;    public void setSex(String sex) {
+<b class="fc"><i>97</i>&nbsp;        this.sex = sex;</b>
+<b class="fc"><i>98</i>&nbsp;    }</b>
+<i>99</i>&nbsp;
+<i>100</i>&nbsp;    public int getAge() {
+<b class="fc"><i>101</i>&nbsp;        return age;</b>
+<i>102</i>&nbsp;    }
+<i>103</i>&nbsp;
+<i>104</i>&nbsp;    public void setAge(int age) {
+<b class="fc"><i>105</i>&nbsp;        this.age = age;</b>
+<b class="fc"><i>106</i>&nbsp;    }</b>
 <i>107</i>&nbsp;
-<b class="fc"><i>108</i>&nbsp;    }</b>
-<i>109</i>&nbsp;
-<i>110</i>&nbsp;//    public String getPhone() {
-<i>111</i>&nbsp;//        return phone;
-<i>112</i>&nbsp;//    }
-<i>113</i>&nbsp;
-<i>114</i>&nbsp;    public void setPhone(String phone) {
-<b class="fc"><i>115</i>&nbsp;        this.phone = phone;</b>
-<b class="fc"><i>116</i>&nbsp;    }</b>
-<i>117</i>&nbsp;
-<i>118</i>&nbsp;//    public String getEmail() {
-<i>119</i>&nbsp;//        return email;
-<i>120</i>&nbsp;//    }
-<i>121</i>&nbsp;
-<i>122</i>&nbsp;    public void setEmail(String email) {
-<b class="fc"><i>123</i>&nbsp;        this.email = email;</b>
-<b class="fc"><i>124</i>&nbsp;    }</b>
-<i>125</i>&nbsp;
-<i>126</i>&nbsp;}
+<i>108</i>&nbsp;    public String getAddress() {
+<b class="fc"><i>109</i>&nbsp;        return address;</b>
+<i>110</i>&nbsp;    }
+<i>111</i>&nbsp;
+<i>112</i>&nbsp;    public void setAddress(String address) {
+<b class="fc"><i>113</i>&nbsp;        this.address = address;</b>
+<b class="fc"><i>114</i>&nbsp;    }</b>
+<i>115</i>&nbsp;
+<i>116</i>&nbsp;    public int getEnabled() {
+<b class="fc"><i>117</i>&nbsp;        return enabled;</b>
+<i>118</i>&nbsp;    }
+<i>119</i>&nbsp;
+<i>120</i>&nbsp;    public void setEnabled(int enabled) {
+<b class="nc"><i>121</i>&nbsp;        this.enabled = enabled;</b>
+<b class="nc"><i>122</i>&nbsp;    }</b>
+<i>123</i>&nbsp;
+<i>124</i>&nbsp;    public String getPassword() {
+<b class="fc"><i>125</i>&nbsp;        return password;</b>
+<i>126</i>&nbsp;    }
+<i>127</i>&nbsp;
+<i>128</i>&nbsp;    public String getPhone() {
+<b class="fc"><i>129</i>&nbsp;        return phone;</b>
+<i>130</i>&nbsp;    }
+<i>131</i>&nbsp;
+<i>132</i>&nbsp;    public String getEmail() {
+<b class="fc"><i>133</i>&nbsp;        return email;</b>
+<i>134</i>&nbsp;    }
+<i>135</i>&nbsp;
+<i>136</i>&nbsp;    public void setEmail(String email) {
+<b class="fc"><i>137</i>&nbsp;        this.email = email;</b>
+<b class="fc"><i>138</i>&nbsp;    }</b>
+<i>139</i>&nbsp;
+<i>140</i>&nbsp;
+<i>141</i>&nbsp;
+<i>142</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2019-07-12 16:24</div>
+    <div style="float:right;">generated on 2019-07-30 16:36</div>
 </div>
 </body>
 </html>

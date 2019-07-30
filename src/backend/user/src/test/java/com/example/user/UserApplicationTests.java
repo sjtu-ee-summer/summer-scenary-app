@@ -37,17 +37,21 @@ public class UserApplicationTests {
 	@WithMockUser(roles={"ADMIN"})
 	@Test
 	public void insertBook() throws  Exception {
-		mvc.perform(get("/users/signup")
-				.param("username", "testuser")
-				.param("password", "testpassword")
-				.param("email", "email@test.test"))
+		mvc.perform(get("/users/username/test"))
 				.andExpect(status().isOk());
-		mvc.perform(get("/users/signin")
-				.param("username", "testuser")
-				.param("password", "testpassword"))
+		mvc.perform(get("/un/signup")
+				.param("username", "testuse")
+				.param("password", "testpasswor")
+				.param("email", "email@test.tes")
+				.param("phone", "999")
+				.param("sex","male"))
+				.andExpect(status().isOk());
+		mvc.perform(get("/un/signin")
+				.param("username", "testuse")
+				.param("password", "testpasswor"))
 				.andReturn().getResponse().getContentAsString();
-		mvc.perform(get("/users/signin")
-				.param("username", "testuser")
+		mvc.perform(get("/un/signin")
+				.param("username", "testuse")
 				.param("password", "wrongpassword"))
 				.andReturn().getResponse().getContentAsString();
 		mvc.perform(get("/users").contentType(MediaType.APPLICATION_JSON))
@@ -63,21 +67,23 @@ public class UserApplicationTests {
 				.andReturn().getResponse().getContentAsString();
 		mvc.perform(get("/users/id/1").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
-		mvc.perform(get("/users/username/testuser").contentType(MediaType.APPLICATION_JSON))
+		mvc.perform(get("/users/username/testuse").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
 		mvc.perform(get("/users/improvip/1").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
-		mvc.perform(get("/users/refind")
+		mvc.perform(get("/un/refindId")
 				.param("email", "email@test.test"))
 				.andExpect(status().isOk())
 				.andReturn().getResponse().getContentAsString();
-		mvc.perform(get("/users/refind")
-				.param("email", "wrongemail@test.test"))
+		mvc.perform(get("/un/refindPassword")
+				.param("email", "kmykoh97@gmail.comt"))
 				.andExpect(status().isOk())
 				.andReturn().getResponse().getContentAsString();
-		mvc.perform(get("/users/changepassword/1")
-				.param("password", "testpassword"))
-				.andExpect(status().isOk());
+		mvc.perform(get("/users/changepassword")
+				.param("id", "1")
+				.param("oldPassword", "testpassword")
+				.param("password", "newpassword"))
+				.andExpect(status().is(400));
 	}
 
 }

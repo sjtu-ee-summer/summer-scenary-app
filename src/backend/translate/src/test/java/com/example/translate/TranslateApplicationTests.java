@@ -37,23 +37,65 @@ public class TranslateApplicationTests {
 	@WithMockUser(roles={"ADMIN"})
 	@Test
 	public void testTranslateText() throws Exception {
-		mvc.perform(get("/translate/text/a").contentType(MediaType.APPLICATION_JSON))
+		mvc.perform(post("/translate/text").contentType(MediaType.APPLICATION_JSON)
+				.param("id", "1")
+				.param("from", "auto")
+				.param("to", "zh-CHS")
+				.param("sentence", "a"))
 				.andExpect(status().isOk());
 	}
 
 
 	@Test
 	public void testTranslatePicture() throws Exception {
-		mvc.perform(get("/translate/photo").contentType(MediaType.APPLICATION_JSON)
+		mvc.perform(post("/translate/photo").contentType(MediaType.APPLICATION_JSON)
+				.param("id", "1")
+				.param("from", "en")
+				.param("to", "zh-CHS")
 				.param("picture", testPictureBase64))
-				.andExpect(status().is(405));
+				.andExpect(status().is(200));
 	}
 
 	@Test
 	public void testTranslateAudio() throws Exception {
-		mvc.perform(get("/translate/voice").contentType(MediaType.APPLICATION_JSON)
+		mvc.perform(post("/translate/voice").contentType(MediaType.APPLICATION_JSON)
+				.param("id", "1")
+				.param("from", "en")
+				.param("to", "zh-CHS")
 				.param("voice", "test"))
-				.andExpect(status().is(405));
+				.andExpect(status().is(200));
+	}
+
+	@Test
+	public void testTranslator() throws Exception {
+		mvc.perform(post("/translator/getjob").contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
+		mvc.perform(post("/translator/setjob").contentType(MediaType.APPLICATION_JSON)
+				.param("id", "1")
+				.param("text", "translate this"))
+				.andExpect(status().isOk());
+		mvc.perform(post("/translator/sendresult").contentType(MediaType.APPLICATION_JSON)
+				.param("result", "翻译")
+				.param("textId", "144")
+				.param("translatorId", "1"))
+				.andExpect(status().isOk());
+		mvc.perform(get("/translator/refresh/1").contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
+		mvc.perform(post("/translator/registertranslator").contentType(MediaType.APPLICATION_JSON)
+				.param("name", "hellotest3"))
+				.andExpect(status().isOk());
+	}
+
+	@Test
+	public void testOther() throws Exception {
+		mvc.perform(post("/translate/pichit/1").contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
+		mvc.perform(post("/translate/texthis/1").contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
+		mvc.perform(post("/translate/voichis/1").contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
+		mvc.perform(get("/").contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
 	}
 
 //	@Test

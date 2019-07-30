@@ -1,0 +1,154 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: TranslatorTextEntity</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.translate.translator.entity</a> ]
+</div>
+
+<h1>Coverage Summary for Class: TranslatorTextEntity (com.example.translate.translator.entity)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TranslatorTextEntity</td>
+<td class="coverageStat">
+  <span class="percent">
+    90.9%
+  </span>
+  <span class="absValue">
+    (10/ 11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    88.9%
+  </span>
+  <span class="absValue">
+    (16/ 18)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">TranslatorTextEntity$HibernateProxy$2QR8VAtm</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    90.9%
+  </span>
+  <span class="absValue">
+    (10/ 11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    88.9%
+  </span>
+  <span class="absValue">
+    (16/ 18)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.translate.translator.entity;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import javax.persistence.*;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;@Entity
+<b class="fc"><i>6</i>&nbsp;public class TranslatorTextEntity {</b>
+<i>7</i>&nbsp;    @Id
+<i>8</i>&nbsp;    @Column(name = &quot;id&quot;, nullable = false)
+<i>9</i>&nbsp;    @GeneratedValue(strategy = GenerationType.AUTO)
+<i>10</i>&nbsp;    private long id;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;    @Lob
+<i>13</i>&nbsp;    private String text;
+<i>14</i>&nbsp;
+<b class="fc"><i>15</i>&nbsp;    @Lob</b>
+<i>16</i>&nbsp;    private String result = &quot;&quot;;
+<i>17</i>&nbsp;
+<b class="fc"><i>18</i>&nbsp;    private boolean valid = true;</b>
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    private Long userId;
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    public long getId() {
+<b class="fc"><i>23</i>&nbsp;        return id;</b>
+<i>24</i>&nbsp;    }
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    public void setId(long id) {
+<b class="nc"><i>27</i>&nbsp;        this.id = id;</b>
+<b class="nc"><i>28</i>&nbsp;    }</b>
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    public String getText() {
+<b class="fc"><i>31</i>&nbsp;        return text;</b>
+<i>32</i>&nbsp;    }
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;    public void setText(String text) {
+<b class="fc"><i>35</i>&nbsp;        this.text = text;</b>
+<b class="fc"><i>36</i>&nbsp;    }</b>
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;    public boolean isValid() {
+<b class="fc"><i>39</i>&nbsp;        return valid;</b>
+<i>40</i>&nbsp;    }
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;    public void setValid(boolean valid) {
+<b class="fc"><i>43</i>&nbsp;        this.valid = valid;</b>
+<b class="fc"><i>44</i>&nbsp;    }</b>
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;    public String getResult() {
+<b class="fc"><i>47</i>&nbsp;        return result;</b>
+<i>48</i>&nbsp;    }
+<i>49</i>&nbsp;
+<i>50</i>&nbsp;    public void setResult(String result) {
+<b class="fc"><i>51</i>&nbsp;        this.result = result;</b>
+<b class="fc"><i>52</i>&nbsp;    }</b>
+<i>53</i>&nbsp;
+<i>54</i>&nbsp;    public Long getUserId() {
+<b class="fc"><i>55</i>&nbsp;        return userId;</b>
+<i>56</i>&nbsp;    }
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;    public void setUserId(Long userId) {
+<b class="fc"><i>59</i>&nbsp;        this.userId = userId;</b>
+<b class="fc"><i>60</i>&nbsp;    }</b>
+<i>61</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-07-30 17:14</div>
+</div>
+</body>
+</html>

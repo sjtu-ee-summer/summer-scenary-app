@@ -1,0 +1,177 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: TranslatorController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.translate.translator.controller</a> ]
+</div>
+
+<h1>Coverage Summary for Class: TranslatorController (com.example.translate.translator.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TranslatorController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    93.9%
+  </span>
+  <span class="absValue">
+    (31/ 33)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.translate.translator.controller;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.example.translate.translator.entity.*;
+<i>4</i>&nbsp;import com.example.translate.translator.repository.*;
+<i>5</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i>6</i>&nbsp;import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+<i>7</i>&nbsp;import org.springframework.web.bind.annotation.*;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;import java.time.format.DateTimeFormatter;
+<i>10</i>&nbsp;import java.time.LocalDateTime;
+<i>11</i>&nbsp;import java.util.List;
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;@RestController
+<i>14</i>&nbsp;@EnableResourceServer
+<i>15</i>&nbsp;@RequestMapping(&quot;/translator&quot;)
+<b class="fc"><i>16</i>&nbsp;public class TranslatorController {</b>
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    @Autowired
+<i>19</i>&nbsp;    private TranslatorProfileRepository translatorProfileRepository;
+<i>20</i>&nbsp;    @Autowired
+<i>21</i>&nbsp;    private TranslatorStatusRepository translatorStatusRepository;
+<i>22</i>&nbsp;    @Autowired
+<i>23</i>&nbsp;    private TranslatorTextRepository translatorTextRepository;
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    @CrossOrigin
+<i>26</i>&nbsp;    @RequestMapping(&quot;/getjob&quot;)
+<i>27</i>&nbsp;    public TranslatorTextEntity getJob() {
+<b class="fc"><i>28</i>&nbsp;        TranslatorTextEntity T = translatorTextRepository.findFirstByValidIsTrue();</b>
+<i>29</i>&nbsp;//        String t = T.getText();
+<i>30</i>&nbsp;
+<b class="fc"><i>31</i>&nbsp;        return T;</b>
+<i>32</i>&nbsp;    }
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;    @CrossOrigin
+<i>35</i>&nbsp;    @PostMapping(&quot;/sendresult&quot;)
+<i>36</i>&nbsp;    public String sendResult(@RequestParam String result, @RequestParam Long textId,
+<i>37</i>&nbsp;                             @RequestParam Long translatorId) {
+<b class="fc"><i>38</i>&nbsp;        TranslatorTextEntity translatorTextEntity = translatorTextRepository.findTranslatorTextEntityById(textId);</b>
+<b class="fc"><i>39</i>&nbsp;        TranslatorStatusEntity translatorStatusEntity = new TranslatorStatusEntity();</b>
+<b class="fc"><i>40</i>&nbsp;        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(&quot;yyyy/MM/dd HH:mm:ss&quot;);</b>
+<b class="fc"><i>41</i>&nbsp;        LocalDateTime now = LocalDateTime.now();</b>
+<i>42</i>&nbsp;
+<b class="fc"><i>43</i>&nbsp;        if (result != &quot;&quot;) {</b>
+<b class="fc"><i>44</i>&nbsp;            translatorTextEntity.setResult(result);</b>
+<b class="fc"><i>45</i>&nbsp;            translatorTextEntity.setValid(false);</b>
+<b class="fc"><i>46</i>&nbsp;            translatorTextRepository.save(translatorTextEntity);</b>
+<b class="fc"><i>47</i>&nbsp;            translatorStatusEntity.setTranslatorId(translatorId);</b>
+<b class="fc"><i>48</i>&nbsp;            translatorStatusEntity.setTextId(textId);</b>
+<b class="fc"><i>49</i>&nbsp;            translatorStatusEntity.setTimestamp(dtf.format(now));</b>
+<b class="fc"><i>50</i>&nbsp;            translatorStatusRepository.save(translatorStatusEntity);</b>
+<i>51</i>&nbsp;
+<b class="fc"><i>52</i>&nbsp;            return &quot;success&quot;;</b>
+<i>53</i>&nbsp;        }
+<i>54</i>&nbsp;
+<b class="nc"><i>55</i>&nbsp;        return &quot;failed&quot;;</b>
+<i>56</i>&nbsp;    }
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;    @CrossOrigin
+<i>59</i>&nbsp;    @PostMapping(&quot;/setjob&quot;)
+<i>60</i>&nbsp;    public String setJob(@RequestParam Long id, @RequestParam String text) {
+<b class="fc"><i>61</i>&nbsp;        TranslatorTextEntity translatorTextEntity = new TranslatorTextEntity();</b>
+<b class="fc"><i>62</i>&nbsp;        translatorTextEntity.setValid(true);</b>
+<b class="fc"><i>63</i>&nbsp;        translatorTextEntity.setText(text);</b>
+<b class="fc"><i>64</i>&nbsp;        translatorTextEntity.setUserId(id);</b>
+<b class="fc"><i>65</i>&nbsp;        translatorTextRepository.save(translatorTextEntity);</b>
+<i>66</i>&nbsp;
+<b class="fc"><i>67</i>&nbsp;        return &quot;success&quot;;</b>
+<i>68</i>&nbsp;    }
+<i>69</i>&nbsp;
+<i>70</i>&nbsp;    @CrossOrigin
+<i>71</i>&nbsp;    @GetMapping(&quot;/refresh/{id}&quot;)
+<i>72</i>&nbsp;    public List&lt;TranslatorTextEntity&gt; refresh(@PathVariable Long id) {
+<b class="fc"><i>73</i>&nbsp;        List&lt;TranslatorTextEntity&gt; translatorTextEntity = translatorTextRepository.findTranslatorTextEntitiesByUserId(id);</b>
+<i>74</i>&nbsp;
+<b class="fc"><i>75</i>&nbsp;        if (translatorTextEntity != null) {</b>
+<b class="fc"><i>76</i>&nbsp;            return translatorTextEntity;</b>
+<i>77</i>&nbsp;        }
+<i>78</i>&nbsp;
+<b class="nc"><i>79</i>&nbsp;        return null;</b>
+<i>80</i>&nbsp;    }
+<i>81</i>&nbsp;
+<i>82</i>&nbsp;    @CrossOrigin
+<i>83</i>&nbsp;    @PostMapping(&quot;/registertranslator&quot;)
+<i>84</i>&nbsp;    public Long registertranslator(@RequestParam String name) {
+<b class="fc"><i>85</i>&nbsp;        TranslatorProfileEntity translatorProfileEntity = new TranslatorProfileEntity();</b>
+<b class="fc"><i>86</i>&nbsp;        translatorProfileEntity.setName(name);</b>
+<b class="fc"><i>87</i>&nbsp;        translatorProfileRepository.save(translatorProfileEntity);</b>
+<b class="fc"><i>88</i>&nbsp;        translatorProfileEntity = translatorProfileRepository.findByName(name);</b>
+<b class="fc"><i>89</i>&nbsp;        Long translatorJobID = translatorProfileEntity.getId();</b>
+<i>90</i>&nbsp;
+<b class="fc"><i>91</i>&nbsp;        return translatorJobID; // returns Job ID upon successful registration</b>
+<i>92</i>&nbsp;    }
+<i>93</i>&nbsp;
+<i>94</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-07-30 17:14</div>
+</div>
+</body>
+</html>
