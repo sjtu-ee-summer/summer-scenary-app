@@ -40,20 +40,7 @@ public class UserController implements UserControllerInterface {
 
     public String addUser(@RequestParam String username,@RequestParam String password,
                         @RequestParam String email, @RequestParam String phone, @RequestParam String sex) {
-        User uTest1 = userRepository.findUserByUsername(username);
-        if (uTest1 != null) {
-            return "username already exists";
-        }
 
-        User uTest2 = userRepository.findUserByEmail(email);
-        if (uTest2 != null) {
-            return "email already exists";
-        }
-
-        User uTest3 = userRepository.findUserByPhone(phone);
-        if (uTest3 != null) {
-            return "phone number already exists";
-        }
 
         User u = new User();
         u.setPassword(password);
@@ -238,6 +225,21 @@ public class UserController implements UserControllerInterface {
         User_roles user_roles = new User_roles();
         user_roles.setUsername(username);
         user_roles.setRole("ROLE_USER");
+
+        User uTest1 = userRepository.findUserByUsername(username);
+        if (uTest1 != null) {
+            return "username already exists";
+        }
+
+        User uTest2 = userRepository.findUserByEmail(email);
+        if (uTest2 != null) {
+            return "email already exists";
+        }
+
+        User uTest3 = userRepository.findUserByPhone(phone);
+        if (uTest3 != null) {
+            return "phone number already exists";
+        }
         userRolesRepository.save(user_roles);
         userRepository.save(u);
 
