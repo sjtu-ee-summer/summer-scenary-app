@@ -12,8 +12,7 @@ import java.util.List;
 
 @RestController
 @EnableResourceServer
-@RequestMapping("/translator")
-public class TranslatorController {
+public class TranslatorController implements TranslatorControllerInterface{
 
     @Autowired
     private TranslatorProfileRepository translatorProfileRepository;
@@ -22,8 +21,6 @@ public class TranslatorController {
     @Autowired
     private TranslatorTextRepository translatorTextRepository;
 
-    @CrossOrigin
-    @RequestMapping("/getjob")
     public TranslatorTextEntity getJob() {
         TranslatorTextEntity T = translatorTextRepository.findFirstByValidIsTrue();
 //        String t = T.getText();
@@ -31,8 +28,6 @@ public class TranslatorController {
         return T;
     }
 
-    @CrossOrigin
-    @PostMapping("/sendresult")
     public String sendResult(@RequestParam String result, @RequestParam Long textId,
                              @RequestParam Long translatorId) {
         TranslatorTextEntity translatorTextEntity = translatorTextRepository.findTranslatorTextEntityById(textId);
@@ -55,8 +50,6 @@ public class TranslatorController {
         return "failed";
     }
 
-    @CrossOrigin
-    @PostMapping("/setjob")
     public String setJob(@RequestParam Long id, @RequestParam String text) {
         TranslatorTextEntity translatorTextEntity = new TranslatorTextEntity();
         translatorTextEntity.setValid(true);
@@ -67,8 +60,6 @@ public class TranslatorController {
         return "success";
     }
 
-    @CrossOrigin
-    @GetMapping("/refresh/{id}")
     public List<TranslatorTextEntity> refresh(@PathVariable Long id) {
         List<TranslatorTextEntity> translatorTextEntity = translatorTextRepository.findTranslatorTextEntitiesByUserId(id);
 
@@ -79,8 +70,6 @@ public class TranslatorController {
         return null;
     }
 
-    @CrossOrigin
-    @PostMapping("/registertranslator")
     public Long registertranslator(@RequestParam String name) {
         TranslatorProfileEntity translatorProfileEntity = new TranslatorProfileEntity();
         translatorProfileEntity.setName(name);

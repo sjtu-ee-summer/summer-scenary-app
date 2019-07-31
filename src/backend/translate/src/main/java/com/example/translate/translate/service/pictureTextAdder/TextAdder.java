@@ -70,23 +70,29 @@ public class TextAdder {
 
         // uncomment these to set highlighting opacity
 //        int alpha = 127; // 50% transparent
-//        Color myColour = new Color(105,105,105, alpha);
+//        Color myColor = new Color(105,105,105, alpha);
 
         Graphics g = image.getGraphics();
-
-        // set highlight
+        g.setFont(g.getFont().deriveFont(20f)); // set font type and size
         Color bgColor = Color.WHITE; // set this to myColour for semi-transparent background(first uncomment!)
         FontMetrics fm = g.getFontMetrics();
-        Rectangle2D rect = fm.getStringBounds(content, g);
-        g.setColor(bgColor);
-        g.fillRect(x,
-                y - fm.getAscent(),
-                (int) rect.getWidth(),
-                (int) rect.getHeight());
-        // set text content
-//        g.setFont(g.getFont().deriveFont(20f)); // set font type and size
-        g.setColor(Color.BLACK);
-        g.drawString(content, x, y);
+        int lineHeight = fm.getHeight();
+
+        for (String line : content.split("[。.?？！!]")) {
+            // set highlight
+            Rectangle2D rect = fm.getStringBounds(line, g);
+            g.setColor(bgColor);
+            g.fillRect(x,
+                    y - fm.getAscent(),
+                    (int) rect.getWidth(),
+                    (int) rect.getHeight());
+
+            // set text content
+            g.setColor(Color.BLACK);
+            g.drawString(line, x, y);
+            y += lineHeight;
+        }
+
         g.dispose();
 
         // bufferImage->base64

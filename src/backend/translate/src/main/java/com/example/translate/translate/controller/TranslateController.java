@@ -13,8 +13,7 @@ import java.util.List;
 
 @RestController
 @EnableResourceServer
-@RequestMapping("/translate")
-public class TranslateController {
+public class TranslateController implements TranslateControllerInterface{
 
     @Autowired
     private TranslateTextRepository translateTextRepository;
@@ -23,7 +22,6 @@ public class TranslateController {
     @Autowired
     private TranslateVoiceRepository translateVoiceRepository;
 
-    @PostMapping("/text")
     public String getTranslation(@RequestParam String sentence, @RequestParam Long id,
                                  @RequestParam String from, @RequestParam String to) throws IOException {
         TranslateText translateText = new TranslateText();
@@ -38,7 +36,6 @@ public class TranslateController {
         return result;
     }
 
-    @PostMapping("/photo")
     public String getPicTranslation(@RequestParam("picture") String picture, @RequestParam("id") Long id,
                                     @RequestParam String from, @RequestParam String to) throws Exception {
         TranslatePicture translatePicture = new TranslatePicture();
@@ -56,7 +53,6 @@ public class TranslateController {
         return result;
     }
 
-    @PostMapping("/voice")
     public String getVoiceTranslation(@RequestParam("voice") String voice, @RequestParam("id") Long id,
                                       @RequestParam String from, @RequestParam String to) throws IOException {
         TranslateVoice translateVoice = new TranslateVoice();
@@ -71,19 +67,15 @@ public class TranslateController {
         return result;
     }
 
-    @RequestMapping("/pichit/{id}")
     public List<TranslatePicEntity> TransPicHis(@PathVariable(value = "id") Long id) {
         return translatePicRepository.findAllByUid(id);
     }
 
-
-    @RequestMapping("/texthis/{id}")
     public List<TranslateTextEntity> TransTextHis(@PathVariable(value = "id") Long id)
     {
         return translateTextRepository.findAllByUid(id);
     }
 
-    @RequestMapping("/voichis/{id}")
     public List<TranslateVoiceEntity> TransVoisHist(@PathVariable(value = "id") Long id)
     {
         return translateVoiceRepository.findAllByUid(id);
