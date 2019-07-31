@@ -1,7 +1,9 @@
 package com.example.imgidentify;
 
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertEquals;
 
+import com.sun.jersey.core.util.MultivaluedMapImpl;
 import org.junit.Before;
 
 import org.junit.Test;
@@ -14,10 +16,17 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.context.WebApplicationContext;
+
+import javax.ws.rs.core.MultivaluedMap;
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
@@ -39,40 +48,90 @@ public class ImgidentifyApplicationTests {
 
     @Test
     public void testhello() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.post("/imgidentify/hello")
-                .contentType(MediaType.APPLICATION_JSON)
-                .param("img", "asdqweqe"))
-                .andExpect(status().isOk());
+        mvc.perform(MockMvcRequestBuilders.post("/imgidentify/hello/1")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk()).andExpect(content().string(containsString("hello")));
     }
 
     @Test
     public void testObjectIdentitystatuserror() throws Exception {
         mvc.perform(MockMvcRequestBuilders.post("/imgidentify/object").contentType(MediaType.APPLICATION_JSON)
-                .param("img", errorBase64))
-                .andExpect(status().isOk());
+                .param("img", errorBase64).param("id","1"))
+                .andExpect(status().isOk()
+                );
     }
 
     @Test
     public void testObjectIdentity() throws Exception {
         mvc.perform(MockMvcRequestBuilders.post("/imgidentify/object").contentType(MediaType.APPLICATION_JSON)
-                .param("img", testPictureBase64))
-                .andExpect(status().isOk());
+                .param("img", testPictureBase64).param("id","1")
+                )
+                .andExpect(status().isOk()).andExpect(content().string(containsString("天安门")));
     }
 
     @Test
     public void testLandMarkIdentity() throws Exception {
         mvc.perform(MockMvcRequestBuilders.post("/imgidentify/landmark").contentType(MediaType.APPLICATION_JSON)
-                .param("img", testPictureBase64))
-                .andExpect(status().isOk());
+                .param("img", testPictureBase64).param("id","1"))
+                .andExpect(status().isOk()).andExpect(content().string(containsString("landmark")));
     }
 
 
     @Test
     public void testLandMarkIdentitycontent() throws Exception {
         mvc.perform(MockMvcRequestBuilders.post("/imgidentify/landmark").contentType(MediaType.APPLICATION_JSON)
-                .param("img", testPictureBase64))
+                .param("img", testPictureBase64).param("id","1"))
                 //待定
-                .andExpect(MockMvcResultMatchers.content().string("{\"landmark\":\"\"}"));
+                .andExpect(MockMvcResultMatchers.content().string(containsString("{\"landmark\":\"\"}")));
     }
 
+    @Test
+    public void testbaike() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.post("/imgidentify/baike").contentType(MediaType.APPLICATION_JSON)
+                .param("keyword", "天安门"))
+                //待定
+                .andExpect(status().isOk()).andExpect(MockMvcResultMatchers.content().string(containsString("天安门")));
+    }
+
+    @Test
+    public void testlandMarkHistory() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/imgidentify/lmkhis/1").contentType(MediaType.APPLICATION_JSON))
+                //待定
+                .andExpect(status().isOk()).andExpect(MockMvcResultMatchers.content().string(containsString("\"uid\":1")));
+    }
+
+
+    @Test
+    public void testobjectHistory() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/imgidentify/objhis/1").contentType(MediaType.APPLICATION_JSON))
+                //待定
+                .andExpect(status().isOk()).andExpect(MockMvcResultMatchers.content().string(containsString("\"uid\":1")));
+    }
+
+    @Test
+    public void testgetfood() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.post("/imgidentify/getfood").contentType(MediaType.APPLICATION_JSON)
+                .param("url","http://api.map.baidu.com/place/detail?uid=5ce2637d55831550ae31e51b&output=html&source=placeapi_v2")
+        )
+                //待定
+                .andExpect(status().isOk()).andExpect(MockMvcResultMatchers.content().string(containsString("http://pv18mucav.bkt.clouddn.com/food.png")));
+    }
+
+    @Test
+    public void testgethotel() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.post("/imgidentify/gethotel").contentType(MediaType.APPLICATION_JSON)
+                .param("url","http://api.map.baidu.com/place/detail?uid=f78439045cc8bdd7d4851fca&output=html&source=placeapi_v2")
+        )
+                //待定
+                .andExpect(status().isOk()).andExpect(MockMvcResultMatchers.content().string(containsString("http://pv18mucav.bkt.clouddn.com/hotel.png")));
+    }
+
+    @Test
+    public void testgetshopping() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.post("/imgidentify/getshopping").contentType(MediaType.APPLICATION_JSON)
+                .param("url","http://api.map.baidu.com/place/detail?uid=0dc3d82d9417756d75e5b660&output=html&source=placeapi_v2")
+        )
+                //待定
+                .andExpect(status().isOk()).andExpect(MockMvcResultMatchers.content().string(containsString("http://pv18mucav.bkt.clouddn.com/shopping.png")));
+    }
 }

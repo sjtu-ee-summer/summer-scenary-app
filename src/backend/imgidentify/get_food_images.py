@@ -1,15 +1,20 @@
 import requests
 from bs4 import BeautifulSoup
+import sys
 
-url = input("Input poi url: ")  # 获取detail页面url
+# url = input("Input poi url: ")  # 获取detail页面url
 # e.g: http://api.map.baidu.com/place/detail?uid=5ce2637d55831550ae31e51b&output=html&source=placeapi_v2
-url = url.replace(' ', '')  # 因为命令行输入必须多打一个空格才能按回车
+# url = url.replace(' ', '')  # 因为命令行输入必须多打一个空格才能按回车
+# url = 'http://api.map.baidu.com/place/detail?uid=048e7f0c026babce26e0a097&output=html&source=placeapi_v2'
+
+url = sys.argv[1]
 
 # 获取图片URL
 str_html = requests.get(url)
 soup = BeautifulSoup(str_html.text, 'lxml')
 data = soup.select('#newbasicinfo > div.baseinfo.clearfix > div.carousel > div > a > img')
 # print(data)
+result = {'src': 'http://pv18mucav.bkt.clouddn.com/food.png'}
 for item in data:
     result = {
         'src': item.get('src')
