@@ -3,7 +3,7 @@ package com.example.user.controller;
 import com.example.user.entity.User;
 import com.example.user.entity.User_roles;
 import com.example.user.repository.UserRepository;
-import com.example.user.repository.UserRolesReposiroty;
+import com.example.user.repository.UserRolesRepository;
 import com.example.user.service.SmtpMailSender;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -23,7 +23,7 @@ public class UserController implements UserControllerInterface {
     private UserRepository userRepository;
 
     @Autowired
-    private UserRolesReposiroty userRolesRepository;
+    private UserRolesRepository userRolesRepository;
 
     @Autowired
     SmtpMailSender smtpMailSender;
@@ -295,17 +295,6 @@ public class UserController implements UserControllerInterface {
         return userRepository.save(u);
     }
 
-    public String refindpassword(@RequestParam String email) {
-        User u = userRepository.findUserByEmail(email);
-
-        if (u == null) {
-            return "no such email";
-        } else {
-            //这里应该用验证用户邮箱的功能，现在未实现，先可以直接修改
-            return u.getId().toString();
-        }
-
-    }
 
     public String changePassword(@RequestParam Long id,
                                  @RequestParam String oldPassword, @RequestParam String newPassword) {
