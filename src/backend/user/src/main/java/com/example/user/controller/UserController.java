@@ -3,7 +3,7 @@ package com.example.user.controller;
 import com.example.user.entity.User;
 import com.example.user.entity.User_roles;
 import com.example.user.repository.UserRepository;
-import com.example.user.repository.UserRolesReposiroty;
+import com.example.user.repository.UserRolesRepository;
 import com.example.user.service.SmtpMailSender;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -23,7 +23,7 @@ public class UserController implements UserControllerInterface {
     private UserRepository userRepository;
 
     @Autowired
-    private UserRolesReposiroty userRolesRepository;
+    private UserRolesRepository userRolesRepository;
 
     @Autowired
     SmtpMailSender smtpMailSender;
@@ -40,20 +40,7 @@ public class UserController implements UserControllerInterface {
 
     public String addUser(@RequestParam String username,@RequestParam String password,
                         @RequestParam String email, @RequestParam String phone, @RequestParam String sex) {
-        User uTest1 = userRepository.findUserByUsername(username);
-        if (uTest1 != null) {
-            return "username already exists";
-        }
 
-        User uTest2 = userRepository.findUserByEmail(email);
-        if (uTest2 != null) {
-            return "email already exists";
-        }
-
-        User uTest3 = userRepository.findUserByPhone(phone);
-        if (uTest3 != null) {
-            return "phone number already exists";
-        }
 
         User u = new User();
         u.setPassword(password);
@@ -238,6 +225,21 @@ public class UserController implements UserControllerInterface {
         User_roles user_roles = new User_roles();
         user_roles.setUsername(username);
         user_roles.setRole("ROLE_USER");
+
+        User uTest1 = userRepository.findUserByUsername(username);
+        if (uTest1 != null) {
+            return "username already exists";
+        }
+
+        User uTest2 = userRepository.findUserByEmail(email);
+        if (uTest2 != null) {
+            return "email already exists";
+        }
+
+        User uTest3 = userRepository.findUserByPhone(phone);
+        if (uTest3 != null) {
+            return "phone number already exists";
+        }
         userRolesRepository.save(user_roles);
         userRepository.save(u);
 
@@ -260,7 +262,7 @@ public class UserController implements UserControllerInterface {
                              @RequestParam String sex,@RequestParam int age,
                              @RequestParam String address,@RequestParam String phone)
     {
-        User u = userRepository.findById(id).get();
+        User u = userRepository.findUserById(id);
         u.setAddress(address);
         u.setAge(age);
         u.setSex(sex);
@@ -295,21 +297,10 @@ public class UserController implements UserControllerInterface {
         return userRepository.save(u);
     }
 
-    public String refindpassword(@RequestParam String email) {
-        User u = userRepository.findUserByEmail(email);
-
-        if (u == null) {
-            return "no such email";
-        } else {
-            //这里应该用验证用户邮箱的功能，现在未实现，先可以直接修改
-            return u.getId().toString();
-        }
-
-    }
 
     public String changePassword(@RequestParam Long id,
                                  @RequestParam String oldPassword, @RequestParam String newPassword) {
-        User u = userRepository.findById(id).get();
+        User u = userRepository.findUserById(id);
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         if (!encoder.matches(oldPassword, u.getPassword())) {
             return "Password not match! Not successful!";

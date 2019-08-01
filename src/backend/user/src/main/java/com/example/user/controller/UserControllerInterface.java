@@ -31,8 +31,6 @@ public interface UserControllerInterface {
     @RequestMapping("/un/improvip/{id}")
     User improPermission(@PathVariable(value = "id") Long id);
 
-    @RequestMapping("/un/refindId")
-    String refindpassword(@RequestParam String email);
 
     @RequestMapping("/users/changepassword")
     String changePassword(@RequestParam Long id, @RequestParam String oldPassword,

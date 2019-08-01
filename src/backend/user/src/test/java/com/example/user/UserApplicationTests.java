@@ -44,7 +44,7 @@ public class UserApplicationTests {
 				.param("password", "testpasswor")
 				.param("email", "email@test.tes")
 				.param("phone", "999")
-				.param("sex","male"))
+				.param("sex", "male"))
 				.andExpect(status().isOk());
 		mvc.perform(get("/un/signin")
 				.param("username", "testuse")
@@ -69,12 +69,15 @@ public class UserApplicationTests {
 				.andExpect(status().isOk());
 		mvc.perform(get("/users/username/testuse").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
-		mvc.perform(get("/users/improvip/1").contentType(MediaType.APPLICATION_JSON))
+
+	}
+	@WithMockUser(roles={"ADMIN"})
+	@Test
+	public void test2() throws Exception{
+		mvc.perform(get("/un/improvip/1").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
-		mvc.perform(get("/un/refindId")
-				.param("email", "email@test.test"))
-				.andExpect(status().isOk())
-				.andReturn().getResponse().getContentAsString();
+		mvc.perform(get("/un/improvip/1").contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
 		mvc.perform(get("/un/refindPassword")
 				.param("email", "kmykoh97@gmail.comt"))
 				.andExpect(status().isOk())
@@ -84,6 +87,8 @@ public class UserApplicationTests {
 				.param("oldPassword", "testpassword")
 				.param("password", "newpassword"))
 				.andExpect(status().is(400));
+		mvc.perform(get("/admin/alluser"))
+				.andExpect(status().isOk());
 	}
 
 }

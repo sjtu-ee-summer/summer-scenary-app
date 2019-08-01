@@ -14,16 +14,16 @@ public class SmtpMailSender {
     @Autowired
     private JavaMailSender javaMailSender;
 
-    public void sendMail(String to, String subject, String content) throws MessagingException {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("1964305379@qq.com");
-        message.setTo(to);
-        message.setSubject(subject);
-        message.setText(content);
-
-//        helper.addAttachment("filename", new ClassPathResource("\\static\\path")); //You can add email attachment
-        javaMailSender.send(message);
-    }
+//    public void sendMail(String to, String subject, String content) throws MessagingException {
+//        SimpleMailMessage message = new SimpleMailMessage();
+//        message.setFrom("1964305379@qq.com");
+//        message.setTo(to);
+//        message.setSubject(subject);
+//        message.setText(content);
+//
+////        helper.addAttachment("filename", new ClassPathResource("\\static\\path")); //You can add email attachment
+//        javaMailSender.send(message);
+//    }
 
     public void sendHtmlMail(String to, String subject, String content) {
         MimeMessage message=javaMailSender.createMimeMessage();

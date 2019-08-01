@@ -77,8 +77,8 @@ public class ImgidentifyController {
 
     @RequestMapping("/baike")
     public String baike(@RequestParam String keyword) throws IOException, InterruptedException {
-        //String exe = "python3";
-        String exe = "python";
+        String exe = "python3";
+//        String exe = "python";
         String command = "./baike.py";
         String[] cmdArr = new String[] {exe, command,keyword};
         Process process = Runtime.getRuntime().exec(cmdArr);
@@ -112,8 +112,8 @@ public class ImgidentifyController {
 
     @PostMapping("/getfood")
     public String getfood(@RequestParam String url) throws IOException, InterruptedException {
-        String exe = "python";
-        //String exe = "python3";
+//        String exe = "python";
+        String exe = "python3";
         String command = "./get_food_images.py";
         String[] cmdArr = new String[] {exe, command, url};
         Process process = Runtime.getRuntime().exec(cmdArr);
@@ -130,8 +130,8 @@ public class ImgidentifyController {
     }
     @PostMapping("/gethotel")
     public String gethotel(@RequestParam String url) throws IOException, InterruptedException {
-        String exe = "python";
-        //String exe = "python3";
+//        String exe = "python";
+        String exe = "python3";
         String command = "./get_hotel_images.py";
         String[] cmdArr = new String[] {exe, command, url};
         Process process = Runtime.getRuntime().exec(cmdArr);
@@ -148,8 +148,8 @@ public class ImgidentifyController {
     }
     @PostMapping("/getshopping")
     public String getshopping(@RequestParam String url) throws IOException, InterruptedException {
-        String exe = "python";
-        //String exe = "python3";
+//        String exe = "python";
+        String exe = "python3";
         String command = "./get_shopping_images.py";
         String[] cmdArr = new String[] {exe, command, url};
         Process process = Runtime.getRuntime().exec(cmdArr);
