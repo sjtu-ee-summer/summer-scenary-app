@@ -1,0 +1,58 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: IdelmkhisRepository</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.imgidentify.Repository</a> ]
+</div>
+
+<h1>Coverage Summary for Class: IdelmkhisRepository (com.example.imgidentify.Repository)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">IdelmkhisRepository</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.imgidentify.Repository;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.example.imgidentify.Entity.Ideobjhi;
+<i>4</i>&nbsp;import com.example.imgidentify.Entity.Idelmkhi;
+<i>5</i>&nbsp;import org.springframework.data.repository.CrudRepository;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import java.util.List;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;public interface IdelmkhisRepository extends CrudRepository&lt;Idelmkhi,Long&gt; {
+<i>10</i>&nbsp;    List&lt;Idelmkhi&gt; findAllByUid(Long user_id);
+<i>11</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-08-01 09:17</div>
+</div>
+</body>
+</html>

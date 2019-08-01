@@ -1,0 +1,57 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: IdeobjhisRepository</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.imgidentify.Repository</a> ]
+</div>
+
+<h1>Coverage Summary for Class: IdeobjhisRepository (com.example.imgidentify.Repository)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">IdeobjhisRepository</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.imgidentify.Repository;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.example.imgidentify.Entity.Ideobjhi;
+<i>4</i>&nbsp;import org.springframework.data.repository.CrudRepository;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import java.util.List;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;public interface IdeobjhisRepository extends CrudRepository&lt;Ideobjhi,Long&gt; {
+<i>9</i>&nbsp;    List&lt;Ideobjhi&gt; findAllByUid(Long user_id);
+<i>10</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-08-01 09:17</div>
+</div>
+</body>
+</html>
