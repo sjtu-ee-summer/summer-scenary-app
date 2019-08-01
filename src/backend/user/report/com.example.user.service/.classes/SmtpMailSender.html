@@ -50,18 +50,18 @@
 </td>
 <td class="coverageStat">
   <span class="percent">
-    66.7%
+    100%
   </span>
   <span class="absValue">
-    (2/ 3)
+    (2/ 2)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    52.6%
+    83.3%
   </span>
   <span class="absValue">
-    (10/ 19)
+    (10/ 12)
   </span>
 </td>
 </tr>
@@ -88,16 +88,16 @@
 <i>14</i>&nbsp;    @Autowired
 <i>15</i>&nbsp;    private JavaMailSender javaMailSender;
 <i>16</i>&nbsp;
-<i>17</i>&nbsp;    public void sendMail(String to, String subject, String content) throws MessagingException {
-<b class="nc"><i>18</i>&nbsp;        SimpleMailMessage message = new SimpleMailMessage();</b>
-<b class="nc"><i>19</i>&nbsp;        message.setFrom(&quot;1964305379@qq.com&quot;);</b>
-<b class="nc"><i>20</i>&nbsp;        message.setTo(to);</b>
-<b class="nc"><i>21</i>&nbsp;        message.setSubject(subject);</b>
-<b class="nc"><i>22</i>&nbsp;        message.setText(content);</b>
-<i>23</i>&nbsp;
-<i>24</i>&nbsp;//        helper.addAttachment(&quot;filename&quot;, new ClassPathResource(&quot;\\static\\path&quot;)); //You can add email attachment
-<b class="nc"><i>25</i>&nbsp;        javaMailSender.send(message);</b>
-<b class="nc"><i>26</i>&nbsp;    }</b>
+<i>17</i>&nbsp;//    public void sendMail(String to, String subject, String content) throws MessagingException {
+<i>18</i>&nbsp;//        SimpleMailMessage message = new SimpleMailMessage();
+<i>19</i>&nbsp;//        message.setFrom(&quot;1964305379@qq.com&quot;);
+<i>20</i>&nbsp;//        message.setTo(to);
+<i>21</i>&nbsp;//        message.setSubject(subject);
+<i>22</i>&nbsp;//        message.setText(content);
+<i>23</i>&nbsp;//
+<i>24</i>&nbsp;////        helper.addAttachment(&quot;filename&quot;, new ClassPathResource(&quot;\\static\\path&quot;)); //You can add email attachment
+<i>25</i>&nbsp;//        javaMailSender.send(message);
+<i>26</i>&nbsp;//    }
 <i>27</i>&nbsp;
 <i>28</i>&nbsp;    public void sendHtmlMail(String to, String subject, String content) {
 <b class="fc"><i>29</i>&nbsp;        MimeMessage message=javaMailSender.createMimeMessage();</b>
@@ -119,7 +119,7 @@
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2019-07-30 16:36</div>
+    <div style="float:right;">generated on 2019-08-01 09:36</div>
 </div>
 </body>
 </html>

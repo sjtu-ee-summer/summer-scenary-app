@@ -46,6 +46,27 @@ public class UserApplicationTests {
 				.param("phone", "999")
 				.param("sex", "male"))
 				.andExpect(status().isOk());
+		mvc.perform(get("/un/signup")
+				.param("username", "testuse1111")
+				.param("password", "testpasswor")
+				.param("email", "email@test.tes")
+				.param("phone", "9999")
+				.param("sex", "male"))
+				.andExpect(status().isOk());
+		mvc.perform(get("/un/signup")
+				.param("username", "testusehhhh")
+				.param("password", "testpasswor")
+				.param("email", "email@test.teslllll")
+				.param("phone", "999")
+				.param("sex", "male"))
+				.andExpect(status().isOk());
+		mvc.perform(get("/un/signup")
+				.param("username", "testuse")
+				.param("password", "testpasswor")
+				.param("email", "email@test.tes")
+				.param("phone", "999")
+				.param("sex", "male"))
+				.andExpect(status().isOk());
 		mvc.perform(get("/un/signin")
 				.param("username", "testuse")
 				.param("password", "testpasswor"))
@@ -69,17 +90,21 @@ public class UserApplicationTests {
 				.andExpect(status().isOk());
 		mvc.perform(get("/users/username/testuse").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
-
-	}
-	@WithMockUser(roles={"ADMIN"})
-	@Test
-	public void test2() throws Exception{
 		mvc.perform(get("/un/improvip/1").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
 		mvc.perform(get("/un/improvip/1").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
 		mvc.perform(get("/un/refindPassword")
-				.param("email", "kmykoh97@gmail.comt"))
+				.param("email", "email@test.tes"))
+				.andExpect(status().isOk())
+				.andReturn().getResponse().getContentAsString();
+
+	}
+	@WithMockUser(roles={"ADMIN"})
+	@Test
+	public void test2() throws Exception{
+		mvc.perform(get("/un/refindPassword")
+				.param("email", "email@test.tes"))
 				.andExpect(status().isOk())
 				.andReturn().getResponse().getContentAsString();
 		mvc.perform(get("/users/changepassword")
@@ -88,6 +113,8 @@ public class UserApplicationTests {
 				.param("password", "newpassword"))
 				.andExpect(status().is(400));
 		mvc.perform(get("/admin/alluser"))
+				.andExpect(status().isOk());
+		mvc.perform(get("/").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
 	}
 

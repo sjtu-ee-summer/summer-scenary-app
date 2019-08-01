@@ -1,0 +1,92 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: UserControllerInterface</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.user.controller</a> ]
+</div>
+
+<h1>Coverage Summary for Class: UserControllerInterface (com.example.user.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">UserControllerInterface</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.user.controller;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.example.user.entity.User;
+<i>4</i>&nbsp;import org.springframework.web.bind.annotation.GetMapping;
+<i>5</i>&nbsp;import org.springframework.web.bind.annotation.PathVariable;
+<i>6</i>&nbsp;import org.springframework.web.bind.annotation.RequestMapping;
+<i>7</i>&nbsp;import org.springframework.web.bind.annotation.RequestParam;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;import javax.mail.MessagingException;
+<i>10</i>&nbsp;import java.util.List;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;public interface UserControllerInterface {
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    @GetMapping(&quot;/users/id/{id}&quot;)
+<i>15</i>&nbsp;    User getUser(@PathVariable Long id);
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;    @GetMapping(&quot;/users/username/{username}&quot;)
+<i>18</i>&nbsp;    User getByUsername(@PathVariable String username);
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    @RequestMapping(&quot;/un/signup&quot;)
+<i>21</i>&nbsp;    String addUser(@RequestParam String username, @RequestParam String password,
+<i>22</i>&nbsp;                   @RequestParam String email, @RequestParam String phone, @RequestParam String sex);
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;    @GetMapping(&quot;/un/signin&quot;)
+<i>25</i>&nbsp;    boolean signin(@RequestParam String username, @RequestParam String password);
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;    @RequestMapping(&quot;/users/userinfo/{id}&quot;)
+<i>28</i>&nbsp;    User postUserInfo(@PathVariable(value = &quot;id&quot;)Long id, @RequestParam String sex,@RequestParam int age,
+<i>29</i>&nbsp;                      @RequestParam String address,@RequestParam String phone);
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;    @RequestMapping(&quot;/un/improvip/{id}&quot;)
+<i>32</i>&nbsp;    User improPermission(@PathVariable(value = &quot;id&quot;) Long id);
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;    @RequestMapping(&quot;/users/changepassword&quot;)
+<i>36</i>&nbsp;    String changePassword(@RequestParam Long id, @RequestParam String oldPassword,
+<i>37</i>&nbsp;                          @RequestParam String newPassword);
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;    @RequestMapping(&quot;/admin/alluser&quot;)
+<i>40</i>&nbsp;    List&lt;User&gt; alluser();
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;    @RequestMapping(&quot;/un/refindPassword&quot;)
+<i>43</i>&nbsp;    String refindPassword(@RequestParam String email) throws MessagingException;
+<i>44</i>&nbsp;
+<i>45</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-08-01 09:36</div>
+</div>
+</body>
+</html>

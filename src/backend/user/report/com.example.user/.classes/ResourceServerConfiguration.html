@@ -50,12 +50,12 @@
     100%
   </span>
   <span class="absValue">
-    (14/ 14)
+    (6/ 6)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">ResourceServerConfiguration$$EnhancerBySpringCGLIB$$ececa7a2</td>
+    <td class="name">ResourceServerConfiguration$$EnhancerBySpringCGLIB$$d8b634cb</td>
   </tr>
 <tr>
   <td class="name"><strong>total</strong></td>
@@ -72,7 +72,7 @@
     100%
   </span>
   <span class="absValue">
-    (14/ 14)
+    (6/ 6)
   </span>
 </td>
 </tr>
@@ -98,26 +98,19 @@
 <i>14</i>&nbsp;
 <b class="fc"><i>15</i>&nbsp;        http</b>
 <b class="fc"><i>16</i>&nbsp;                .authorizeRequests()</b>
-<b class="fc"><i>17</i>&nbsp;                .antMatchers(HttpMethod.GET,&quot;/un/**&quot;)</b>
-<b class="fc"><i>18</i>&nbsp;                .permitAll();</b>
-<i>19</i>&nbsp;
-<b class="fc"><i>20</i>&nbsp;        http</b>
-<b class="fc"><i>21</i>&nbsp;                .authorizeRequests()</b>
-<b class="fc"><i>22</i>&nbsp;                .antMatchers(HttpMethod.GET,&quot;/users/**&quot;)</b>
-<b class="fc"><i>23</i>&nbsp;                .hasRole(&quot;USER&quot;);</b>
-<i>24</i>&nbsp;
-<b class="fc"><i>25</i>&nbsp;        http</b>
-<b class="fc"><i>26</i>&nbsp;                .authorizeRequests()</b>
-<b class="fc"><i>27</i>&nbsp;                .antMatchers(HttpMethod.GET,&quot;/admin/**&quot;)</b>
-<b class="fc"><i>28</i>&nbsp;                .hasRole(&quot;ADMIN&quot;);</b>
-<b class="fc"><i>29</i>&nbsp;    }</b>
-<i>30</i>&nbsp;}
+<i>17</i>&nbsp;//                .antMatchers(&quot;/admin/**&quot;).hasRole(&quot;ADMIN&quot;)
+<i>18</i>&nbsp;//                .antMatchers(&quot;/users/**&quot;).hasRole(&quot;USER&quot;)
+<b class="fc"><i>19</i>&nbsp;                .antMatchers(&quot;/un/**&quot;, &quot;/**&quot;).permitAll()</b>
+<b class="fc"><i>20</i>&nbsp;                .anyRequest().authenticated();</b>
+<i>21</i>&nbsp;
+<b class="fc"><i>22</i>&nbsp;    }</b>
+<i>23</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2019-07-30 16:36</div>
+    <div style="float:right;">generated on 2019-08-01 09:36</div>
 </div>
 </body>
 </html>

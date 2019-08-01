@@ -48,19 +48,22 @@
 <i>10</i>&nbsp;import java.util.Optional;
 <i>11</i>&nbsp;
 <i>12</i>&nbsp;public interface UserRepository extends CrudRepository&lt;User,Long&gt; {
-<i>13</i>&nbsp;    User findUserByUsername(String username);
-<i>14</i>&nbsp;
-<i>15</i>&nbsp;    User findUserByEmail(String email);
-<i>16</i>&nbsp;
-<i>17</i>&nbsp;    User findUserByPhone(String phone);
-<i>18</i>&nbsp;
-<i>19</i>&nbsp;}
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    User findUserByUsername(String username);
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;    User findUserByEmail(String email);
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    User findUserByPhone(String phone);
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    User findUserById(Long id);
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2019-07-30 16:36</div>
+    <div style="float:right;">generated on 2019-08-01 09:36</div>
 </div>
 </body>
 </html>
