@@ -140,7 +140,7 @@ public class UserController implements UserControllerInterface {
                 "                <tr>\n" +
                 "                    <td align=\"center\" valign=\"top\" style=\"padding: 40px 10px 40px 10px;\">\n" +
                 "                        <a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app\" target=\"_blank\">\n" +
-                "                            <img alt=\"Logo\" src=\"https://cdn0.iconfinder.com/data/icons/ballicons/128/tourist_bag-512.png\" width=\"100\" height=\"100\" style=\"display: block;  font-family: 'Lato', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;\" border=\"0\">\n" +
+                "                            <img alt=\"Logo\" src=\"https://i.ibb.co/kQPHtMd/42-C87434477-B21-C545-F2-D49-C4329554-C.png\" width=\"100\" height=\"100\" style=\"display: block;  font-family: 'Lato', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;\" border=\"0\">\n" +
                 "                        </a>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
@@ -152,7 +152,7 @@ public class UserController implements UserControllerInterface {
                 "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#ffffff\" align=\"center\" valign=\"top\" style=\"padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;\">\n" +
-                "                        <h1 style=\"font-size: 32px; font-weight: 400; margin: 0;\">Welcome, " + username +
+                "                        <h1 style=\"font-size: 32px; font-weight: 400; margin: 0;\">很高兴有您的加入，" + username +
                 "</h1>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
@@ -164,7 +164,7 @@ public class UserController implements UserControllerInterface {
                 "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#ffffff\" align=\"left\" style=\"padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;\" >\n" +
-                "                        <p style=\"margin: 0;\"><center>We hope to give you a wonderful journey!</center></p>\n" +
+                "                        <p style=\"margin: 0;\"><center>我们希望能给您一个不一样的假期</center></p>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
                 "                <tr>\n" +
@@ -174,7 +174,7 @@ public class UserController implements UserControllerInterface {
                 "                                <td bgcolor=\"#ffffff\" align=\"center\" style=\"padding: 20px 30px 60px 30px;\">\n" +
                 "                                    <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n" +
                 "                                        <tr>\n" +
-                "                                            <td align=\"center\" style=\"border-radius: 3px;\" bgcolor=\"#7c72dc\"><a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app\" target=\"_blank\" style=\"font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #7c72dc; display: inline-block;\">Check out our Github Profile</a></td>\n" +
+                "                                            <td align=\"center\" style=\"border-radius: 3px;\" bgcolor=\"#7c72dc\"><a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app\" target=\"_blank\" style=\"font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #7c72dc; display: inline-block;\">瞄瞄我们的项目</a></td>\n" +
                 "                                        </tr>\n" +
                 "                                    </table>\n" +
                 "                                </td>\n" +
@@ -190,12 +190,12 @@ public class UserController implements UserControllerInterface {
                 "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#111111\" align=\"left\" style=\"padding: 40px 30px 20px 30px; color: #ffffff; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;\" >\n" +
-                "                        <h2 style=\"font-size: 24px; font-weight: 400; margin: 0;\">About Travelsy</h2>\n" +
+                "                        <h2 style=\"font-size: 24px; font-weight: 400; margin: 0;\">关于 Easy Travel</h2>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#111111\" align=\"left\" style=\"padding: 0px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;\" >\n" +
-                "                        <p style=\"margin: 0;\">We are a group of passionate tour guides aiming to provide you a wonderful and unforgetable experience</p>\n" +
+                "                        <p style=\"margin: 0;\">我们是一群充满激情的导游，旨在为您提供美妙而难忘的体验</p>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
                 "            </table>\n" +
@@ -206,8 +206,8 @@ public class UserController implements UserControllerInterface {
                 "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#C6C2ED\" align=\"center\" style=\"padding: 30px 30px 30px 30px; border-radius: 4px 4px 4px 4px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;\" >\n" +
-                "                        <h2 style=\"font-size: 20px; font-weight: 400; color: #111111; margin: 0;\">Need more help?</h2>\n" +
-                "                        <p style=\"margin: 0;\"><a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app/issues\" target=\"_blank\" style=\"color: #7c72dc;\">We&rsquo;re here, ready to talk</a></p>\n" +
+                "                        <h2 style=\"font-size: 20px; font-weight: 400; color: #111111; margin: 0;\">需要更多协助？</h2>\n" +
+                "                        <p style=\"margin: 0;\"><a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app/issues\" target=\"_blank\" style=\"color: #7c72dc;\">我们在这里，欢迎谈聊聊</a></p>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
                 "            </table>\n" +
@@ -218,12 +218,12 @@ public class UserController implements UserControllerInterface {
                 "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#f4f4f4\" align=\"left\" style=\"padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;\" >\n" +
-                "                        <p style=\"margin: 0;\">You received this email because you requested a password reset. If you did not, <a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app/issues\" target=\"_blank\" style=\"color: #111111; font-weight: 700;\">please contact us.</a>.</p>\n" +
+                "                        <p style=\"margin: 0;\">您收到此电子邮件是因为您已注册成为我们的新用户。如果您没有，请与我们<a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app/issues\" target=\"_blank\" style=\"color: #111111; font-weight: 700;\">联系.</a>.</p>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#f4f4f4\" align=\"left\" style=\"padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;\" >\n" +
-                "                        <p style=\"margin: 0;\">Shanghai Jiao Tong University @ 2019 TravelSy</p>\n" +
+                "                        <p style=\"margin: 0;\">Shanghai Jiao Tong University @ 2019 Easy Travel</p>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
                 "            </table>\n" +
@@ -232,6 +232,7 @@ public class UserController implements UserControllerInterface {
                 "</table>\n" +
                 "</body>\n" +
                 "</html>\n";
+
         // send email
         smtpMailSender.sendHtmlMail(email, "Welcome to TravelSy", content);
 
@@ -357,7 +358,7 @@ public class UserController implements UserControllerInterface {
 
         String tempPassword = sb.toString();
 
-        String content="<html>\n" +
+        String content = "<html>\n" +
                 "<head>\n" +
                 "    <title></title>\n" +
                 "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n" +
@@ -421,7 +422,7 @@ public class UserController implements UserControllerInterface {
                 "                <tr>\n" +
                 "                    <td align=\"center\" valign=\"top\" style=\"padding: 40px 10px 40px 10px;\">\n" +
                 "                        <a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app\" target=\"_blank\">\n" +
-                "                            <img alt=\"Logo\" src=\"https://cdn0.iconfinder.com/data/icons/ballicons/128/tourist_bag-512.png\" width=\"100\" height=\"100\" style=\"display: block;  font-family: 'Lato', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;\" border=\"0\">\n" +
+                "                            <img alt=\"Logo\" src=\"https://i.ibb.co/kQPHtMd/42-C87434477-B21-C545-F2-D49-C4329554-C.png\" width=\"100\" height=\"100\" style=\"display: block;  font-family: 'Lato', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;\" border=\"0\">\n" +
                 "                        </a>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
@@ -433,7 +434,7 @@ public class UserController implements UserControllerInterface {
                 "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#ffffff\" align=\"center\" valign=\"top\" style=\"padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;\">\n" +
-                "                        <h1 style=\"font-size: 32px; font-weight: 400; margin: 0;\">We have reset yout password. </h1>\n" +
+                "                        <h1 style=\"font-size: 32px; font-weight: 400; margin: 0;\">我们已重置您的密码</h1>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
                 "            </table>\n" +
@@ -444,7 +445,7 @@ public class UserController implements UserControllerInterface {
                 "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#ffffff\" align=\"left\" style=\"padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;\" >\n" +
-                "                        <p style=\"margin: 0;\">Your new password is: <b> " + tempPassword +
+                "                        <p style=\"margin: 0;\">您的新密码是：<b> " + tempPassword +
                 " </b></p>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
@@ -455,7 +456,7 @@ public class UserController implements UserControllerInterface {
                 "                                <td bgcolor=\"#ffffff\" align=\"center\" style=\"padding: 20px 30px 60px 30px;\">\n" +
                 "                                    <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n" +
                 "                                        <tr>\n" +
-                "                                            <td align=\"center\" style=\"border-radius: 3px;\" bgcolor=\"#7c72dc\"><a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app\" target=\"_blank\" style=\"font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #7c72dc; display: inline-block;\">Check out our Github Profile</a></td>\n" +
+                "                                            <td align=\"center\" style=\"border-radius: 3px;\" bgcolor=\"#7c72dc\"><a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app\" target=\"_blank\" style=\"font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #7c72dc; display: inline-block;\">瞄瞄我们的项目</a></td>\n" +
                 "                                        </tr>\n" +
                 "                                    </table>\n" +
                 "                                </td>\n" +
@@ -471,12 +472,12 @@ public class UserController implements UserControllerInterface {
                 "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#111111\" align=\"left\" style=\"padding: 40px 30px 20px 30px; color: #ffffff; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;\" >\n" +
-                "                        <h2 style=\"font-size: 24px; font-weight: 400; margin: 0;\">About Travelsy</h2>\n" +
+                "                        <h2 style=\"font-size: 24px; font-weight: 400; margin: 0;\">关于 Easy Travel</h2>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#111111\" align=\"left\" style=\"padding: 0px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;\" >\n" +
-                "                        <p style=\"margin: 0;\">We are a group of passionate tour guides aiming to provide you a wonderful and unforgetable experience</p>\n" +
+                "                        <p style=\"margin: 0;\">我们是一群充满激情的导游，旨在为您提供美妙而难忘的体验</p>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
                 "            </table>\n" +
@@ -487,8 +488,8 @@ public class UserController implements UserControllerInterface {
                 "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#C6C2ED\" align=\"center\" style=\"padding: 30px 30px 30px 30px; border-radius: 4px 4px 4px 4px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;\" >\n" +
-                "                        <h2 style=\"font-size: 20px; font-weight: 400; color: #111111; margin: 0;\">Need more help?</h2>\n" +
-                "                        <p style=\"margin: 0;\"><a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app/issues\" target=\"_blank\" style=\"color: #7c72dc;\">We&rsquo;re here, ready to talk</a></p>\n" +
+                "                        <h2 style=\"font-size: 20px; font-weight: 400; color: #111111; margin: 0;\">需要更多协助？</h2>\n" +
+                "                        <p style=\"margin: 0;\"><a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app/issues\" target=\"_blank\" style=\"color: #7c72dc;\">我们在这里，欢迎谈聊聊</a></p>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
                 "            </table>\n" +
@@ -499,12 +500,12 @@ public class UserController implements UserControllerInterface {
                 "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#f4f4f4\" align=\"left\" style=\"padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;\" >\n" +
-                "                        <p style=\"margin: 0;\">You received this email because you requested a password reset. If you did not, <a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app/issues\" target=\"_blank\" style=\"color: #111111; font-weight: 700;\">please contact us.</a>.</p>\n" +
+                "                        <p style=\"margin: 0;\">您收到此电子邮件是因为您要求重置密码。如果您没有，请与我们<a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app/issues\" target=\"_blank\" style=\"color: #111111; font-weight: 700;\">联系.</a>.</p>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#f4f4f4\" align=\"left\" style=\"padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;\" >\n" +
-                "                        <p style=\"margin: 0;\">Shanghai Jiao Tong University @ 2019 TravelSy</p>\n" +
+                "                        <p style=\"margin: 0;\">Shanghai Jiao Tong University @ 2019 Easy Travel</p>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
                 "            </table>\n" +
@@ -513,6 +514,7 @@ public class UserController implements UserControllerInterface {
                 "</table>\n" +
                 "</body>\n" +
                 "</html>\n";
+
         // send email
         smtpMailSender.sendHtmlMail(email, "RESET PASSWORD", content);
 
