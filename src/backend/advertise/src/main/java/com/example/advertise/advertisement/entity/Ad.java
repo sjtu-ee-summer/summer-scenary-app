@@ -1,4 +1,4 @@
-package com.example.advertise.Entity;
+package com.example.advertise.advertisement.entity;
 
 
 import javax.persistence.*;

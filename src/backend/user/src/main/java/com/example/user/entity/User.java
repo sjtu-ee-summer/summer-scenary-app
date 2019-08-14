@@ -15,6 +15,9 @@ public class User
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private UserAd userAd;
+
     private String username;
 
     private String password;
@@ -138,5 +141,11 @@ public class User
     }
 
 
+    public UserAd getUserAd() {
+        return userAd;
+    }
 
+    public void setUserAd(UserAd userAd) {
+        this.userAd = userAd;
+    }
 }

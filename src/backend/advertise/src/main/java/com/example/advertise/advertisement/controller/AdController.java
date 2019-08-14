@@ -1,8 +1,8 @@
-package com.example.advertise.controller;
+package com.example.advertise.advertisement.controller;
 
 
-import com.example.advertise.Entity.Ad;
-import com.example.advertise.repository.AdRepository;
+import com.example.advertise.advertisement.entity.Ad;
+import com.example.advertise.advertisement.repository.AdRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.*;

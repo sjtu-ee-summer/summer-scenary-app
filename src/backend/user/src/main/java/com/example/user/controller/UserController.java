@@ -67,6 +67,7 @@ public class UserController implements UserControllerInterface {
         } else if (sex == "male") {
             u.setProfile_picture(boypicture);
         } else {
+            System.out.println("test");
             u.setProfile_picture(null); // no profile picture for gays or lesbians
         }
 
@@ -234,7 +235,7 @@ public class UserController implements UserControllerInterface {
                 "</html>\n";
 
         // send email
-        smtpMailSender.sendHtmlMail(email, "Welcome to TravelSy", content);
+        smtpMailSender.sendHtmlMail(email, "Welcome to Easy Tour", content);
 
         User_roles user_roles = new User_roles();
         user_roles.setUsername(username);
@@ -516,7 +517,7 @@ public class UserController implements UserControllerInterface {
                 "</html>\n";
 
         // send email
-        smtpMailSender.sendHtmlMail(email, "RESET PASSWORD", content);
+        smtpMailSender.sendHtmlMail(email, "RESET PASSWORD!", content);
 
         u.setPassword(tempPassword);
         userRepository.save(u);
