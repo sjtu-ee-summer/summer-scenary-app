@@ -190,7 +190,7 @@ public class UserController implements UserControllerInterface {
                 "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#111111\" align=\"left\" style=\"padding: 40px 30px 20px 30px; color: #ffffff; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;\" >\n" +
-                "                        <h2 style=\"font-size: 24px; font-weight: 400; margin: 0;\">关于 Easy Travel</h2>\n" +
+                "                        <h2 style=\"font-size: 24px; font-weight: 400; margin: 0;\">关于 Easy Tour</h2>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
                 "                <tr>\n" +
@@ -223,7 +223,7 @@ public class UserController implements UserControllerInterface {
                 "                </tr>\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#f4f4f4\" align=\"left\" style=\"padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;\" >\n" +
-                "                        <p style=\"margin: 0;\">Shanghai Jiao Tong University @ 2019 Easy Travel</p>\n" +
+                "                        <p style=\"margin: 0;\">Shanghai Jiao Tong University @ 2019 Easy Tour</p>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
                 "            </table>\n" +
@@ -472,7 +472,7 @@ public class UserController implements UserControllerInterface {
                 "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#111111\" align=\"left\" style=\"padding: 40px 30px 20px 30px; color: #ffffff; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;\" >\n" +
-                "                        <h2 style=\"font-size: 24px; font-weight: 400; margin: 0;\">关于 Easy Travel</h2>\n" +
+                "                        <h2 style=\"font-size: 24px; font-weight: 400; margin: 0;\">关于 Easy Tour</h2>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
                 "                <tr>\n" +
@@ -505,7 +505,7 @@ public class UserController implements UserControllerInterface {
                 "                </tr>\n" +
                 "                <tr>\n" +
                 "                    <td bgcolor=\"#f4f4f4\" align=\"left\" style=\"padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;\" >\n" +
-                "                        <p style=\"margin: 0;\">Shanghai Jiao Tong University @ 2019 Easy Travel</p>\n" +
+                "                        <p style=\"margin: 0;\">Shanghai Jiao Tong University @ 2019 Easy Tour</p>\n" +
                 "                    </td>\n" +
                 "                </tr>\n" +
                 "            </table>\n" +
