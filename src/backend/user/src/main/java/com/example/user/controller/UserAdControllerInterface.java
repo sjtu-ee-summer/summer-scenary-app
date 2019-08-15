@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 public interface UserAdControllerInterface {
 
-    @RequestMapping("/un/updateinterest")
-    String updateinterest(@RequestParam Long id, UserAd userad);
+    @RequestMapping("/un/hello")
+    String hello(@RequestParam Long id, UserAd userad);
 
-
+    @RequestMapping("un/updateinterest")
+    String update(@RequestParam Long id, UserAd userad);
 }

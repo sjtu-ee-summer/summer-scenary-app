@@ -140,7 +140,6 @@ public class User
         this.email = email;
     }
 
-
     public UserAd getUserAd() {
         return userAd;
     }

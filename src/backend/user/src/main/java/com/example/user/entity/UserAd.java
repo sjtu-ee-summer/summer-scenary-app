@@ -231,4 +231,5 @@ public class UserAd {
     public void setCitylife(int citylife) {
         this.citylife = citylife;
     }
+
 }
