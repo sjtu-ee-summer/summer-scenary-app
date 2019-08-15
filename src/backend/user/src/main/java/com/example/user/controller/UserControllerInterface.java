@@ -17,16 +17,20 @@ public interface UserControllerInterface {
     @GetMapping("/users/username/{username}")
     User getByUsername(@PathVariable String username);
 
+    // Alert!!!
+    // gender: 0 for male, 1 for female
     @RequestMapping("/un/signup")
     String addUser(@RequestParam String username, @RequestParam String password,
-                   @RequestParam String email, @RequestParam String phone, @RequestParam String sex);
+                   @RequestParam String email, @RequestParam String phone, @RequestParam int gender);
 
     @GetMapping("/un/signin")
     boolean signin(@RequestParam String username, @RequestParam String password);
 
+    // Alert!!!
+    // gender: 0 for male, 1 for female
     @RequestMapping("/users/userinfo/{id}")
-    User postUserInfo(@PathVariable(value = "id")Long id, @RequestParam String sex,@RequestParam int age,
-                      @RequestParam String address,@RequestParam String phone);
+    User postUserInfo(@PathVariable(value = "id")Long id, @RequestParam int gender, @RequestParam int age,
+                      @RequestParam String address, @RequestParam String phone);
 
     @RequestMapping("/un/improvip/{id}")
     User improPermission(@PathVariable(value = "id") Long id);

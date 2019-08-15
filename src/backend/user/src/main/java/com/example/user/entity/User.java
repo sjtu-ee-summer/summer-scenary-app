@@ -30,7 +30,7 @@ public class User
 
     private Date vipdate;
 
-    private String sex;
+    private int gender;
 
     private int age=0;
 
@@ -92,14 +92,6 @@ public class User
         this.vip = vip;
     }
 
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
     public int getAge() {
         return age;
     }
@@ -146,5 +138,13 @@ public class User
 
     public void setUserAd(UserAd userAd) {
         this.userAd = userAd;
+    }
+
+    public int getGender() {
+        return gender;
+    }
+
+    public void setGender(int gender) {
+        this.gender = gender;
     }
 }

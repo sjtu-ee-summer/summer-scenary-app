@@ -39,7 +39,7 @@ public class UserController implements UserControllerInterface {
     }
 
     public String addUser(@RequestParam String username,@RequestParam String password,
-                        @RequestParam String email, @RequestParam String phone, @RequestParam String sex) {
+                        @RequestParam String email, @RequestParam String phone, @RequestParam int gender) { // gender: 0 fo male, 1 for female
         User uTest1 = userRepository.findUserByUsername(username);
         if (uTest1 != null) {
             return "username already exists";
@@ -60,14 +60,13 @@ public class UserController implements UserControllerInterface {
         u.setUsername(username);
         u.setEmail(email);
         u.setPhone(phone);
-        u.setSex(sex);
+        u.setGender(gender);
 
-        if (sex == "female") {
+        if (gender == 1) {
             u.setProfile_picture(girlpicture);
-        } else if (sex == "male") {
+        } else if (gender == 0) {
             u.setProfile_picture(boypicture);
         } else {
-            System.out.println("test");
             u.setProfile_picture(null); // no profile picture for gays or lesbians
         }
 
@@ -274,13 +273,12 @@ public class UserController implements UserControllerInterface {
     }
 
     public User postUserInfo(@PathVariable(value = "id")Long id,
-                             @RequestParam String sex,@RequestParam int age,
-                             @RequestParam String address,@RequestParam String phone)
-    {
+                             @RequestParam int gender, @RequestParam int age,
+                             @RequestParam String address, @RequestParam String phone) { // gender: 0 for male, 1 for female
         User u = userRepository.findUserById(id);
         u.setAddress(address);
         u.setAge(age);
-        u.setSex(sex);
+        u.setGender(gender);
         u.setPhone(phone);
         return userRepository.save(u);
     }
