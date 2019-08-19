@@ -9,6 +9,6 @@ public interface UserAdControllerInterface {
     @RequestMapping("/un/hello")
     String hello(@RequestParam Long id, UserAd userad);
 
-    @RequestMapping("un/updateinterest")
+    @RequestMapping("/users/updateinterest")
     String update(@RequestParam Long id, UserAd userad);
 }
