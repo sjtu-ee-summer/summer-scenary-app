@@ -6,7 +6,6 @@ import com.example.user.repository.UserRepository;
 import com.example.user.repository.UserRolesRepository;
 import com.example.user.service.SmtpMailSender;
 import org.springframework.beans.factory.annotation.*;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.*;
@@ -77,6 +76,41 @@ public class UserController implements UserControllerInterface {
         String dateNowStr = sdf.format(d);
         u.setVipdate(java.sql.Date.valueOf(dateNowStr));
 
+        // start new thread in background to improve response time
+        Thread t = new Thread(){
+            public void run(){
+                System.out.println("test1");
+                sendSignupEmail(email, username);
+            }
+        };
+        t.start();
+
+        User_roles user_roles = new User_roles();
+        user_roles.setUsername(username);
+        user_roles.setRole("ROLE_USER");
+
+        User uTest4 = userRepository.findUserByUsername(username);
+        if (uTest1 != null) {
+            return "username already exists";
+        }
+
+        // to solve problems with concurrency
+        User uTest5 = userRepository.findUserByEmail(email);
+        if (uTest2 != null) {
+            return "email already exists";
+        }
+
+        User uTest6 = userRepository.findUserByPhone(phone);
+        if (uTest3 != null) {
+            return "phone number already exists";
+        }
+        userRolesRepository.save(user_roles);
+        userRepository.save(u);
+
+        return "register success";
+    }
+
+    public void sendSignupEmail(String email, String username) {
         String content = "<html>\n" +
                 "<head>\n" +
                 "    <title></title>\n" +
@@ -236,29 +270,6 @@ public class UserController implements UserControllerInterface {
 
         // send email
         smtpMailSender.sendHtmlMail(email, "Welcome to Easy Tour", content);
-
-        User_roles user_roles = new User_roles();
-        user_roles.setUsername(username);
-        user_roles.setRole("ROLE_USER");
-
-        User uTest4 = userRepository.findUserByUsername(username);
-        if (uTest1 != null) {
-            return "username already exists";
-        }
-
-        User uTest5 = userRepository.findUserByEmail(email);
-        if (uTest2 != null) {
-            return "email already exists";
-        }
-
-        User uTest6 = userRepository.findUserByPhone(phone);
-        if (uTest3 != null) {
-            return "phone number already exists";
-        }
-        userRolesRepository.save(user_roles);
-        userRepository.save(u);
-
-        return "register success";
     }
 
     public boolean signin(@RequestParam String username, @RequestParam String password) {
@@ -358,6 +369,22 @@ public class UserController implements UserControllerInterface {
 
         String tempPassword = sb.toString();
 
+        // start new thread in background to improve response time
+        Thread t = new Thread(){
+            public void run(){
+                System.out.println("test1");
+                sendPasswordEmail(email, tempPassword);
+            }
+        };
+        t.start();
+
+        u.setPassword(tempPassword);
+        userRepository.save(u);
+
+        return "success";
+    }
+
+    public void sendPasswordEmail(String email, String tempPassword) {
         String content = "<html>\n" +
                 "<head>\n" +
                 "    <title></title>\n" +
@@ -517,189 +544,5 @@ public class UserController implements UserControllerInterface {
 
         // send email
         smtpMailSender.sendHtmlMail(email, "RESET PASSWORD!", content);
-
-        u.setPassword(tempPassword);
-        userRepository.save(u);
-
-        return "success";
     }
-
-    public String test() {
-        Thread t = new Thread(){
-            public void run(){
-                System.out.println("test1");
-               test2();
-            }
-        };
-        t.start();
-        return "true";
-    }
-
-    @Async
-    public void test2() {
-        System.out.println("test12345");
-        String tempPassword = "new password";
-
-        String content = "<html>\n" +
-                "<head>\n" +
-                "    <title></title>\n" +
-                "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n" +
-                "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n" +
-                "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n" +
-                "    <style type=\"text/css\">\n" +
-                "        @media screen {\n" +
-                "            @font-face {\n" +
-                "                font-family: 'Lato';\n" +
-                "                font-style: normal;\n" +
-                "                font-weight: 400;\n" +
-                "                src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');\n" +
-                "            }\n" +
-                "\n" +
-                "            @font-face {\n" +
-                "                font-family: 'Lato';\n" +
-                "                font-style: normal;\n" +
-                "                font-weight: 700;\n" +
-                "                src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v11/qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff) format('woff');\n" +
-                "            }\n" +
-                "\n" +
-                "            @font-face {\n" +
-                "                font-family: 'Lato';\n" +
-                "                font-style: italic;\n" +
-                "                font-weight: 400;\n" +
-                "                src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v11/RYyZNoeFgb0l7W3Vu1aSWOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');\n" +
-                "            }\n" +
-                "\n" +
-                "            @font-face {\n" +
-                "                font-family: 'Lato';\n" +
-                "                font-style: italic;\n" +
-                "                font-weight: 700;\n" +
-                "                src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYELO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');\n" +
-                "            }\n" +
-                "        }\n" +
-                "        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }\n" +
-                "        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }\n" +
-                "        img { -ms-interpolation-mode: bicubic; }\n" +
-                "        img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }\n" +
-                "        table { border-collapse: collapse !important; }\n" +
-                "        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }\n" +
-                "        a[x-apple-data-detectors] {\n" +
-                "            color: inherit !important;\n" +
-                "            text-decoration: none !important;\n" +
-                "            font-size: inherit !important;\n" +
-                "            font-family: inherit !important;\n" +
-                "            font-weight: inherit !important;\n" +
-                "            line-height: inherit !important;\n" +
-                "        }\n" +
-                "        div[style*=\"margin: 16px 0;\"] { margin: 0 !important; }\n" +
-                "    </style>\n" +
-                "</head>\n" +
-                "<body style=\"background-color: #f4f4f4; margin: 0 !important; padding: 0 !important;\">\n" +
-                "<div style=\"display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'Lato', Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;\">\n" +
-                "    Looks like you tried signing in a few too many times. Let's see if we can get you back into your account.\n" +
-                "</div>\n" +
-                "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n" +
-                "    <tr>\n" +
-                "        <td bgcolor=\"#7c72dc\" align=\"center\">\n" +
-                "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
-                "                <tr>\n" +
-                "                    <td align=\"center\" valign=\"top\" style=\"padding: 40px 10px 40px 10px;\">\n" +
-                "                        <a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app\" target=\"_blank\">\n" +
-                "                            <img alt=\"Logo\" src=\"https://i.ibb.co/kQPHtMd/42-C87434477-B21-C545-F2-D49-C4329554-C.png\" width=\"100\" height=\"100\" style=\"display: block;  font-family: 'Lato', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;\" border=\"0\">\n" +
-                "                        </a>\n" +
-                "                    </td>\n" +
-                "                </tr>\n" +
-                "            </table>\n" +
-                "        </td>\n" +
-                "    </tr>\n" +
-                "    <tr>\n" +
-                "        <td bgcolor=\"#7c72dc\" align=\"center\" style=\"padding: 0px 10px 0px 10px;\">\n" +
-                "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
-                "                <tr>\n" +
-                "                    <td bgcolor=\"#ffffff\" align=\"center\" valign=\"top\" style=\"padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;\">\n" +
-                "                        <h1 style=\"font-size: 32px; font-weight: 400; margin: 0;\">我们已重置您的密码</h1>\n" +
-                "                    </td>\n" +
-                "                </tr>\n" +
-                "            </table>\n" +
-                "        </td>\n" +
-                "    </tr>\n" +
-                "    <tr>\n" +
-                "        <td bgcolor=\"#f4f4f4\" align=\"center\" style=\"padding: 0px 10px 0px 10px;\">\n" +
-                "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
-                "                <tr>\n" +
-                "                    <td bgcolor=\"#ffffff\" align=\"left\" style=\"padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;\" >\n" +
-                "                        <p style=\"margin: 0;\">您的新密码是：<b> " + tempPassword +
-                " </b></p>\n" +
-                "                    </td>\n" +
-                "                </tr>\n" +
-                "                <tr>\n" +
-                "                    <td bgcolor=\"#ffffff\" align=\"left\">\n" +
-                "                        <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n" +
-                "                            <tr>\n" +
-                "                                <td bgcolor=\"#ffffff\" align=\"center\" style=\"padding: 20px 30px 60px 30px;\">\n" +
-                "                                    <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n" +
-                "                                        <tr>\n" +
-                "                                            <td align=\"center\" style=\"border-radius: 3px;\" bgcolor=\"#7c72dc\"><a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app\" target=\"_blank\" style=\"font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #7c72dc; display: inline-block;\">瞄瞄我们的项目</a></td>\n" +
-                "                                        </tr>\n" +
-                "                                    </table>\n" +
-                "                                </td>\n" +
-                "                            </tr>\n" +
-                "                        </table>\n" +
-                "                    </td>\n" +
-                "                </tr>\n" +
-                "            </table>\n" +
-                "        </td>\n" +
-                "    </tr>\n" +
-                "    <tr>\n" +
-                "        <td bgcolor=\"#f4f4f4\" align=\"center\" style=\"padding: 0px 10px 0px 10px;\">\n" +
-                "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
-                "                <tr>\n" +
-                "                    <td bgcolor=\"#111111\" align=\"left\" style=\"padding: 40px 30px 20px 30px; color: #ffffff; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;\" >\n" +
-                "                        <h2 style=\"font-size: 24px; font-weight: 400; margin: 0;\">关于 Easy Tour</h2>\n" +
-                "                    </td>\n" +
-                "                </tr>\n" +
-                "                <tr>\n" +
-                "                    <td bgcolor=\"#111111\" align=\"left\" style=\"padding: 0px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;\" >\n" +
-                "                        <p style=\"margin: 0;\">我们是一群充满激情的导游，旨在为您提供美妙而难忘的体验</p>\n" +
-                "                    </td>\n" +
-                "                </tr>\n" +
-                "            </table>\n" +
-                "        </td>\n" +
-                "    </tr>\n" +
-                "    <tr>\n" +
-                "        <td bgcolor=\"#f4f4f4\" align=\"center\" style=\"padding: 30px 10px 0px 10px;\">\n" +
-                "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
-                "                <tr>\n" +
-                "                    <td bgcolor=\"#C6C2ED\" align=\"center\" style=\"padding: 30px 30px 30px 30px; border-radius: 4px 4px 4px 4px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;\" >\n" +
-                "                        <h2 style=\"font-size: 20px; font-weight: 400; color: #111111; margin: 0;\">需要更多协助？</h2>\n" +
-                "                        <p style=\"margin: 0;\"><a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app/issues\" target=\"_blank\" style=\"color: #7c72dc;\">我们在这里，欢迎谈聊聊</a></p>\n" +
-                "                    </td>\n" +
-                "                </tr>\n" +
-                "            </table>\n" +
-                "        </td>\n" +
-                "    </tr>\n" +
-                "    <tr>\n" +
-                "        <td bgcolor=\"#f4f4f4\" align=\"center\" style=\"padding: 0px 10px 0px 10px;\">\n" +
-                "            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"480\" >\n" +
-                "                <tr>\n" +
-                "                    <td bgcolor=\"#f4f4f4\" align=\"left\" style=\"padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;\" >\n" +
-                "                        <p style=\"margin: 0;\">您收到此电子邮件是因为您要求重置密码。如果您没有，请与我们<a href=\"https://github.com/sjtu-ee-summer/summer-scenary-app/issues\" target=\"_blank\" style=\"color: #111111; font-weight: 700;\">联系.</a>.</p>\n" +
-                "                    </td>\n" +
-                "                </tr>\n" +
-                "                <tr>\n" +
-                "                    <td bgcolor=\"#f4f4f4\" align=\"left\" style=\"padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;\" >\n" +
-                "                        <p style=\"margin: 0;\">Shanghai Jiao Tong University @ 2019 Easy Tour</p>\n" +
-                "                    </td>\n" +
-                "                </tr>\n" +
-                "            </table>\n" +
-                "        </td>\n" +
-                "    </tr>\n" +
-                "</table>\n" +
-                "</body>\n" +
-                "</html>\n";
-        // send email
-        smtpMailSender.sendHtmlMail("kmykoh97@gmail.com", "RESET PASSWORD!", content);
-
-        System.out.println("test5");
-    }
-
 }
