@@ -21,7 +21,8 @@ public class ImgIdentifyObject {
 
     private static Logger logger = LoggerFactory.getLogger(ImgIdentifyObject.class);
 
-    private static String access_token = "24.50b81135cb28882ad465f98a9114ef66.2592000.1565330832.282335-16714026";
+    private static String access_token = "24.89edf5fc2938bce0c9557c210f98c330.2592000.1569075244.282335-16714026";
+
 
     public static String main(String file64) throws IOException {
 
