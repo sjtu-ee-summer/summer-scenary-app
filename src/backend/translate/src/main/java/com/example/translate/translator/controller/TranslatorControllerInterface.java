@@ -1,6 +1,6 @@
 package com.example.translate.translator.controller;
 
-import com.example.translate.translator.entity.TranslatorTextEntity;
+import com.example.translate.translator.entity.TranslatorStatusEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -8,25 +8,33 @@ import java.util.List;
 @RequestMapping("/translator")
 public interface TranslatorControllerInterface {
 
+    // 专家接单（只能接最旧的单子）
     @CrossOrigin
     @RequestMapping("/getjob")
-    public TranslatorTextEntity getJob();
+    TranslatorStatusEntity getJob();
 
+    //
     @CrossOrigin
-    @PostMapping("/sendresult")
-    public String sendResult(@RequestParam String result, @RequestParam Long textId,
-                             @RequestParam Long translatorId);
+    @RequestMapping("/sendresult")
+    String sendResult(@RequestParam String result, @RequestParam Long textId,
+                      @RequestParam Long translatorId);
 
+    // 用户要求专家服务
     @CrossOrigin
-    @PostMapping("/setjob")
-    public String setJob(@RequestParam Long id, @RequestParam String text);
+    @RequestMapping("/setjob")
+    String setJob(@RequestParam Long id, @RequestParam String text);
 
+    // 看用户所有的专家单子
     @CrossOrigin
-    @GetMapping("/refresh/{id}")
-    public List<TranslatorTextEntity> refresh(@PathVariable Long id);
+    @RequestMapping("/seeall/{id}")
+    List<TranslatorStatusEntity> seeAll(@PathVariable Long id);
 
+    // 专家注册
     @CrossOrigin
-    @PostMapping("/registertranslator")
-    public Long registertranslator(@RequestParam String name);
+    @RequestMapping("/registertranslator")
+    Long registertranslator(@RequestParam String name, @RequestParam String password);
 
+    // 专家登入
+    @RequestMapping("/signin")
+    boolean signin(@RequestParam String username, @RequestParam String password);
 }

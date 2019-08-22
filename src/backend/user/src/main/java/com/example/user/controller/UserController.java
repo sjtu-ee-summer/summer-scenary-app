@@ -39,7 +39,7 @@ public class UserController implements UserControllerInterface {
     }
 
     public String addUser(@RequestParam String username,@RequestParam String password,
-                        @RequestParam String email, @RequestParam String phone, @RequestParam int gender) { // gender: 0 fo male, 1 for female
+                          @RequestParam String email, @RequestParam String phone, @RequestParam int gender) { // gender: 0 fo male, 1 for female
         User uTest1 = userRepository.findUserByUsername(username);
         if (uTest1 != null) {
             return "username already exists";

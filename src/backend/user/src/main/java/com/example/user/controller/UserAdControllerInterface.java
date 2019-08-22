@@ -11,4 +11,5 @@ public interface UserAdControllerInterface {
 
     @RequestMapping("/users/updateinterest")
     String update(@RequestParam Long id, UserAd userad);
+
 }

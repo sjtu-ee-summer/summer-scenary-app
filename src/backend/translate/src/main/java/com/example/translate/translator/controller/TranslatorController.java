@@ -3,6 +3,7 @@ package com.example.translate.translator.controller;
 import com.example.translate.translator.entity.*;
 import com.example.translate.translator.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,12 +19,12 @@ public class TranslatorController implements TranslatorControllerInterface{
     private TranslatorProfileRepository translatorProfileRepository;
     @Autowired
     private TranslatorStatusRepository translatorStatusRepository;
-    @Autowired
-    private TranslatorTextRepository translatorTextRepository;
 
-    public TranslatorTextEntity getJob() {
-        TranslatorTextEntity T = translatorTextRepository.findFirstByValidIsTrue();
+    public TranslatorStatusEntity getJob() {
+        TranslatorStatusEntity T = translatorStatusRepository.findFirstByValidIsTrue();
 //        String t = T.getText();
+        T.setValid(false); // means job's taken!
+        translatorStatusRepository.save(T);
 
         return T;
     }
@@ -50,34 +51,45 @@ public class TranslatorController implements TranslatorControllerInterface{
         return "failed";
     }
 
-    public String setJob(@RequestParam Long id, @RequestParam String text) {
-        TranslatorTextEntity translatorTextEntity = new TranslatorTextEntity();
-        translatorTextEntity.setValid(true);
-        translatorTextEntity.setText(text);
-        translatorTextEntity.setUserId(id);
-        translatorTextRepository.save(translatorTextEntity);
+    public String setJob(@RequestParam Long id) {
+        TranslatorStatusEntity translatorStatusEntity = new TranslatorStatusEntity();
+        translatorStatusEntity.setUserId(id);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        translatorStatusEntity.setTimestamp(dtf.format(now));
+
+        translatorStatusRepository.save(translatorStatusEntity);
 
         return "success";
     }
 
-    public List<TranslatorTextEntity> refresh(@PathVariable Long id) {
-        List<TranslatorTextEntity> translatorTextEntity = translatorTextRepository.findTranslatorTextEntitiesByUserId(id);
+    public List<TranslatorStatusEntity> seeAll(@PathVariable Long id) {
+        List<TranslatorStatusEntity> translatorStatusEntity = translatorStatusRepository.findTranslatorStatusEntitiesByUserId(id);
 
-        if (translatorTextEntity != null) {
-            return translatorTextEntity;
-        }
-
-        return null;
+        return translatorStatusEntity;
     }
 
-    public Long registertranslator(@RequestParam String name) {
+    public Long registertranslator(@RequestParam String name, @RequestParam String password) {
         TranslatorProfileEntity translatorProfileEntity = new TranslatorProfileEntity();
         translatorProfileEntity.setName(name);
+        translatorProfileEntity.setPassword(password);
         translatorProfileRepository.save(translatorProfileEntity);
         translatorProfileEntity = translatorProfileRepository.findByName(name);
         Long translatorJobID = translatorProfileEntity.getId();
 
         return translatorJobID; // returns Job ID upon successful registration
+    }
+
+    public boolean signin(@RequestParam String username, @RequestParam String password) {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        TranslatorProfileEntity u = translatorProfileRepository.findByName(username);
+        if (u == null) {
+            return false;
+        } else if (encoder.matches(password,u.getPassword())) {
+            return true;
+        }
+
+        return false;
     }
 
 }
