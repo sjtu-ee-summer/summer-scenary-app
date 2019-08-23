@@ -13,11 +13,13 @@ public class TranslatorStatusEntity {
 
     private long translatorId = 0; // initialized with 0 meaning no translator currently accept this job
 
-    private String timestamp;
+    private String timestart = "";
+
+    private String timeend = "";
 
     private boolean valid = true; // initialized with true to enable job to be taken
 
-    private int rating = 0;
+    private double rating = 0.0;
 
     public long getId() {
         return id;
@@ -33,14 +35,6 @@ public class TranslatorStatusEntity {
 
     public void setTranslatorId(long translatorId) {
         this.translatorId = translatorId;
-    }
-
-    public String getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
     }
 
     public boolean isValid() {
@@ -59,11 +53,27 @@ public class TranslatorStatusEntity {
         this.userId = userId;
     }
 
-    public int getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(double rating) {
         this.rating = rating;
+    }
+
+    public String getTimestart() {
+        return timestart;
+    }
+
+    public void setTimestart(String timestart) {
+        this.timestart = timestart;
+    }
+
+    public String getTimeend() {
+        return timeend;
+    }
+
+    public void setTimeend(String timeend) {
+        this.timeend = timeend;
     }
 }

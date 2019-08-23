@@ -15,7 +15,9 @@ public class TranslatorProfileEntity {
 
     private String password;
 
-    private int rating = 0;
+    private double rating = 0.0;
+
+    private long noOfJobTaken;
 
     public String getName() {
         return name;
@@ -42,11 +44,19 @@ public class TranslatorProfileEntity {
         this.password = encoder.encode(password);
     }
 
-    public int getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(double rating) {
         this.rating = rating;
+    }
+
+    public long getNoOfJobTaken() {
+        return noOfJobTaken;
+    }
+
+    public void setNoOfJobTaken(long noOfJobTaken) {
+        this.noOfJobTaken = noOfJobTaken;
     }
 }

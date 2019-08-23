@@ -20,56 +20,55 @@ public class TranslatorController implements TranslatorControllerInterface{
     @Autowired
     private TranslatorStatusRepository translatorStatusRepository;
 
-    public TranslatorStatusEntity getJob() {
+    public TranslatorStatusEntity getJob(@RequestParam Long translatorid) {
         TranslatorStatusEntity T = translatorStatusRepository.findFirstByValidIsTrue();
 //        String t = T.getText();
         T.setValid(false); // means job's taken!
+        // start time count
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        T.setTimestart(dtf.format(now));
+        T.setTranslatorId(translatorid);
         translatorStatusRepository.save(T);
 
         return T;
     }
 
-    public String sendResult(@RequestParam String result, @RequestParam Long textId,
-                             @RequestParam Long translatorId) {
-        TranslatorTextEntity translatorTextEntity = translatorTextRepository.findTranslatorTextEntityById(textId);
-        TranslatorStatusEntity translatorStatusEntity = new TranslatorStatusEntity();
+    public String endJob(@RequestParam Long eventid, @RequestParam double rating) {
+        TranslatorStatusEntity T = translatorStatusRepository.findTranslatorStatusEntityById(eventid);
+        // record end time
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
+        T.setTimeend(dtf.format(now));
+        // set rating
+        T.setRating(rating);
+        translatorStatusRepository.save(T);
 
-        if (result != "") {
-            translatorTextEntity.setResult(result);
-            translatorTextEntity.setValid(false);
-            translatorTextRepository.save(translatorTextEntity);
-            translatorStatusEntity.setTranslatorId(translatorId);
-            translatorStatusEntity.setTextId(textId);
-            translatorStatusEntity.setTimestamp(dtf.format(now));
-            translatorStatusRepository.save(translatorStatusEntity);
-
-            return "success";
-        }
-
-        return "failed";
-    }
-
-    public String setJob(@RequestParam Long id) {
-        TranslatorStatusEntity translatorStatusEntity = new TranslatorStatusEntity();
-        translatorStatusEntity.setUserId(id);
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        LocalDateTime now = LocalDateTime.now();
-        translatorStatusEntity.setTimestamp(dtf.format(now));
-
-        translatorStatusRepository.save(translatorStatusEntity);
+        // set translator average rating
+        TranslatorProfileEntity translator = translatorProfileRepository.findById(T.getTranslatorId());
+        translator.setRating(((translator.getRating()*(translator.getNoOfJobTaken())) + rating) / (translator.getNoOfJobTaken()+1));
+        translator.setNoOfJobTaken(translator.getNoOfJobTaken() + 1);
 
         return "success";
     }
 
-    public List<TranslatorStatusEntity> seeAll(@PathVariable Long id) {
-        List<TranslatorStatusEntity> translatorStatusEntity = translatorStatusRepository.findTranslatorStatusEntitiesByUserId(id);
+    public TranslatorStatusEntity startJob(@RequestParam Long userid) {
+        TranslatorStatusEntity translatorStatusEntity = new TranslatorStatusEntity();
+        translatorStatusEntity.setUserId(userid);
+        translatorStatusRepository.save(translatorStatusEntity);
+
+        TranslatorStatusEntity temp = translatorStatusRepository.findTranslatorStatusEntityById(translatorStatusEntity.getId());
+
+        return temp;
+    }
+
+    public List<TranslatorStatusEntity> seeAll(@PathVariable Long userid) {
+        List<TranslatorStatusEntity> translatorStatusEntity = translatorStatusRepository.findTranslatorStatusEntitiesByUserId(userid);
 
         return translatorStatusEntity;
     }
 
-    public Long registertranslator(@RequestParam String name, @RequestParam String password) {
+    public Long registerTranslator(@RequestParam String name, @RequestParam String password) {
         TranslatorProfileEntity translatorProfileEntity = new TranslatorProfileEntity();
         translatorProfileEntity.setName(name);
         translatorProfileEntity.setPassword(password);

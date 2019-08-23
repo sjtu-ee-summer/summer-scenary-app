@@ -7,4 +7,6 @@ public interface TranslatorProfileRepository extends CrudRepository<TranslatorPr
 
     TranslatorProfileEntity findByName(String name);
 
+    TranslatorProfileEntity findById(long id);
+
 }

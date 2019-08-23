@@ -9,4 +9,7 @@ public interface TranslatorStatusRepository extends CrudRepository<TranslatorSta
     List<TranslatorStatusEntity> findTranslatorStatusEntitiesByUserId(Long userid);
 
     TranslatorStatusEntity findFirstByValidIsTrue();
+
+    TranslatorStatusEntity findTranslatorStatusEntityById(Long id);
+
 }
