@@ -13,7 +13,7 @@ public interface TranslatorControllerInterface {
     @RequestMapping("/getjob")
     TranslatorStatusEntity getJob(@RequestParam Long translatorid);
 
-    // 用户结束专家翻译 eventid 是 /startjob 返回的 id
+    // 用户结束专家翻译并给评分 eventid 是 /startjob 返回的 id
     @CrossOrigin
     @RequestMapping("/endjob")
     String endJob(@RequestParam Long eventid, @RequestParam double rating);

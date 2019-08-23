@@ -17,7 +17,7 @@ public class TranslatorProfileEntity {
 
     private double rating = 0.0;
 
-    private long noOfJobTaken;
+    private int noOfJobTaken = 0;
 
     public String getName() {
         return name;
@@ -52,11 +52,11 @@ public class TranslatorProfileEntity {
         this.rating = rating;
     }
 
-    public long getNoOfJobTaken() {
+    public int getNoOfJobTaken() {
         return noOfJobTaken;
     }
 
-    public void setNoOfJobTaken(long noOfJobTaken) {
+    public void setNoOfJobTaken(int noOfJobTaken) {
         this.noOfJobTaken = noOfJobTaken;
     }
 }
