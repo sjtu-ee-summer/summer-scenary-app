@@ -31,7 +31,7 @@ public class ImgIdentifyLandmark {
 
     /**
      *
-     * @param access_token 应用token
+     * //@param access_token 应用token
      * @param base64Picture 图片路径
      */
     public static String ocrtrans(String base64Picture) throws IOException {
@@ -57,6 +57,7 @@ public class ImgIdentifyLandmark {
         System.out.println(result);
         jsonObject = (JsonObject)jsonParser.parse(result);
         JsonObject end = jsonObject.get("result").getAsJsonObject();
+        end = end.get("landmark").getAsJsonObject();
         return end.toString();
 //        return result;
     }
