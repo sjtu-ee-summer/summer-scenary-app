@@ -76,5 +76,11 @@
 		out.println("验证失败");
 	}
 %>
+
+	<script type="text/javascript">
+		windows.onload = function(){
+			
+		}
+	</script>
   </body>
 </html>
