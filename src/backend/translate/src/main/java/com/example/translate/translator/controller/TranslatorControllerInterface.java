@@ -34,6 +34,7 @@ public interface TranslatorControllerInterface {
     List<TranslatorStatusEntity> seeAll(@PathVariable Long userid);
 
     // 专家注册
+    // returns success on successful registration, else returns username already exist
     @CrossOrigin
     @RequestMapping("/registertranslator")
     String registerTranslator(@RequestParam String username, @RequestParam String password);

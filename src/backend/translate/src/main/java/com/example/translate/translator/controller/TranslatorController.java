@@ -82,14 +82,25 @@ public class TranslatorController implements TranslatorControllerInterface{
     }
 
     public String registerTranslator(@RequestParam String username, @RequestParam String password) {
+        // do repeat checking
+        TranslatorProfileEntity T1 = translatorProfileRepository.findByUsername(username);
+        if (T1 != null) {
+            return "username already exist";
+        }
+
         TranslatorProfileEntity translatorProfileEntity = new TranslatorProfileEntity();
         translatorProfileEntity.setName(username);
         translatorProfileEntity.setPassword(password);
+
+        // concurrency checking
+        TranslatorProfileEntity T2 = translatorProfileRepository.findByUsername(username);
+        if (T2 != null) {
+            return "username already exist";
+        }
+
         translatorProfileRepository.save(translatorProfileEntity);
 
         return "success";
-
-        // todo repeated user exception
     }
 
     public Long signin(@RequestParam String username, @RequestParam String password) {

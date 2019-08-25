@@ -89,12 +89,12 @@ public class UserController implements UserControllerInterface {
         user_roles.setUsername(username);
         user_roles.setRole("ROLE_USER");
 
+        // to solve problems with concurrency
         User uTest4 = userRepository.findUserByUsername(username);
         if (uTest1 != null) {
             return "username already exists";
         }
 
-        // to solve problems with concurrency
         User uTest5 = userRepository.findUserByEmail(email);
         if (uTest2 != null) {
             return "email already exists";
