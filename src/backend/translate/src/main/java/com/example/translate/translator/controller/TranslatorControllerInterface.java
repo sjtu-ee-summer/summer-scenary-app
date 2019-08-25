@@ -23,6 +23,11 @@ public interface TranslatorControllerInterface {
     @RequestMapping("/startjob")
     TranslatorStatusEntity startJob(@RequestParam Long userid);
 
+    // 专家查看是否有工作 有工作返回true, 没有返回false
+    @CrossOrigin
+    @RequestMapping("/checkjob")
+    String checkAvailableJob();
+
     // 看用户所有的专家单子
     @CrossOrigin
     @RequestMapping("/seeall/{userid}")
@@ -31,9 +36,12 @@ public interface TranslatorControllerInterface {
     // 专家注册
     @CrossOrigin
     @RequestMapping("/registertranslator")
-    Long registerTranslator(@RequestParam String name, @RequestParam String password);
+    String registerTranslator(@RequestParam String username, @RequestParam String password);
 
     // 专家登入
+    // Upon successful signin, return translator_id to frontend. Frontend should store this translator_id to be used on other services
+    // returns 0 or exception error on failed signin
     @RequestMapping("/signin")
-    boolean signin(@RequestParam String username, @RequestParam String password);
+    Long signin(@RequestParam String username, @RequestParam String password);
+
 }

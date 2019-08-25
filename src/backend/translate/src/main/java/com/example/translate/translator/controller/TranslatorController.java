@@ -34,6 +34,16 @@ public class TranslatorController implements TranslatorControllerInterface{
         return T;
     }
 
+    public String checkAvailableJob() {
+        TranslatorStatusEntity T = translatorStatusRepository.findFirstByValidIsTrue();
+
+        if (T == null) {
+            return "false";
+        }
+
+        return "true";
+    }
+
     public String endJob(@RequestParam Long eventid, @RequestParam double rating) {
         TranslatorStatusEntity T = translatorStatusRepository.findTranslatorStatusEntityById(eventid);
         // record end time
@@ -48,8 +58,11 @@ public class TranslatorController implements TranslatorControllerInterface{
         TranslatorProfileEntity translator = translatorProfileRepository.findById(T.getTranslatorId());
         translator.setRating(((translator.getRating()*(translator.getNoOfJobTaken())) + rating) / (translator.getNoOfJobTaken()+1));
         translator.setNoOfJobTaken(translator.getNoOfJobTaken() + 1);
+        translatorProfileRepository.save(translator);
 
         return "success";
+
+        // todo exception for repeated rating
     }
 
     public TranslatorStatusEntity startJob(@RequestParam Long userid) {
@@ -68,27 +81,27 @@ public class TranslatorController implements TranslatorControllerInterface{
         return translatorStatusEntity;
     }
 
-    public Long registerTranslator(@RequestParam String name, @RequestParam String password) {
+    public String registerTranslator(@RequestParam String username, @RequestParam String password) {
         TranslatorProfileEntity translatorProfileEntity = new TranslatorProfileEntity();
-        translatorProfileEntity.setName(name);
+        translatorProfileEntity.setName(username);
         translatorProfileEntity.setPassword(password);
         translatorProfileRepository.save(translatorProfileEntity);
-        translatorProfileEntity = translatorProfileRepository.findByName(name);
-        Long translatorJobID = translatorProfileEntity.getId();
 
-        return translatorJobID; // returns Job ID upon successful registration
+        return "success";
+
+        // todo repeated user exception
     }
 
-    public boolean signin(@RequestParam String username, @RequestParam String password) {
+    public Long signin(@RequestParam String username, @RequestParam String password) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        TranslatorProfileEntity u = translatorProfileRepository.findByName(username);
-        if (u == null) {
-            return false;
-        } else if (encoder.matches(password,u.getPassword())) {
-            return true;
+        TranslatorProfileEntity u = translatorProfileRepository.findByUsername(username);
+
+        if (encoder.matches(password, u.getPassword())) {
+            Long translator_id = u.getId();
+            return translator_id;
         }
 
-        return false;
+        return Long.valueOf(0);
     }
 
 }

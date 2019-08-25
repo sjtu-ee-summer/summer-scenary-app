@@ -23,8 +23,10 @@ public interface UserControllerInterface {
     String addUser(@RequestParam String username, @RequestParam String password,
                    @RequestParam String email, @RequestParam String phone, @RequestParam int gender);
 
+    // Upon successful signin, return user_id to frontend. Frontend should store this user_id to be used on other services
+    // returns 0 or exception error on failed signin
     @GetMapping("/un/signin")
-    boolean signin(@RequestParam String username, @RequestParam String password);
+    Long signin(@RequestParam String username, @RequestParam String password);
 
     // Alert!!!
     // gender: 0 for male, 1 for female

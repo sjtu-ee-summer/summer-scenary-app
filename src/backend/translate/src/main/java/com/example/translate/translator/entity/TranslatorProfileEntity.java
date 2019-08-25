@@ -11,7 +11,7 @@ public class TranslatorProfileEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String name;
+    private String username;
 
     private String password;
 
@@ -20,11 +20,11 @@ public class TranslatorProfileEntity {
     private int noOfJobTaken = 0;
 
     public String getName() {
-        return name;
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String username) {
+        this.username = username;
     }
 
     public long getId() {
