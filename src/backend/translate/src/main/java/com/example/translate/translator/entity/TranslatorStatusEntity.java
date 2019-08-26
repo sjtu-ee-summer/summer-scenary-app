@@ -9,11 +9,17 @@ public class TranslatorStatusEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private long textId;
+    private long userId;
 
-    private long translatorId;
+    private long translatorId = 0; // initialized with 0 meaning no translator currently accept this job
 
-    private String timestamp;
+    private String timestart = "";
+
+    private String timeend = "";
+
+    private boolean valid = true; // initialized with true to enable job to be taken
+
+    private double rating = 0.0;
 
     public long getId() {
         return id;
@@ -21,14 +27,6 @@ public class TranslatorStatusEntity {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public long getTextId() {
-        return textId;
-    }
-
-    public void setTextId(long textId) {
-        this.textId = textId;
     }
 
     public long getTranslatorId() {
@@ -39,11 +37,43 @@ public class TranslatorStatusEntity {
         this.translatorId = translatorId;
     }
 
-    public String getTimestamp() {
-        return timestamp;
+    public boolean isValid() {
+        return valid;
     }
 
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
+    public void setValid(boolean valid) {
+        this.valid = valid;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
+    public String getTimestart() {
+        return timestart;
+    }
+
+    public void setTimestart(String timestart) {
+        this.timestart = timestart;
+    }
+
+    public String getTimeend() {
+        return timeend;
+    }
+
+    public void setTimeend(String timeend) {
+        this.timeend = timeend;
     }
 }

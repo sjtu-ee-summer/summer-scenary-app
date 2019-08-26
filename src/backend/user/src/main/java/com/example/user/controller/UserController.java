@@ -39,7 +39,7 @@ public class UserController implements UserControllerInterface {
     }
 
     public String addUser(@RequestParam String username,@RequestParam String password,
-                        @RequestParam String email, @RequestParam String phone, @RequestParam int gender) { // gender: 0 fo male, 1 for female
+                          @RequestParam String email, @RequestParam String phone, @RequestParam int gender) { // gender: 0 fo male, 1 for female
         User uTest1 = userRepository.findUserByUsername(username);
         if (uTest1 != null) {
             return "username already exists";
@@ -89,12 +89,12 @@ public class UserController implements UserControllerInterface {
         user_roles.setUsername(username);
         user_roles.setRole("ROLE_USER");
 
+        // to solve problems with concurrency
         User uTest4 = userRepository.findUserByUsername(username);
         if (uTest1 != null) {
             return "username already exists";
         }
 
-        // to solve problems with concurrency
         User uTest5 = userRepository.findUserByEmail(email);
         if (uTest2 != null) {
             return "email already exists";
@@ -272,16 +272,16 @@ public class UserController implements UserControllerInterface {
         smtpMailSender.sendHtmlMail(email, "Welcome to Easy Tour", content);
     }
 
-    public boolean signin(@RequestParam String username, @RequestParam String password) {
+    public Long signin(@RequestParam String username, @RequestParam String password) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         User u = userRepository.findUserByUsername(username);
-        if (u == null) {
-            return false;
-        } else if (encoder.matches(password,u.getPassword())) {
-            return true;
+
+        if (encoder.matches(password, u.getPassword())) {
+            Long user_id = u.getId();
+            return user_id;
         }
 
-        return false;
+        return Long.valueOf(0);
     }
 
     public User postUserInfo(@PathVariable(value = "id")Long id,

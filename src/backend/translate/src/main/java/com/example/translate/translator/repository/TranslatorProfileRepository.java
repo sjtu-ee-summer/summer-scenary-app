@@ -5,6 +5,8 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface TranslatorProfileRepository extends CrudRepository<TranslatorProfileEntity,Long> {
 
-    TranslatorProfileEntity findByName(String name);
+    TranslatorProfileEntity findByUsername(String username);
+
+    TranslatorProfileEntity findById(long id);
 
 }
