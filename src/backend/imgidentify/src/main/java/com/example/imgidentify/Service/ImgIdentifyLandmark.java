@@ -56,9 +56,13 @@ public class ImgIdentifyLandmark {
         JsonParser jsonParser = new JsonParser();
         System.out.println(result);
         jsonObject = (JsonObject)jsonParser.parse(result);
-        JsonObject end = jsonObject.get("result").getAsJsonObject();
-        end = end.get("landmark").getAsJsonObject();
-        return end.toString();
+        String end = jsonObject.get("result").toString();
+
+        JsonObject j;
+        j = (JsonObject)jsonParser.parse(end);
+        String landmark = j.get("landmark").toString();
+//        end = end.get("landmark").getAsJsonObject();
+        return landmark;
 //        return result;
     }
 
