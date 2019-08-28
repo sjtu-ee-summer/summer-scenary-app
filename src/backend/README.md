@@ -13,6 +13,7 @@ This README file is added to prevent duplicate work that might mess up our cloud
 - Configured Jenkins' Job
 - Configured Jenkins' pipeline
 - Compile projects' services
+- Installed MongoDB
 
 ## Ongoing
 
