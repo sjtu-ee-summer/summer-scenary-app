@@ -65,7 +65,8 @@ public class ImgIdentifyLandmark {
         j = (JsonObject)jsonParser.parse(end);
         String landmark = j.get("landmark").toString();
 //        end = end.get("landmark").getAsJsonObject();
-        return landmark;
+        String st = landmark.replace("\"", "");
+        return st;
 //        return result;
     }
 
@@ -132,10 +133,12 @@ public class ImgIdentifyLandmark {
         jsonObject = (JsonObject)jsonParser.parse(body);
         JsonObject bean = jsonObject.getAsJsonObject("pagebean");
         JsonArray contentlist = bean.getAsJsonArray("contentlist");
+        if(contentlist.size()==0){
+            return "未知地点";
+        }
         System.out.println(contentlist.toString());
         JsonObject j = contentlist.get(0).getAsJsonObject();
         JsonPrimitive proname = j.getAsJsonPrimitive("proName");
-
         return proname.toString();
     }
 }
