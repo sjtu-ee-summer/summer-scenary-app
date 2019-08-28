@@ -7,12 +7,19 @@ import com.example.imgidentify.Repository.IdelmkhisRepository;
 import com.example.imgidentify.Repository.IdeobjhisRepository;
 import com.example.imgidentify.Service.ImgIdentifyObject;
 import com.example.imgidentify.Service.ImgIdentifyLandmark;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonPrimitive;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.*;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @EnableResourceServer
@@ -163,5 +170,13 @@ public class ImgidentifyController {
         process.waitFor();
         System.out.println(str);
         return str;
+    }
+
+    //s
+    @RequestMapping("/proname")
+    public String info(@RequestParam String name) throws IOException {
+
+        return ImgIdentifyLandmark.proname(name);
+
     }
 }

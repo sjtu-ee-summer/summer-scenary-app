@@ -1,7 +1,10 @@
 package com.example.imgidentify.Service;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.google.gson.JsonPrimitive;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -102,4 +105,37 @@ public class ImgIdentifyLandmark {
         return result;
     }
 
+    public static String proname(String name) throws IOException{
+        /** 图片地标识别接口地址 */
+        String url = "http://route.showapi.com/268-1";
+
+        /** 构建参数 */
+        Map<String,String> params = new HashMap<String,String>();
+
+
+        params.put("keyword",name);
+        params.put("showapi_appid","103804");
+
+        String str = "keyword"+name+"showapi_appid103804f06a794b48154b7381988d4ce6e512b9";
+        String sign= DigestUtils.md5Hex(str.getBytes("utf-8"));
+        params.put("showapi_sign",sign);
+
+
+        /** 请求图片地标识别 */
+        String result = requestForHttp(url,params);
+        System.out.println(result);
+
+        JsonObject jsonObject;
+        JsonParser jsonParser = new JsonParser();
+        jsonObject = (JsonObject)jsonParser.parse(result);
+        String  body = jsonObject.get("showapi_res_body").toString();
+        jsonObject = (JsonObject)jsonParser.parse(body);
+        JsonObject bean = jsonObject.getAsJsonObject("pagebean");
+        JsonArray contentlist = bean.getAsJsonArray("contentlist");
+        System.out.println(contentlist.toString());
+        JsonObject j = contentlist.get(0).getAsJsonObject();
+        JsonPrimitive proname = j.getAsJsonPrimitive("proName");
+
+        return proname.toString();
+    }
 }
