@@ -26,6 +26,9 @@ public class NoteController {
 
     @RequestMapping("/body/{id}")
     public String body(@PathVariable(name = "id")int id, @RequestBody String body) {
+        if(snoteRepository.existsByUid(id)){
+            snoteRepository.deleteAllByUid(id);
+        }
         Concequence c = concequenceRepository.findById(2l).get();
         Long num = c.getNum();
         Snote snote = new Snote();

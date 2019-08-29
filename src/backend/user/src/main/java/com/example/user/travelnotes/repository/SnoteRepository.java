@@ -7,4 +7,6 @@ import java.util.Optional;
 
 public interface SnoteRepository extends MongoRepository<Snote,Long> {
     Optional<Snote> findByUid(int uid);
+    boolean existsByUid(int uid);
+    void deleteAllByUid(int uid);
 }
