@@ -9,4 +9,5 @@ import java.util.Optional;
 public interface TravelnoteRepository extends MongoRepository<Travelnote,Long> {
     Optional<Travelnote> findByUid(Long uid);
     List<Travelnote> findAllByState(int state);
+    List<Travelnote> findAllByUid(Long uid);
 }

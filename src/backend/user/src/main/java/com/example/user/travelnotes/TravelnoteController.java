@@ -44,9 +44,9 @@ public class TravelnoteController {
 
 
     @RequestMapping("/uid/{uid}")
-    public String uid(@PathVariable(name = "uid")Long uid) {
-        Travelnote travelnote = travelnoteRepository.findByUid(uid).get();
-        return travelnote.toString();
+    public List<Travelnote> uid(@PathVariable(name = "uid")Long uid) {
+        List<Travelnote> travelnote = travelnoteRepository.findAllByUid(uid);
+        return travelnote;
     }
 
     @RequestMapping("/all")
