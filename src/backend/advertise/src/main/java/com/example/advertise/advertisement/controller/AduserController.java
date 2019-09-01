@@ -2,6 +2,8 @@ package com.example.advertise.advertisement.controller;
 
 
 
+import com.example.advertise.advertisement.entity.Aduser;
+import com.example.advertise.advertisement.repository.AduserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -17,7 +17,6 @@ import java.util.Optional;
 @RequestMapping("/travel")
 public class Controller {
 
-
     @Autowired
     private CityRepository cityRepository;
 
@@ -42,4 +41,5 @@ public class Controller {
     public Optional<Travel> findtra(@RequestParam Long id){
         return travelRepository.findById(id);
     }
+
 }
