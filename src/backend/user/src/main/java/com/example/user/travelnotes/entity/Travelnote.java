@@ -17,6 +17,8 @@ public class Travelnote {
 
     private String title;
 
+    private int height;
+
     public Long getId() {
         return id;
     }
@@ -57,6 +59,14 @@ public class Travelnote {
         this.title = title;
     }
 
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
     @Override
     public String toString() {
         return "Travelnote{" +
@@ -65,6 +75,7 @@ public class Travelnote {
                 ", state=" + state +
                 ", uid=" + uid +
                 ", title='" + title + '\'' +
+                ", height=" + height +
                 '}';
     }
 }

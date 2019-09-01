@@ -27,12 +27,14 @@ public class TravelnoteController {
     public String save(@RequestParam String note,
                        @RequestParam int state,
                        @RequestParam String title,
-                       @RequestParam Long uid){
+                       @RequestParam Long uid,
+                       @RequestParam int height){
         Travelnote travelnote = new Travelnote();
         travelnote.setNote(note);
         travelnote.setState(state);
         travelnote.setTitle(title);
         travelnote.setUid(uid);
+        travelnote.setHeight(height);
         Concequence c = concequenceRepository.findById(2l).get();
         Long num = c.getNum();
         travelnote.setId(num);

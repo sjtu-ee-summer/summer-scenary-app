@@ -4,7 +4,6 @@ package com.example.advertise.advertisement.controller;
 import com.example.advertise.advertisement.entity.Ad;
 import com.example.advertise.advertisement.repository.AdRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -14,9 +13,12 @@ import java.io.*;
 import java.util.Base64;
 import java.util.List;
 
+//import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+
 @RestController
 @RequestMapping("/ad")
 //@EnableResourceServer
+@CrossOrigin
 public class AdController {
 
     @Autowired
@@ -79,13 +81,16 @@ public class AdController {
         String entername = params.getParameter("entername");
         String title = params.getParameter("title");
         String detail = params.getParameter("detail");
+        Long uid = Long.parseLong(params.getParameter("uid"));
         System.out.println(entername+title+detail);
         Ad a = new Ad();
 //        a.setPicture(imgfile.getBytes());
 //        a.setVideo(vidfile.getBytes());
         a.setEntername(entername);
         a.setDetail(detail);
+        a.setUid(uid);
         a.setTitle(title);
+        a.setEnable(0);
         a.setBase64picture(base64image);
         adRepository.save(a);
 

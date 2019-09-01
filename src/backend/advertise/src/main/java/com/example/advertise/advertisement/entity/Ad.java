@@ -27,6 +27,26 @@ public class Ad {
     @Lob
     private String detail;
 
+    private Long uid;
+
+    private int enable;
+
+    public int getEnable() {
+        return enable;
+    }
+
+    public void setEnable(int enable) {
+        this.enable = enable;
+    }
+
+    public Long getUid() {
+        return uid;
+    }
+
+    public void setUid(Long uid) {
+        this.uid = uid;
+    }
+
     public Long getId() {
         return id;
     }
