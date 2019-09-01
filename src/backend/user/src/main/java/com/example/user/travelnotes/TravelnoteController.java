@@ -27,12 +27,14 @@ public class TravelnoteController {
     public String save(@RequestParam String note,
                        @RequestParam int state,
                        @RequestParam String title,
-                       @RequestParam Long uid){
+                       @RequestParam Long uid,
+                       @RequestParam int height){
         Travelnote travelnote = new Travelnote();
         travelnote.setNote(note);
         travelnote.setState(state);
         travelnote.setTitle(title);
         travelnote.setUid(uid);
+        travelnote.setHeight(height);
         Concequence c = concequenceRepository.findById(2l).get();
         Long num = c.getNum();
         travelnote.setId(num);
@@ -44,9 +46,9 @@ public class TravelnoteController {
 
 
     @RequestMapping("/uid/{uid}")
-    public String uid(@PathVariable(name = "uid")Long uid) {
-        Travelnote travelnote = travelnoteRepository.findByUid(uid).get();
-        return travelnote.toString();
+    public List<Travelnote> uid(@PathVariable(name = "uid")Long uid) {
+        List<Travelnote> travelnote = travelnoteRepository.findAllByUid(uid);
+        return travelnote;
     }
 
     @RequestMapping("/all")

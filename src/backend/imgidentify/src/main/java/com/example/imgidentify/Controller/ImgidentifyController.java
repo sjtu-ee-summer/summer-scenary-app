@@ -54,6 +54,8 @@ public class ImgidentifyController {
         Idelmkhi landmark = new Idelmkhi();
 
         String result = imgIdentifyLandmark.main(img);
+        String proname = proname(result);
+        landmark.setProname(proname);
         landmark.setImage(img);
         landmark.setResult(result);
         landmark.setUid(id);
@@ -173,8 +175,8 @@ public class ImgidentifyController {
     }
 
     //s
-    @RequestMapping("/proname")
-    public String info(@RequestParam String name) throws IOException {
+
+    public String proname(@RequestParam String name) throws IOException {
 
         return ImgIdentifyLandmark.proname(name);
 

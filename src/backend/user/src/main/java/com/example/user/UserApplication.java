@@ -9,13 +9,16 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 
+@EnableTransactionManagement
 @EnableEurekaClient
 @SpringBootApplication
+
 public class UserApplication {
 
 	@Autowired

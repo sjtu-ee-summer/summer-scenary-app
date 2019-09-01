@@ -8,6 +8,8 @@ import com.example.user.service.SmtpMailSender;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.mail.MessagingException;
@@ -38,6 +40,8 @@ public class UserController implements UserControllerInterface {
         return userRepository.findUserByUsername(username);
     }
 
+
+    @Transactional(isolation = Isolation.SERIALIZABLE)
     public String addUser(@RequestParam String username,@RequestParam String password,
                           @RequestParam String email, @RequestParam String phone, @RequestParam int gender) { // gender: 0 fo male, 1 for female
         User uTest1 = userRepository.findUserByUsername(username);

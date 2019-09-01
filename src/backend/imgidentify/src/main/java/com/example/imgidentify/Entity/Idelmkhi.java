@@ -16,7 +16,17 @@ public class Idelmkhi {
     @Lob
     private String result;
 
+    private String proname;
+
     private Long uid;
+
+    public String getProname() {
+        return proname;
+    }
+
+    public void setProname(String proname) {
+        this.proname = proname;
+    }
 
     public Long getId() {
         return id;
