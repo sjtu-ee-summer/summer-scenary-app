@@ -178,7 +178,9 @@ public class ImgidentifyController {
 
     public String proname(@RequestParam String name) throws IOException {
 
-        return ImgIdentifyLandmark.proname(name);
+        String result = ImgIdentifyLandmark.proname(name);
+        String st = result.replace("\"", "");
+        return st;
 
     }
 }
