@@ -560,6 +560,6 @@ public class UserController implements UserControllerInterface {
         }
         u.setProfile_picture(photo);
         userRepository.save(u);
-        return "change success";
+        return photo;
     }
 }

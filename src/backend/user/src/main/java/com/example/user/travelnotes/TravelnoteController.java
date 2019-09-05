@@ -53,6 +53,17 @@ public class TravelnoteController {
 
     @RequestMapping("/all")
     public List<Travelnote> all() {
-        return travelnoteRepository.findAllByState(1);
+        return travelnoteRepository.findAllByState(0);
+    }
+
+    @RequestMapping("/release")
+    public String release(@RequestParam Long id){
+        Travelnote t = travelnoteRepository.findById(id).get();
+        if(t==null){
+            return "id donot exists";
+        }
+        t.setState(0);
+        travelnoteRepository.save(t);
+        return "success";
     }
 }
