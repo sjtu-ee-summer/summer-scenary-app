@@ -48,4 +48,7 @@ public interface UserControllerInterface {
     @RequestMapping("/un/refindPassword")
     String refindPassword(@RequestParam String email) throws MessagingException;
 
+    @RequestMapping("/users/changephoto")
+    String changePhoto(@RequestParam Long id,@RequestParam String photo);
+
 }

@@ -388,6 +388,8 @@ public class UserController implements UserControllerInterface {
         return "success";
     }
 
+
+
     public void sendPasswordEmail(String email, String tempPassword) {
         String content = "<html>\n" +
                 "<head>\n" +
@@ -548,5 +550,16 @@ public class UserController implements UserControllerInterface {
 
         // send email
         smtpMailSender.sendHtmlMail(email, "RESET PASSWORD!", content);
+    }
+
+    @Override
+    public String changePhoto(Long id, String photo) {
+        User u = userRepository.findUserById(id);
+        if(u==null){
+            return "user id do not exists";
+        }
+        u.setProfile_picture(photo);
+        userRepository.save(u);
+        return "change success";
     }
 }
