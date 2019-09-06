@@ -58,12 +58,13 @@ public class TravelnoteController {
 
     @RequestMapping("/release")
     public String release(@RequestParam Long id){
-        Travelnote t = travelnoteRepository.findById(id).get();
-        if(t==null){
+        if(travelnoteRepository.existsById(id)){
+            Travelnote t = travelnoteRepository.findById(id).get();
+            t.setState(0);
+            travelnoteRepository.save(t);
+            return "success";
+        }else {
             return "id donot exists";
         }
-        t.setState(0);
-        travelnoteRepository.save(t);
-        return "success";
     }
 }
