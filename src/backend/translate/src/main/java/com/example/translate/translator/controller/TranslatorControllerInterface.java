@@ -45,4 +45,9 @@ public interface TranslatorControllerInterface {
     @RequestMapping("/signin")
     Long signin(@RequestParam String username, @RequestParam String password);
 
+    //通过专家的Idd得到专家的用户名
+    @CrossOrigin
+    @RequestMapping("/getname")
+    String getname(@RequestParam Long id);
+
 }

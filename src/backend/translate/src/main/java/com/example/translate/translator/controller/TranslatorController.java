@@ -115,4 +115,14 @@ public class TranslatorController implements TranslatorControllerInterface{
         return Long.valueOf(0);
     }
 
+    public String getname(@RequestParam Long id){
+        if(translatorProfileRepository.existsById(id)){
+            TranslatorProfileEntity translatorProfileEntity = translatorProfileRepository.findById(id).get();
+            return translatorProfileEntity.getName();
+        }else {
+            return "id donot exists";
+        }
+
+    }
+
 }
