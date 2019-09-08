@@ -25,7 +25,7 @@ public class NoteController {
     }
 
     @RequestMapping("/body/{id}")
-    public String body(@PathVariable(name = "id")int id, @RequestBody String body) {
+    public String body(@PathVariable(name = "id")Long id, @RequestBody String body) {
         if(snoteRepository.existsByUid(id)){
             snoteRepository.deleteAllByUid(id);
         }
@@ -45,11 +45,12 @@ public class NoteController {
     }
 
     @RequestMapping("/find")
-    public String find(@RequestParam int uid){
-        Snote snote = snoteRepository.findByUid(uid).get();
-        if(snote==null){
+    public String find(@RequestParam Long uid){
+        if(snoteRepository.existsByUid(uid)){
+            Snote snote = snoteRepository.findByUid(uid).get();
+            return snote.getNote();
+        }else {
             return "no note";
         }
-        return snote.getNote();
     }
 }

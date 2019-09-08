@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
-@Document(collection = "snote_msg")
+@Document(collection = "travelnote_msg")
 public class Travelnote {
     @Id
     private Long id;

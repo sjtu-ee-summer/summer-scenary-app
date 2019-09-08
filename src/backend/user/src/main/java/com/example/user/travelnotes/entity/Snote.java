@@ -12,7 +12,7 @@ public class Snote {
 
     private String note;
 
-    private int uid;
+    private Long uid;
 
     public Long getId() {
         return id;
@@ -30,11 +30,11 @@ public class Snote {
         this.note = note;
     }
 
-    public int getUid() {
+    public Long getUid() {
         return uid;
     }
 
-    public void setUid(int uid) {
+    public void setUid(Long uid) {
         this.uid = uid;
     }
 }
