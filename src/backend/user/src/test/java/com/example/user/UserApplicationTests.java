@@ -102,11 +102,6 @@ public class UserApplicationTests {
 				.andReturn().getResponse().getContentAsString();
 	}
 
-<<<<<<< HEAD
-=======
-//<<<<<<< HEAD
-//=======
->>>>>>> 915e554e6ceb648f50a85761fc7b7795c78117bb
 	@WithMockUser(roles={"ADMIN"})
 	@Test
 	public void insertBook() throws  Exception {
@@ -145,10 +140,6 @@ public class UserApplicationTests {
 
 	}
 
-<<<<<<< HEAD
-=======
-//>>>>>>> 50cd2c7583173e82d163f63a99b6c6c82602e39d
->>>>>>> 915e554e6ceb648f50a85761fc7b7795c78117bb
 	@WithMockUser(roles={"ADMIN"})
 	@Test
 	public void generalUserTest2() throws Exception{
