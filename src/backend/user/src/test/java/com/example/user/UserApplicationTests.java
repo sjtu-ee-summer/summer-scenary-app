@@ -36,7 +36,7 @@ public class UserApplicationTests {
 
 	@WithMockUser(roles={"ADMIN"})
 	@Test
-	public void signup() throws  Exception {
+	public void generalUserTest() throws  Exception {
 		mvc.perform(get("/users/username/test"))
 				.andExpect(status().isOk());
 		mvc.perform(get("/un/signup")
@@ -46,6 +46,10 @@ public class UserApplicationTests {
 				.param("phone", "999")
 				.param("gender", "1"))
 				.andExpect(status().isOk());
+		mvc.perform(get("/un/signin")
+				.param("username", "testuse")
+				.param("password", "testpasswor"))
+				.andReturn().getResponse().getContentAsString();
 		mvc.perform(get("/un/signup")
 				.param("username", "testuse1111")
 				.param("password", "testpasswor")
@@ -67,48 +71,38 @@ public class UserApplicationTests {
 				.param("phone", "999")
 				.param("gender", "1"))
 				.andExpect(status().isOk());
+		mvc.perform(get("/un/signin")
+				.param("username", "testuse")
+				.param("password", "wrongpassword"))
+				.andReturn().getResponse().getContentAsString();
+		mvc.perform(get("/users").contentType(MediaType.APPLICATION_JSON))
+				.andDo(MockMvcResultHandlers.print())
+				.andExpect(status().is(200))
+				.andReturn().getResponse().getContentAsString();
+		mvc.perform(get("/users/userinfo/1").contentType(MediaType.APPLICATION_JSON)
+				.param("gender", "1")
+				.param("age", "0")
+				.param("address", "hell")
+				.param("phone", "999"))
+				.andDo(MockMvcResultHandlers.print())
+				.andReturn().getResponse().getContentAsString();
+		mvc.perform(get("/users/id/1").contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
+		mvc.perform(get("/users/username/testuse").contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
+		mvc.perform(get("/un/improvip/1").contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
+		mvc.perform(get("/un/improvip/1").contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
+		mvc.perform(get("/un/refindPassword")
+				.param("email", "email@test.tes"))
+				.andExpect(status().isOk())
+				.andReturn().getResponse().getContentAsString();
 	}
 
-//	@WithMockUser(roles={"ADMIN"})
-//	@Test
-//	public void insertBook() throws  Exception {
-//
-//		mvc.perform(get("/un/signin")
-//				.param("username", "testuse")
-//				.param("password", "testpasswor"))
-//				.andReturn().getResponse().getContentAsString();
-//		mvc.perform(get("/un/signin")
-//				.param("username", "testuse")
-//				.param("password", "wrongpassword"))
-//				.andReturn().getResponse().getContentAsString();
-//		mvc.perform(get("/users").contentType(MediaType.APPLICATION_JSON))
-//				.andDo(MockMvcResultHandlers.print())
-//				.andExpect(status().is(404))
-//				.andReturn().getResponse().getContentAsString();
-//		mvc.perform(get("/users/userinfo/1").contentType(MediaType.APPLICATION_JSON)
-//				.param("gender", "1")
-//				.param("age", "0")
-//				.param("address", "hell")
-//				.param("phone", "999"))
-//				.andDo(MockMvcResultHandlers.print())
-//				.andReturn().getResponse().getContentAsString();
-//		mvc.perform(get("/users/id/1").contentType(MediaType.APPLICATION_JSON))
-//				.andExpect(status().isOk());
-//		mvc.perform(get("/users/username/testuse").contentType(MediaType.APPLICATION_JSON))
-//				.andExpect(status().isOk());
-//		mvc.perform(get("/un/improvip/1").contentType(MediaType.APPLICATION_JSON))
-//				.andExpect(status().isOk());
-//		mvc.perform(get("/un/improvip/1").contentType(MediaType.APPLICATION_JSON))
-//				.andExpect(status().isOk());
-//		mvc.perform(get("/un/refindPassword")
-//				.param("email", "email@test.tes"))
-//				.andExpect(status().isOk())
-//				.andReturn().getResponse().getContentAsString();
-//
-//	}
 	@WithMockUser(roles={"ADMIN"})
 	@Test
-	public void test2() throws Exception{
+	public void generalUserTest2() throws Exception{
 		mvc.perform(get("/un/refindPassword")
 				.param("email", "email@test.tes"))
 				.andExpect(status().isOk())

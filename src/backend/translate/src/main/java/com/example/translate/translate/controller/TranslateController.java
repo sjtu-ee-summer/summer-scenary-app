@@ -13,7 +13,8 @@ import java.util.List;
 
 @RestController
 @EnableResourceServer
-public class TranslateController implements TranslateControllerInterface{
+public class TranslateController implements TranslateControllerInterface
+{
 
     @Autowired
     private TranslateTextRepository translateTextRepository;
@@ -23,7 +24,8 @@ public class TranslateController implements TranslateControllerInterface{
     private TranslateVoiceRepository translateVoiceRepository;
 
     public String getTranslation(@RequestParam String sentence, @RequestParam Long id,
-                                 @RequestParam String from, @RequestParam String to) throws IOException {
+                                 @RequestParam String from, @RequestParam String to) throws IOException
+    {
         TranslateText translateText = new TranslateText();
         TranslateTextEntity text = new TranslateTextEntity();
 
@@ -37,7 +39,8 @@ public class TranslateController implements TranslateControllerInterface{
     }
 
     public String getPicTranslation(@RequestParam("picture") String picture, @RequestParam("id") Long id,
-                                    @RequestParam String from, @RequestParam String to) throws Exception {
+                                    @RequestParam String from, @RequestParam String to) throws Exception
+    {
         TranslatePicture translatePicture = new TranslatePicture();
         TranslatePicEntity pic = new TranslatePicEntity();
         TextAdder textAdder = new TextAdder();
@@ -54,7 +57,8 @@ public class TranslateController implements TranslateControllerInterface{
     }
 
     public String getVoiceTranslation(@RequestParam("voice") String voice, @RequestParam("id") Long id,
-                                      @RequestParam String from, @RequestParam String to) throws IOException {
+                                      @RequestParam String from, @RequestParam String to) throws IOException
+    {
         TranslateVoice translateVoice = new TranslateVoice();
         TranslateVoiceEntity v = new TranslateVoiceEntity();
 
@@ -67,7 +71,8 @@ public class TranslateController implements TranslateControllerInterface{
         return result;
     }
 
-    public List<TranslatePicEntity> TransPicHis(@PathVariable(value = "id") Long id) {
+    public List<TranslatePicEntity> TransPicHis(@PathVariable(value = "id") Long id)
+    {
         return translatePicRepository.findAllByUid(id);
     }
 

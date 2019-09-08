@@ -40,7 +40,6 @@ public class UserController implements UserControllerInterface {
         return userRepository.findUserByUsername(username);
     }
 
-
     @Transactional(isolation = Isolation.SERIALIZABLE)
     public String addUser(@RequestParam String username,@RequestParam String password,
                           @RequestParam String email, @RequestParam String phone, @RequestParam int gender) { // gender: 0 fo male, 1 for female
@@ -70,8 +69,6 @@ public class UserController implements UserControllerInterface {
             u.setProfile_picture(girlpicture);
         } else if (gender == 0) {
             u.setProfile_picture(boypicture);
-        } else {
-            u.setProfile_picture(null); // no profile picture for gays or lesbians
         }
 
         //获得当前日期
@@ -93,21 +90,6 @@ public class UserController implements UserControllerInterface {
         user_roles.setUsername(username);
         user_roles.setRole("ROLE_USER");
 
-        // to solve problems with concurrency
-        User uTest4 = userRepository.findUserByUsername(username);
-        if (uTest1 != null) {
-            return "username already exists";
-        }
-
-        User uTest5 = userRepository.findUserByEmail(email);
-        if (uTest2 != null) {
-            return "email already exists";
-        }
-
-        User uTest6 = userRepository.findUserByPhone(phone);
-        if (uTest3 != null) {
-            return "phone number already exists";
-        }
         userRolesRepository.save(user_roles);
         userRepository.save(u);
 
@@ -549,4 +531,17 @@ public class UserController implements UserControllerInterface {
         // send email
         smtpMailSender.sendHtmlMail(email, "RESET PASSWORD!", content);
     }
+
+    public void update(@RequestParam Long id, long c1, long c2, long c3, long c4, long c5) {
+        User user = userRepository.findUserById(id);
+
+        user.setC1(user.getC1() + c1);
+        user.setC2(user.getC2() + c2);
+        user.setC3(user.getC3() + c3);
+        user.setC4(user.getC4() + c4);
+        user.setC5(user.getC5() + c5);
+
+        userRepository.save(user);
+    }
+
 }

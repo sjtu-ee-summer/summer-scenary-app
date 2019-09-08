@@ -48,4 +48,6 @@ public interface UserControllerInterface {
     @RequestMapping("/un/refindPassword")
     String refindPassword(@RequestParam String email) throws MessagingException;
 
+    @RequestMapping("/users/updateinterest")
+    void update(@RequestParam Long id, long c1, long c2, long c3, long c4, long c5);
 }
