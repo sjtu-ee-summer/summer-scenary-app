@@ -534,6 +534,10 @@ public class UserController implements UserControllerInterface {
         smtpMailSender.sendHtmlMail(email, "RESET PASSWORD!", content);
     }
 
+<<<<<<< HEAD
+=======
+//<<<<<<< HEAD
+>>>>>>> 915e554e6ceb648f50a85761fc7b7795c78117bb
     public void update(@RequestParam Long id, long c1, long c2, long c3, long c4, long c5) {
         User user = userRepository.findUserById(id);
 
@@ -546,6 +550,10 @@ public class UserController implements UserControllerInterface {
         userRepository.save(user);
     }
 
+<<<<<<< HEAD
+=======
+//=======
+>>>>>>> 915e554e6ceb648f50a85761fc7b7795c78117bb
     @Override
     public String changePhoto(Long id, String photo) {
         User u = userRepository.findUserById(id);
@@ -556,4 +564,8 @@ public class UserController implements UserControllerInterface {
         userRepository.save(u);
         return photo;
     }
+<<<<<<< HEAD
+=======
+//>>>>>>> 50cd2c7583173e82d163f63a99b6c6c82602e39d
+>>>>>>> 915e554e6ceb648f50a85761fc7b7795c78117bb
 }
