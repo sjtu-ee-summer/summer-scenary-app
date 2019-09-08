@@ -56,7 +56,7 @@ public class TravelnoteControllerTest {
     @Test
     public void testrelease() throws Exception {
         mvc.perform(MockMvcRequestBuilders.post("/travelnote/release")
-                .contentType(MediaType.APPLICATION_JSON).param("id","9"))
+                .contentType(MediaType.APPLICATION_JSON).param("id","17"))
                 .andExpect(status().isOk()).andExpect(content().string(containsString("success")));
     }
 

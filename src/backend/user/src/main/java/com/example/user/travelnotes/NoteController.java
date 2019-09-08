@@ -46,10 +46,11 @@ public class NoteController {
 
     @RequestMapping("/find")
     public String find(@RequestParam int uid){
-        Snote snote = snoteRepository.findByUid(uid).get();
-        if(snote==null){
+        if(snoteRepository.existsByUid(uid)){
+            Snote snote = snoteRepository.findByUid(uid).get();
+            return snote.getNote();
+        }else {
             return "no note";
         }
-        return snote.getNote();
     }
 }
