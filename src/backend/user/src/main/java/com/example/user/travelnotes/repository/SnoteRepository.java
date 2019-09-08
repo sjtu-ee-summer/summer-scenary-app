@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.Optional;
 
 public interface SnoteRepository extends MongoRepository<Snote,Long> {
-    Optional<Snote> findByUid(int uid);
-    boolean existsByUid(int uid);
-    void deleteAllByUid(int uid);
+    Optional<Snote> findByUid(Long uid);
+    boolean existsByUid(Long uid);
+    void deleteAllByUid(Long uid);
 }

@@ -4,6 +4,7 @@ package com.example.user.travelnotes;
 import com.example.user.travelnotes.entity.Concequence;
 import com.example.user.travelnotes.entity.Travelnote;
 import com.example.user.travelnotes.repository.ConcequenceRepository;
+import com.example.user.travelnotes.repository.SnoteRepository;
 import com.example.user.travelnotes.repository.TravelnoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +24,9 @@ public class TravelnoteController {
     @Autowired
     ConcequenceRepository concequenceRepository;
 
+    @Autowired
+    SnoteRepository snoteRepository;
+
     @RequestMapping("/save")
     public String save(@RequestParam String note,
                        @RequestParam int state,
@@ -39,6 +43,7 @@ public class TravelnoteController {
         Long num = c.getNum();
         travelnote.setId(num);
         c.setNum(num+1);
+        snoteRepository.deleteAllByUid(uid);
         concequenceRepository.save(c);
         travelnoteRepository.save(travelnote);
         return travelnote.toString();
