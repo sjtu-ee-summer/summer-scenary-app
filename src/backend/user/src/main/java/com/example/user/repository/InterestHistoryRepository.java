@@ -6,14 +6,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Set;
 
-@Repository
 public interface InterestHistoryRepository extends CrudRepository<interestHistory, Long> {
-    Set<interestHistory> findAllByUser_id(long id);
+    Set<interestHistory> findAllByUserId(long id);
 
-    Set<interestHistory> findTop2ByUser_idOrderByIdDesc(long id);
+    interestHistory findLastByUserId(long id);
 
-    interestHistory findTopByUser_idOrderByIdDesc(long id);
-
-    Long countAll();
-
+//    Long countAll();
 }

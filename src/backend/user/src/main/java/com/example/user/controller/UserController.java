@@ -534,7 +534,6 @@ public class UserController implements UserControllerInterface {
         smtpMailSender.sendHtmlMail(email, "RESET PASSWORD!", content);
     }
 
-<<<<<<< HEAD
     public void update(@RequestParam Long id, long c1, long c2, long c3, long c4, long c5) {
         User user = userRepository.findUserById(id);
 
@@ -547,7 +546,6 @@ public class UserController implements UserControllerInterface {
         userRepository.save(user);
     }
 
-=======
     @Override
     public String changePhoto(Long id, String photo) {
         User u = userRepository.findUserById(id);
@@ -558,5 +556,4 @@ public class UserController implements UserControllerInterface {
         userRepository.save(u);
         return photo;
     }
->>>>>>> 50cd2c7583173e82d163f63a99b6c6c82602e39d
 }

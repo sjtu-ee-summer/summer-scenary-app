@@ -1,10 +1,9 @@
 package com.example.user.entity;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name="interesthistory")
 public class interestHistory
 {
     @Id
@@ -12,9 +11,9 @@ public class interestHistory
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private long user_id;
+    private long userId;
 
-    private long scene_id;
+    private long sceneId;
 
     public Long getId() {
         return id;
@@ -24,19 +23,19 @@ public class interestHistory
         this.id = id;
     }
 
-    public long getUser_id() {
-        return user_id;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setUser_id(long user_id) {
-        this.user_id = user_id;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
-    public long getScene_id() {
-        return scene_id;
+    public long getSceneId() {
+        return sceneId;
     }
 
-    public void setScene_id(long scene_id) {
-        this.scene_id = scene_id;
+    public void setSceneId(long sceneId) {
+        this.sceneId = sceneId;
     }
 }

@@ -20,8 +20,8 @@ import java.util.*;
 public class behavior {
     @Autowired
     private BehaviorService behaviorService;
-//    @Autowired
-//    private ImgSceneRepository imgSceneRepository;
+    @Autowired
+    private ImgSceneRepository imgSceneRepository;
     @Autowired
     private InterestHistoryRepository interestHistoryRepository;
     @Autowired
@@ -70,15 +70,21 @@ public class behavior {
         User u1 = userRepository.findUserById(id);
         Set<Long> interest = new HashSet<Long>();
         for (Cluster c : clustersContainer) {
+            System.out.println("id");
+            System.out.println(u1.getCluster_id());
             if (c.getId() == u1.getCluster_id()) {
                 // found! get history!
+                System.out.println(u1.getCluster_id());
                 List<Point> memberpoint = c.getMembers();
                 for (Point p : memberpoint) {
                     if (p.getUser_id() != id) {
                         // got other user user_id!
                         // continue to get their history
-                        interestHistory ih = interestHistoryRepository.findTopByUser_idOrderByIdDesc(p.getUser_id());
-                        interest.add(ih.getScene_id());
+                        System.out.println(p);
+                        Set<interestHistory> ih = interestHistoryRepository.findAllByUserId(p.getUser_id());
+                        for (interestHistory thtemp : ih) {
+                            interest.add(thtemp.getSceneId());
+                        }
                     }
                 }
 
@@ -90,11 +96,11 @@ public class behavior {
             return interest;
         }
 
-        Long qty = interestHistoryRepository.countAll();
+        int qty = 950;
         while (interest.size() < 8) {
             // get random scene_id
-            long idx = (long)(Math.random() * qty);
-            interest.add(idx);
+            int idx = (int)(Math.random() * qty);
+            interest.add(Long.valueOf(idx));
         }
 
         return interest; // return set of scene_id
@@ -108,19 +114,19 @@ public class behavior {
 
     @ResponseBody
     @RequestMapping("/getimg")
-    public void getImg(@RequestParam long id) {
+    public imgscene getImg(@RequestParam long id) {
         detailscene d = detailSceneRepository.findById(id);
         String tempAttract = d.getAttract();
-//        imgscene i = imgSceneRepository.findimgsceneByAttract(tempAttract);
+        imgscene i = imgSceneRepository.findFirstByAttract(tempAttract);
 
-//        return i;
+        return i;
     }
 
     @RequestMapping("/setinterest")
     public void setvisitinterest(@RequestParam long scene_id, @RequestParam long user_id) {
         interestHistory i = new interestHistory();
-        i.setUser_id(user_id);
-        i.setScene_id(scene_id);
+        i.setUserId(user_id);
+        i.setSceneId(scene_id);
 
         interestHistoryRepository.save(i);
     }

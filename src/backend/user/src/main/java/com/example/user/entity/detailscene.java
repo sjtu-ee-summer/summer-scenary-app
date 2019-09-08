@@ -1,10 +1,9 @@
 package com.example.user.entity;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name="detailscene")
 public class detailscene
 {
 
@@ -13,27 +12,38 @@ public class detailscene
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Lob
     private String attract;
 
+    @Lob
     private String overview;
 
+    @Lob
     private String ticket;
 
+    @Lob
     private String season;
 
+    @Lob
     private String traffic;
 
+    @Lob
     private String tip;
 
+    @Lob
     private String address;
 
     private String phone;
 
     private String hours;
 
+    @Lob
     private String website;
 
+    @Lob
     private String scene;
+
+    private int type;
 
     public long getId() {
         return id;
@@ -129,5 +139,13 @@ public class detailscene
 
     public void setScene(String scene) {
         this.scene = scene;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }

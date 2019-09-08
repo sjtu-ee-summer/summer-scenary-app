@@ -5,4 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ImgSceneRepository extends CrudRepository<imgscene, String> {
 //    imgscene findimgsceneByAttract(String attract);
+
+    imgscene findFirstByAttract(String attract);
 }

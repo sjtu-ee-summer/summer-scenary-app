@@ -1,21 +1,38 @@
 package com.example.user.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="imgscene")
 public class imgscene {
 
+    @Id
+    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Lob
     private String attract;
 
+    @Lob
     private String intro;
 
+    @Lob
     private String url;
 
+    @Lob
     private String smallimage;
 
+    @Lob
     private String iconimage;
 
+    @Lob
     private String middleimage;
 
+    @Lob
     private String bigmiddleimage;
 
+    @Lob
     private String bigimage;
 
     public String getAttract() {
@@ -80,5 +97,13 @@ public class imgscene {
 
     public void setBigimage(String bigimage) {
         this.bigimage = bigimage;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
