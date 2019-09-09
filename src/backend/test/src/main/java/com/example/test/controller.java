@@ -17,6 +17,11 @@ import java.util.Date;
 @RestController
 public class controller
 {
+    @RequestMapping("/ha")
+    public String he(){
+        return "he";
+    }
+
     @RequestMapping("/hello/{id}")
     public String hello(@PathVariable(value = "id") Long id) {
         System.out.println(id);
