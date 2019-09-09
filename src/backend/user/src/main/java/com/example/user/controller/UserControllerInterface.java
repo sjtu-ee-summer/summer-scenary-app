@@ -40,6 +40,7 @@ public interface UserControllerInterface {
     String changePassword(@RequestParam Long id, @RequestParam String oldPassword,
                           @RequestParam String newPassword);
 
+    @CrossOrigin
     @RequestMapping("/admin/alluser")
     List<User> alluser();
 
