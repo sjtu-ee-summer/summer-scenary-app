@@ -259,6 +259,9 @@ public class UserController implements UserControllerInterface {
     }
 
     public Long signin(@RequestParam String username, @RequestParam String password) {
+        if(!userRepository.existsByUsername(username)){
+            return Long.valueOf(0);
+        }
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         User u = userRepository.findUserByUsername(username);
 
@@ -557,7 +560,12 @@ public class UserController implements UserControllerInterface {
     }
 
     public String vuesignin(String username,String password) {
+
+        if(!userRepository.existsByUsername(username)){
+            return "username or password wrong";
+        }
         User_roles user_roles = userRolesRepository.findUser_rolesByUsername(username);
+
         if(!user_roles.getRole().equals("ROLE_ADMIN")){
             return "username or password wrong";
         }
