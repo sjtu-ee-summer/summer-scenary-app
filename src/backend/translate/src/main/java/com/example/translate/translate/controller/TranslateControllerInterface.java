@@ -13,7 +13,7 @@ public interface TranslateControllerInterface {
 
     @PostMapping("/text")
     String getTranslation(@RequestParam String sentence, @RequestParam Long id,
-                                 @RequestParam String from, @RequestParam String to) throws IOException;
+                          @RequestParam String from, @RequestParam String to) throws IOException;
 
     @PostMapping("/photo")
     public String getPicTranslation(@RequestParam("picture") String picture, @RequestParam("id") Long id,
