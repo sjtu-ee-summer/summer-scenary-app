@@ -1,10 +1,7 @@
 package com.example.user.controller;
 
 import com.example.user.entity.User;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.mail.MessagingException;
 import java.util.List;
@@ -26,6 +23,7 @@ public interface UserControllerInterface {
     // Upon successful signin, return user_id to frontend. Frontend should store this user_id to be used on other services
     // returns 0 or exception error on failed signin
     @GetMapping("/un/signin")
+    @CrossOrigin
     Long signin(@RequestParam String username, @RequestParam String password);
 
     // Alert!!!
