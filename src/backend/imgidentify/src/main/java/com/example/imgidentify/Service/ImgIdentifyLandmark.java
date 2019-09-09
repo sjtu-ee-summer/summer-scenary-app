@@ -66,9 +66,11 @@ public class ImgIdentifyLandmark {
         String landmark = j.get("landmark").toString();
 //        end = end.get("landmark").getAsJsonObject();
         String st = landmark.replace("\"", "");
-        if(st==""){
+        System.out.println(landmark);
+        if(st.equals("")){
             return "未知地点";
         }
+        System.out.println(st);
         return st;
 //        return result;
     }
