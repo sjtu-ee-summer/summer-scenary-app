@@ -555,4 +555,19 @@ public class UserController implements UserControllerInterface {
         userRepository.save(u);
         return photo;
     }
+
+    public String vuesignin(String username,String password) {
+        User_roles user_roles = userRolesRepository.findUser_rolesByUsername(username);
+        if(!user_roles.getRole().equals("ROLE_ADMIN")){
+            return "username or password wrong";
+        }
+        User user = userRepository.findUserByUsername(username);
+        user.getPassword();
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        if(encoder.matches(password, user.getPassword())){
+            return "register success";
+        }else{
+            return "username or password wrong";
+        }
+    }
 }

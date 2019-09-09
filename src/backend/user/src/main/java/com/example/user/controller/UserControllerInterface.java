@@ -52,4 +52,8 @@ public interface UserControllerInterface {
     @RequestMapping("/users/changephoto")
     String changePhoto(@RequestParam Long id,@RequestParam String photo);
 
+    @CrossOrigin
+    @RequestMapping("/un/vuesignin")
+    public String vuesignin(@RequestParam String username,@RequestParam String password);
+
 }
